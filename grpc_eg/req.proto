@@ -1,0 +1,28 @@
+syntax = "proto3";
+package req;
+import "item.proto";
+
+option go_package = "pb_test";
+
+message Request {
+    reserved 15, 9 to 11; // 保留一些标识号
+    reserved "ha"; // 保留一些字段名
+
+    string query = 1;
+    map<string, string> headers = 2;
+}
+
+message Response {
+    reserved 15, 9 to 11;
+    reserved "foo", "bar";
+
+    string req_query = 1;
+    item.ItemDetail x = 2;
+    bool succ = 3;
+}
+
+service SearchSSS {
+    rpc Search (Request) returns (Response) {}
+}
+
+// \grpc_test>protoc -I=. -I=inside_pkg *.proto item.proto --go_out=plugins=grpc:pb_test

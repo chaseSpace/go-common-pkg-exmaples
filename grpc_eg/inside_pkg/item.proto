@@ -1,0 +1,18 @@
+syntax = "proto3";
+package item;
+option go_package = "pb_test";
+
+
+message ItemDetail {
+    string name=1;
+    int32 price=2;
+    string desc=3;
+    status Status=4;
+    enum status {
+         option allow_alias = true;
+         DEFAULT=0;
+         ACTIVE=1;
+         INACTIVE=2;
+         OFF=2;
+    }
+}
