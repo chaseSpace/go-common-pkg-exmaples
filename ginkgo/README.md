@@ -3,15 +3,15 @@
 
 Ginkgo allows you to write tests in Go using expressive Behavior-Driven Development ("BDD") style.
 
-##### [What is BDD ?](https://zh.wikipedia.org/wiki/行为驱动开发)
+### [What is BDD ?](https://zh.wikipedia.org/wiki/行为驱动开发)
 
-##### Learn more about [Ginkgo](https://github.com/onsi/ginkgo)
+### Learn more about [Ginkgo](https://github.com/onsi/ginkgo)
 
-##### [中文文档](https://blog.gmem.cc/ginkgo-study-note)
+### [中文文档](https://blog.gmem.cc/ginkgo-study-note)
 
 ---
 
-##### Getting started
+### Getting started
 ```bash
 go get -u github.com/onsi/ginkgo/ginkgo  # installs the ginkgo CLI
 go get -u github.com/onsi/gomega/...     # fetches the matcher library
@@ -28,7 +28,7 @@ ginkgo  # also runs your tests
 ginkgo -v # be equivalent to `go test -ginkgo.v`, -v represents -verbose 
 ```
 
-##### CLI
+### CLI
 ```bash
 # 运行当前目录中的测试
 ginkgo
