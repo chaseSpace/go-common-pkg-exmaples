@@ -1,0 +1,1 @@
+## Go common package examples
