@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc_eg/pb_test"
+	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/testdata"

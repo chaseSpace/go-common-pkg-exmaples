@@ -1,4 +1,4 @@
-package encode_pkg_eg
+package encode_pkg
 
 import (
 	"bytes"

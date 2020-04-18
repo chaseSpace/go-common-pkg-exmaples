@@ -58,10 +58,14 @@ func readFileIfModified(lastMod time.Time) ([]byte, time.Time, error) {
 func reader(ws *websocket.Conn) {
 	defer ws.Close()
 	ws.SetReadLimit(512)
-	// 设置ws连接最大空闲时间，超过即断开
-	_ = ws.SetReadDeadline(time.Now().Add(11 * time.Second))
+	//// 设置ws连接最大空闲时间，超过即断开
+	//_ = ws.SetReadDeadline(time.Now().Add(3 * time.Second))
 	// reader只保持连接处理心跳
-	ws.SetPongHandler(func(string) error { _ = ws.SetReadDeadline(time.Now().Add(pongWait)); return nil })
+	ws.SetPongHandler(func(s string) error {
+		_ = ws.SetReadDeadline(time.Now().Add(pongWait))
+		log.Println("pong", s)
+		return nil
+	})
 	for {
 		_, m, err := ws.ReadMessage()
 		if err != nil {
