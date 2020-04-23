@@ -7,6 +7,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/testdata"
 	"log"
+	"time"
 )
 
 const (
@@ -30,5 +31,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not search: %v", err)
 	}
+	// parse timestamp
+	log.Print("Rsp time:", time.Unix(r.GetTime().Seconds, 0).String())
 	log.Printf("searching: %+v", r.String())
 }

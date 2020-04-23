@@ -15,6 +15,9 @@ var _ = Describe("Describe-PanicTest", func() {
 
 	Describe("Describe-test panic", func() {
 		It("should panic", func() {
+			// 有时候It的text参数不能简短的介绍复杂的用例内容，就用到By，它可以在It内部多次使用，用来当做日志一下
+			// 比如用例包含4个步骤，那么在对应步骤的起始处添加By("description for this step...")
+			// 文本会在错误时打印出来
 			By("Document your test case-0,  but this case won't display, because it will be passed for test")
 			// 测试panic，需要用func封装
 			Expect(func() { DoPanic(true) }).Should(Panic())

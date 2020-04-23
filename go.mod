@@ -15,6 +15,7 @@ require (
 	github.com/kr/pretty v0.2.0 // indirect
 	github.com/onsi/ginkgo v1.7.0
 	github.com/onsi/gomega v1.4.3
+	github.com/robfig/cron/v3 v3.0.0
 	google.golang.org/grpc v1.28.1
 	gopkg.in/jose.v1 v1.0.0-20161127122323-a941c3995164
 	xorm.io/core v0.7.3

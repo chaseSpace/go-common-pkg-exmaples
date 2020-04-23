@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
+	"github.com/golang/protobuf/ptypes"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/testdata"
@@ -21,10 +22,12 @@ type serverSSS struct{}
 func (s *serverSSS) Search(ctx context.Context, in *pb.Request) (*pb.Response, error) {
 	log.Printf("ctx value a:%v\n", ctx.Value("a"))
 	log.Printf("Received: query:%v header:%+v", in.GetQuery(), in.GetHeaders())
+
 	return &pb.Response{ReqQuery: in.GetQuery(),
 		X: &pb.ItemDetail{Name: "apple", Price: 110,
 			Desc: "desc", Status: pb.ItemDetail_ACTIVE},
-		Succ: true}, nil
+		Succ: true,
+		Time: ptypes.TimestampNow()}, nil
 }
 
 func main() {
