@@ -1,0 +1,34 @@
+version: "3.3"
+services:
+  test-mysql-5.7:
+    image: mysql/mysql-server:5.7
+    container_name: test-mysql-5.7
+#    build:
+#      context: /path/to/ctx
+#      dockerfile: /xxx.Dockerfile
+    ports:
+        - "33061:3306"  # http (host-p:container-p)
+    environment:
+      TIME_ZONE: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: "123"  # set root password, it will be ignored if db exists
+      MYSQL_DATABASE: "gxt"  # create a db if not exist
+      MYSQL_USER: "gxt-user1"  # create a user
+      MYSQL_PASSWORD: "ForGreatBright2020okxsdjd" # set password for $MYSQL_USER
+      # NOTE: $MYSQL_USER will be bind with $MYSQL_DATABASE, this means $MYSQL_USER only can access $MYSQL_DATABASE by default.
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - test_mysql_vol:/var/lib/mysql  # data dir，也可以在conf中指定
+      - /root/my_docker/docker-svc/mysql-5.7:/etc/mysql/conf.d  # config-file.cnf存在于宿主机对应目录下，文件名固定
+      - /root/my_docker/docker-svc/mysql-5.7/slow-query.log:/server/data/mysql-slow.log # slow query log
+    networks:
+      - my-bridge
+    restart: on-failure
+
+
+volumes:
+  test_mysql_vol:  # 创建的卷名 prod_app_web，如果是docker-compose则是docker_compose_app_web
+
+networks:
+  my-bridge:
+    driver: overlay # 如果是swarm模式只能使用overlay
+    attachable: true # 可以被独立容器添加

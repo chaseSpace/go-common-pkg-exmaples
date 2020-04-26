@@ -1,0 +1,30 @@
+version: "3.3"
+services:
+  test-redis-3.1:
+    image: redis:3.0-alpine
+    container_name: test-redis-3.1
+#    build:
+#      context: /path/to/ctx
+#      dockerfile: /xxx.Dockerfile
+    command: ["redis-server", "/redis/redis.conf" ]
+    ports:
+        - "63791:6379"  # http (host-p:container-p)
+    environment:
+      TIME_ZONE: Asia/Shanghai
+      # NOTE: $MYSQL_USER will be bind with $MYSQL_DATABASE, this means $MYSQL_USER only can access $MYSQL_DATABASE by default.
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /root/my_docker/docker-svc/redis-3.0:/redis
+      - test_redis_vol:/data  # redis dir
+    networks:
+      - my-bridge
+    restart: on-failure
+
+
+volumes:
+  test_redis_vol:  # 创建的卷名 prod_app_web，如果是docker-compose则是docker_compose_app_web
+
+networks:
+  my-bridge:
+    driver: overlay # 如果是swarm模式只能使用overlay
+    attachable: true # 可以被独立容器添加

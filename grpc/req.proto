@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
-import "item.proto";
+import "grpc/inside_pkg/item.proto";
 
 package req;
 
