@@ -22,4 +22,10 @@ mv /path/to/docker-compose.yml .
 docker-compose -f docker-compose.yml up -d # `-d` represents start in background
 
 docker ps |grep mysql # check status of container
+
+# enter mysql shell
+bash#mysql -uUSER -pPASSWORD
+
+# change root password
+mysql> set password for root@localhost = password('new pass'); 
 ```

@@ -5,6 +5,7 @@ import (
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/credentials/alts/internal/conn"
 	"google.golang.org/grpc/testdata"
 	"log"
 	"time"
@@ -14,16 +15,23 @@ const (
 	address = "localhost:50051"
 )
 
-func main() {
+var c grpc.ClientConn
+
+var client pb_test.SearchSSSClient
+
+func init() {
 	creds, err := credentials.NewClientTLSFromFile(testdata.Path("server1.pem"), "*.test.youtube.com")
 	clientOpt := grpc.WithTransportCredentials(creds)
 	conn, err := grpc.Dial(address, clientOpt)
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
-	defer conn.Close()
 	log.Println(conn.GetState())
-	c := pb_test.NewSearchSSSClient(conn)
+	client = pb_test.NewSearchSSSClient(conn)
+}
+
+func main() {
+	defer client()
 	// Contact the server and print out its response.
 
 	r, err := c.Search(context.WithValue(context.Background(), "a", 1),
