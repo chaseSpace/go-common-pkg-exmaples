@@ -6,9 +6,11 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/keepalive"
 	"google.golang.org/grpc/testdata"
 	"log"
 	"net"
+	"time"
 )
 
 const (
@@ -22,7 +24,6 @@ type serverSSS struct{}
 func (s *serverSSS) Search(ctx context.Context, in *pb.Request) (*pb.Response, error) {
 	log.Printf("ctx value a:%v\n", ctx.Value("a"))
 	log.Printf("Received: query:%v header:%+v", in.GetQuery(), in.GetHeaders())
-
 	return &pb.Response{ReqQuery: in.GetQuery(),
 		X: &pb.ItemDetail{Name: "apple", Price: 110,
 			Desc: "desc", Status: pb.ItemDetail_ACTIVE},
@@ -42,7 +43,17 @@ func main() {
 		log.Fatalf("Failed to generate credentials %v", err)
 	}
 	svrOpt := grpc.Creds(creds)
-	s := grpc.NewServer(svrOpt)
+
+	// 一般我们设置MaxConnectionIdle=5-10min足够了，其他无需更改
+	keepaliveopt := grpc.KeepaliveParams(keepalive.ServerParameters{
+		MaxConnectionIdle: 5 * time.Minute, // 空闲多久关闭连接，默认不关，0表示无限
+		//MaxConnectionAge: 1*time.Second, // 连接最多存活多久，默认无限，不用设置
+		//MaxConnectionAge+MaxConnectionAgeGrace这个时间过后，连接被强制关
+		MaxConnectionAgeGrace: 1 * time.Second,
+		Time:                  time.Hour,       // 空闲多久主动ping客户端，默认2hour
+		Timeout:               1 * time.Second, // ping超时，默认20s
+	})
+	s := grpc.NewServer(svrOpt, keepaliveopt)
 	pb.RegisterSearchSSSServer(s, &serverSSS{})
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
