@@ -1,4 +1,4 @@
-package main
+package hot_reload
 
 import (
 	"context"
@@ -54,7 +54,7 @@ func main() {
 func OnSignal() {
 	var c = make(chan os.Signal)
 
-	// syscall.SIGUSR2 是linux特有的
+	// syscall.SIGUSR2 是linux特有的(编译时需指定OS为linux)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM, syscall.SIGUSR2)
 
 	for {

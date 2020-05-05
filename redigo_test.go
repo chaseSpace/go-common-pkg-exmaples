@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gomodule/redigo/redis"
+	"github.com/stretchr/testify/assert"
 	"log"
 	"testing"
 	"time"
@@ -97,7 +98,7 @@ func (p *Pool) IdleCount() int
 func (p *Pool) Stats() PoolStats
 
 
-*************不常用的方法
+*************
 func Scan(src []interface{}, dest ...interface{}) ([]interface{}, error)
 func ScanSlice(src []interface{}, dest interface{}, fieldNames ...string) error
 func ScanStruct(src []interface{}, dest interface{}) error
@@ -105,8 +106,8 @@ func NewConn(netConn net.conn, readTimeout, writeTimeout time.Duration) conn 基
 func NewLoggingConn(conn conn, logger *log.Logger, prefix string) conn 返回日志封装过的conn
 func NewLoggingConnFilter(conn conn, logger *log.Logger, prefix string, skip func(cmdName string) bool) conn
 
-*************不常用的结构体 PubSubConn
-type PubSubConn struct { conn conn }  发布订阅
+************* PubSubConn 发布订阅
+type PubSubConn struct { conn conn }
 func (c PubSubConn) Close() error
 func (c PubSubConn) PSubscribe(channel ...interface{}) error
 func (c PubSubConn) PUnsubscribe(channel ...interface{}) error
@@ -117,7 +118,7 @@ func (c PubSubConn) Subscribe(channel ...interface{}) error
 func (c PubSubConn) Unsubscribe(channel ...interface{}) error
 
 
-*************不常用的结构体 Scanner https://godoc.org/github.com/gomodule/redigo/redis#Scanner
+************* Scanner https://godoc.org/github.com/gomodule/redigo/redis#Scanner
 type Scanner interface {
     RedisScan(src interface{}) error
 }
@@ -156,18 +157,22 @@ func TestBase(t *testing.T) {
 
 func Test_String(t *testing.T) {
 	//here is db 0 by default.
+	BaseConn()
 	s, err := conn.Do("SET", "name", "lei")
 	if err != nil {
 		fmt.Println(2, err)
 		return
 	}
-	fmt.Println("set:", s)
+	fmt.Println("set:", s) // OK
+	s, err = redis.String(conn.Do("GET", "nameX"))
+	log.Println("GET not exist key", s, err == redis.ErrNil) // 空 true
+
 	s, err = redis.String(conn.Do("GET", "name"))
 	if err != nil {
 		fmt.Println(3, err)
 		return
 	}
-	fmt.Println("get:", s)
+	fmt.Println("get:", s) // lei
 }
 
 func Test_StringMap(t *testing.T) {
@@ -298,4 +303,99 @@ func TestExists(t *testing.T) {
 	_, _ = rdsConn.Do("SET", []byte("byteK"), []byte("xxx"))
 	s, err = rdsConn.Do("GET", "byteK")
 	fmt.Println(string(s.([]byte)), err) // get 返回的都是[]byte类型
+}
+
+func TestList(t *testing.T) {
+	BaseConn()
+	rdsConn := conn
+	defer rdsConn.Close()
+	_, err := rdsConn.Do("DEL", "mylist")
+	log.Println("del empty key", err)
+
+	_, err = rdsConn.Do("RPOP", "mylist")
+	log.Println("RPOP empty key", err) // err=nil
+
+	_, err = rdsConn.Do("LPUSH", "mylist", "1")
+	log.Println("LPUSH err", err)
+
+	_, err = rdsConn.Do("RPOP", "mylist")
+	_, err = rdsConn.Do("RPOP", "mylist")
+	log.Println("RPOP empty list key err", err) // err=nil
+
+	_, err = rdsConn.Do("DEL", "mylist")
+	log.Println("del list key", err)
+}
+
+func TestHash(t *testing.T) {
+	BaseConn()
+	rdsConn := conn
+	defer rdsConn.Close()
+	_, _ = rdsConn.Do("DEL", "myhash")
+
+	_, err := redis.Values(rdsConn.Do("HSCAN", "myhash", 0, "COUNT", 1))
+	log.Println("HSCAN empty hashkey err", err) // nil
+
+	for i := 0; i < 1000; i++ {
+		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		//log.Println("HSET err", err) nil
+	}
+
+	var cursor int64 = -1
+	count := 300
+	for cursor != 0 {
+		if cursor == -1 {
+			cursor = 0
+		}
+		vs, err := redis.Values(rdsConn.Do("HSCAN", "myhash", cursor, "COUNT", count))
+		cursor, err = redis.Int64(vs[0], nil)
+		log.Printf("HSCAN cursor:%d err:%v\n", cursor, err == nil)
+		m, err := redis.StringMap(vs[1], err)
+		log.Printf("HSCAN map:%+v err:%v\n", m, err == nil)
+	}
+}
+
+func TestPipe(t *testing.T) {
+	BaseConn()
+	rdsConn := conn
+	defer rdsConn.Close()
+	keys := make([]string, 0)
+	for i := 0; i < 1000; i++ {
+		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		//log.Println("HSET err", err) nil
+		keys = append(keys, fmt.Sprintf("k%d", i))
+	}
+
+	for k, _ := range keys {
+		// 命令被缓存到本机buffer
+		_ = rdsConn.Send("HDEL", "myhash", k)
+	}
+	// 一次性发送（注意buffer累积的命令不要过多），例如一条命令"GET KEY"是7字节，1000条就是7Kb
+	err = rdsConn.Flush()
+	log.Println("Flush err:", err)
+
+	nilSlice := make([]error, 0)
+
+	for i := 0; i < 1000; i++ {
+		_, err = rdsConn.Receive()
+		nilSlice = append(nilSlice, err)
+	}
+	assert.Equal(t, len(nilSlice), 1000)
+}
+
+func TestArgs(t *testing.T) {
+	BaseConn()
+	rdsConn := conn
+	defer rdsConn.Close()
+	keys := make([]string, 0)
+	for i := 0; i < 1000; i++ {
+		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		//log.Println("HSET err", err) nil
+		keys = append(keys, fmt.Sprintf("k%d", i))
+	}
+	r, _ := rdsConn.Do("HGET", "myhash", "k999")
+	assert.NotNil(t, r)
+	_, err = rdsConn.Do("HDEL", redis.Args{"myhash"}.AddFlat(keys)...)
+	log.Println("HDEL err", err)
+	r, _ = rdsConn.Do("HGET", "myhash", "k999")
+	assert.Nil(t, r)
 }

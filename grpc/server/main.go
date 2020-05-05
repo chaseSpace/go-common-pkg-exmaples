@@ -45,6 +45,7 @@ func main() {
 	svrOpt := grpc.Creds(creds)
 
 	// 一般我们设置MaxConnectionIdle=5-10min足够了，其他无需更改
+	// 服务器断开后，客户端会自动马上重连
 	keepaliveopt := grpc.KeepaliveParams(keepalive.ServerParameters{
 		MaxConnectionIdle: 5 * time.Minute, // 空闲多久关闭连接，默认不关，0表示无限
 		//MaxConnectionAge: 1*time.Second, // 连接最多存活多久，默认无限，不用设置

@@ -29,6 +29,7 @@
         <method importPath="github.com/fatih/color" receiver="*Color" name="Printf" />
         <method importPath="github.com/fatih/color" receiver="*Color" name="Fprintln" />
         <method importPath="github.com/fatih/color" receiver="*Color" name="Fprint" />
+        <method importPath="github.com/gomodule/redigo/redis" receiver="Conn" name="Close" />
       </methods>
     </inspection_tool>
     <inspection_tool class="GoUnusedCallResult" enabled="true" level="WARNING" enabled_by_default="true">

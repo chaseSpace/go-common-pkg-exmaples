@@ -67,7 +67,7 @@ func verify(token_b []byte) {
 }
 
 func Test_jwt(t *testing.T) {
-	log.Printf("%d\n", time.Now())
+	log.Printf("%s\n", time.Now())
 	//NewToken := sign()
 	//verify(NewToken)
 }
