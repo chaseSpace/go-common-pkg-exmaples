@@ -331,8 +331,11 @@ func TestHash(t *testing.T) {
 	rdsConn := conn
 	defer rdsConn.Close()
 	_, _ = rdsConn.Do("DEL", "myhash")
+	r, err := rdsConn.Do("HGET", "myhash", "k999")
+	assert.Nil(t, r)
+	assert.Nil(t, err)
 
-	_, err := redis.Values(rdsConn.Do("HSCAN", "myhash", 0, "COUNT", 1))
+	_, err = redis.Values(rdsConn.Do("HSCAN", "myhash", 0, "COUNT", 1))
 	log.Println("HSCAN empty hashkey err", err) // nil
 
 	for i := 0; i < 1000; i++ {
@@ -387,12 +390,15 @@ func TestArgs(t *testing.T) {
 	rdsConn := conn
 	defer rdsConn.Close()
 	keys := make([]string, 0)
+	// HSET k f v的v可以是字节，取出来可以直接转str
 	for i := 0; i < 1000; i++ {
-		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), []byte("xcv"))
 		//log.Println("HSET err", err) nil
 		keys = append(keys, fmt.Sprintf("k%d", i))
 	}
 	r, _ := rdsConn.Do("HGET", "myhash", "k999")
+	log.Printf("typ %T", r)           // []uint8
+	log.Println(redis.String(r, nil)) // 1 <nil>，存入byte，取出时可以转str
 	assert.NotNil(t, r)
 	_, err = rdsConn.Do("HDEL", redis.Args{"myhash"}.AddFlat(keys)...)
 	log.Println("HDEL err", err)

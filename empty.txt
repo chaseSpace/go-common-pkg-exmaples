@@ -1,2 +1,0 @@
- MaxConnectionAgeGrace is an additive period after MaxConnectionAge after
- which the connection will be forcibly closed.

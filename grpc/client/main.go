@@ -2,11 +2,12 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/keepalive"
-	"google.golang.org/grpc/testdata"
 	"log"
 	"time"
 )
@@ -20,7 +21,8 @@ var c *grpc.ClientConn
 var client pb_test.SearchSSSClient
 
 func init() {
-	creds, err := credentials.NewClientTLSFromFile(testdata.Path("server1.pem"), "*.test.youtube.com")
+	fmt.Println("client...")
+	creds, err := credentials.NewClientTLSFromFile(key.Path("cert.crt"), "gxt.grpcsrv.auth")
 	clientOpt := grpc.WithTransportCredentials(creds)
 
 	// 指导：线上需要开启PermitWithoutStream，持续保持连接

@@ -16,15 +16,20 @@ $ docker exec -i some-mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' <
 ```bash
 docker pull mysql:5.7
 
-mkdir -p docker-svc/mysql-5.7
+mkdir -p /~/docker-svc/mysql-5.7
+# 一般root目录空间最大
+mkdir /data_dir && chmod o+w /data_dir
 cd docker-svc/mysql-5.7
+touch slow-query.log
 mv /path/to/docker-compose.yml .
-docker-compose -f docker-compose.yml up -d # `-d` represents start in background
+
+# `-d` represents start in background
+docker-compose -f compose.yml up -d
 
 docker ps |grep mysql # check status of container
 
 # enter mysql shell
-bash#mysql -uUSER -pPASSWORD
+bash# mysql -uUSER -pPASSWORD
 
 # change root password
 mysql> set password for root@localhost = password('new pass'); 

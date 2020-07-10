@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="add dockerfile">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/LEI.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/grpc/key/cert.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/key/rsa_private.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/key/rsa_public.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/key/testdata.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/mysql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/mysql/config-file.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/config-file.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/mysql/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/redis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/redis/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/redis/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/redis/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfiles/redis/redis.conf" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/redis/redis.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/client/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hot_reload.go" beforeDir="false" afterPath="$PROJECT_DIR$/hot_reload/hot_reload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jose_jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/jose_jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redigo.go" beforeDir="false" afterPath="$PROJECT_DIR$/redigo_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xorm.go" beforeDir="false" afterPath="$PROJECT_DIR$/xorm_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redigo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/redigo_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,19 +29,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grpc/client/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="53" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/redigo_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-403">
-              <caret line="341" lean-forward="true" selection-start-line="341" selection-end-line="341" />
+        <entry file="file://$PROJECT_DIR$/_dockerfile/redis/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="204">
+                <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -43,8 +43,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grpc/server/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="49" column="42" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="42" />
+            <state relative-caret-position="-13">
+              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grpc/client/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <element signature="e#14#246#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>int8</find>
-      <find>int32</find>
       <find>pingPeriod</find>
       <find>filename</find>
       <find>example_1</find>
@@ -92,12 +102,15 @@
       <find>k\d+:</find>
       <find>111</find>
       <find>Add</find>
+      <find>templ</find>
+      <find>'</find>
     </findStrings>
     <replaceStrings>
       <replace>github.com/chaseSpace/go-common-pkg-exmaples</replace>
       <replace>example_2</replace>
       <replace />
       <replace>/</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -107,12 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ginkgo/example_4/README.md" />
-        <option value="$PROJECT_DIR$/ginkgo/example_1/example_1_suite_test.go" />
-        <option value="$PROJECT_DIR$/ginkgo/example_2/example_2_suite_test.go" />
-        <option value="$PROJECT_DIR$/ginkgo/example_1/sum_test.go" />
-        <option value="$PROJECT_DIR$/../../pkg/mod/github.com/onsi/ginkgo@v1.7.0/reporters/stenographer/stenographer.go" />
-        <option value="$PROJECT_DIR$/../../pkg/mod/github.com/onsi/ginkgo@v1.7.0/reporters/stenographer/console_logging.go" />
         <option value="$PROJECT_DIR$/../../pkg/mod/github.com/fatih/color@v1.9.0/color.go" />
         <option value="$PROJECT_DIR$/ginkgo/example_3/color_test.go" />
         <option value="$PROJECT_DIR$/color_display/color.go" />
@@ -149,21 +156,26 @@
         <option value="$PROJECT_DIR$/_dockerfiles/redis/README.md" />
         <option value="$PROJECT_DIR$/_dockerfiles/mysql/README.md" />
         <option value="$PROJECT_DIR$/go.mod" />
-        <option value="$PROJECT_DIR$/empty.txt" />
         <option value="$PROJECT_DIR$/../../../pkg/mod/google.golang.org/grpc@v1.29.1/internal/transport/http2_server.go" />
-        <option value="$PROJECT_DIR$/grpc/client/main.go" />
-        <option value="$PROJECT_DIR$/grpc/server/main.go" />
         <option value="$PROJECT_DIR$/redigo.go" />
         <option value="$PROJECT_DIR$/hot_reload.go" />
         <option value="$PROJECT_DIR$/hot_reload/hot_reload.go" />
         <option value="$PROJECT_DIR$/jose_jwt.go" />
         <option value="$PROJECT_DIR$/redigo_test.go" />
+        <option value="$PROJECT_DIR$/_dockerfile/mysql/config-file.cnf" />
+        <option value="$PROJECT_DIR$/_dockerfile/mysql/README.md" />
+        <option value="$PROJECT_DIR$/_dockerfile/mysql/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/_dockerfile/redis/README.md" />
+        <option value="$PROJECT_DIR$/_dockerfile/redis/redis.conf" />
+        <option value="$PROJECT_DIR$/grpc/key/testdata.go" />
+        <option value="$PROJECT_DIR$/empty.txt" />
+        <option value="$PROJECT_DIR$/grpc/server/main.go" />
+        <option value="$PROJECT_DIR$/grpc/client/main.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="423" />
-    <option name="y" value="33" />
+    <option name="x" value="13" />
     <option name="width" value="1920" />
     <option name="height" value="1047" />
   </component>
@@ -185,12 +197,28 @@
             <path>
               <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-common-pkg-exmaples" type="462c0819:PsiDirectoryNode" />
-              <item name="_dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="_dockerfile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-common-pkg-exmaples" type="462c0819:PsiDirectoryNode" />
               <item name="encode_pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-common-pkg-exmaples" type="462c0819:PsiDirectoryNode" />
+              <item name="flag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-common-pkg-exmaples" type="462c0819:PsiDirectoryNode" />
+              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-common-pkg-exmaples" type="462c0819:PsiDirectoryNode" />
+              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go-common-pkg-exmaples" type="b2602c69:ProjectViewProjectNode" />
@@ -215,25 +243,31 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/grpc/key" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc\key" />
+      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc" />
+      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\_dockerfiles\redis" />
+      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_7" />
+      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_6" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket_exmaple" />
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\_dockerfiles\redis" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_7" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_6" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_5" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,7 +282,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples">
+  <component name="RunManager" selected="Go Build.go build main.go (1)">
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/grpc/server/main.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -258,6 +310,17 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestArgs$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestC in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestC$" />
       <method v="2" />
     </configuration>
     <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -271,131 +334,100 @@
       <pattern value="^TestHash$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestList in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestList$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestPipe$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_String in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^Test_String$" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Go Test.TestList in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.Test_String in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Test.TestC in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build main.go (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.TestList in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.Test_String in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.TestC in github.com/chaseSpace/go-common-pkg-exmaples" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestHash_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 11h 57m 31s.xml">
-      <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestHash_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 11h 58m 56s.xml">
-      <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestHash_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 02m 45s.xml">
-      <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestPipe_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 47m 00s.xml">
-      <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestPipe_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 47m 26s.xml">
-      <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestPipe_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 48m 22s.xml">
-      <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestPipe_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 49m 13s.xml">
-      <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestPipe_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 12h 50m 02s.xml">
-      <configuration name="TestPipe in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 13h 11m 33s.xml">
       <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="TestHash_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.05 at 13h 33m 23s.xml">
       <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 11h 26m 40s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 11h 27m 55s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 11h 28m 24s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 12h 31m 39s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 12h 47m 28s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestC_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 13h 03m 54s.xml">
+      <configuration name="TestC in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestHash_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 13h 26m 18s.xml">
+      <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestArgs_in_github_com_chaseSpace_go-common-pkg-exmaples - 2020.05.10 at 13h 36m 39s.xml">
+      <configuration name="TestArgs in github.com/chaseSpace/go-common-pkg-exmaples" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22392885" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21907842" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.39332098" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995958" weight="0.5701107" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286334" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3858998" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.45269015" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26345083" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5004042" side_tool="true" weight="0.37476808" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="make" order="3" />
-      <window_info anchor="right" id="Structure" order="4" visible="true" weight="0.15359741" />
+      <window_info anchor="right" id="Structure" order="4" weight="0.15359741" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <MESSAGE value="update" />
     <MESSAGE value="add dockerfile" />
     <MESSAGE value="x" />
-    <option name="LAST_COMMIT_MESSAGE" value="x" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/robfig/cron/v3@v3.0.0/parser_test.go" />
-    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/robfig/cron/v3@v3.0.0/option.go" />
     <entry file="file://C:/Go/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -431,72 +463,10 @@
     <entry file="file://$PROJECT_DIR$/_dockerfiles/想.dockerfile" />
     <entry file="file://$PROJECT_DIR$/_dockerfiles/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/_dockerfiles/mysql.Dockerfile" />
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/mysql/config-file.cnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1702">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grpc/req.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cron/cron_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/redis/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="161">
-            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/redis/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/redis/redis.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/mysql/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_dockerfiles/mysql/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="690">
-            <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -591,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/empty.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../pkg/mod/google.golang.org/grpc@v1.29.1/internal/transport/http2_server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -688,24 +651,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grpc/client/main.go">
+    <entry file="file://$PROJECT_DIR$/cron/cron_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grpc/server/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="49" column="42" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="42" />
+        <state relative-caret-position="-1571">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/redigo_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="341" lean-forward="true" selection-start-line="341" selection-end-line="341" />
+        <state relative-caret-position="214">
+          <caret line="397" column="5" lean-forward="true" selection-start-line="397" selection-start-column="5" selection-end-line="397" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/mysql/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="250">
+            <caret line="26" selection-start-line="26" selection-end-line="26" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/redis/redis.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/redis/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="60" lean-forward="true" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/mysql/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/mysql/config-file.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dockerfile/redis/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../pkg/mod/google.golang.org/grpc@v1.29.1/testdata/testdata.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="30" column="1" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grpc/key/testdata.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/empty.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grpc/server/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grpc/client/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#246#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

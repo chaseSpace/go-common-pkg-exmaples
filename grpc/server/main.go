@@ -2,19 +2,22 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
 	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"github.com/golang/protobuf/ptypes"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/keepalive"
-	"google.golang.org/grpc/testdata"
 	"log"
 	"net"
 	"time"
 )
 
 const (
-	port = ":50051"
+	// 建议server地址不要只填端口
+	// 我遇到过server端只填端口，client必须填IP+Port才连得上的情况，反之时而可以时而不行
+	addr = "localhost:50051"
 )
 
 // serverSSS is used to implement helloworld.GreeterServer.
@@ -32,13 +35,14 @@ func (s *serverSSS) Search(ctx context.Context, in *pb.Request) (*pb.Response, e
 }
 
 func main() {
-	lis, err := net.Listen("tcp", port)
+	fmt.Println("server...")
+	lis, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	creds, err := credentials.NewServerTLSFromFile(testdata.Path("server1.pem"),
-		testdata.Path("server1.key"))
+	creds, err := credentials.NewServerTLSFromFile(key.Path("cert.crt"),
+		key.Path("rsa_private.key"))
 	if err != nil {
 		log.Fatalf("Failed to generate credentials %v", err)
 	}
