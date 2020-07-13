@@ -16,7 +16,6 @@ import (
 
 const (
 	// 建议server地址不要只填端口
-
 	// 我遇到过server端只填端口，client必须填IP+Port才连得上的情况，反之时而可以时而不行
 	addr = "localhost:50051"
 )
