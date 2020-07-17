@@ -1,7 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Administrator">
     <words>
+      <w>creds</w>
+      <w>gorm</w>
+      <w>grpc</w>
+      <w>incrementable</w>
       <w>protoc</w>
+      <w>sqlite</w>
     </words>
   </dictionary>
 </component>

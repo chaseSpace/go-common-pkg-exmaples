@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sqlite" uuid="35f2cb44-9795-49a1-b611-59bd97521d8b">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\develop\go\go-common-pkg-exmaples\gorm\sqlite.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="weiyi" uuid="460e0b58-18ab-4dad-8957-5491fefa90dc">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://114.115.216.44:33061/test</jdbc-url>
+    </data-source>
+  </component>
+</project>
