@@ -9,12 +9,13 @@ import (
 	"time"
 )
 
+// 夹杂中英文是因为英文是从文档中复制下来的，意思简单明了，没必要改成中文
+
 /* 数据库需要对应driver
 import _ "github.com/jinzhu/gorm/dialects/mysql"
 // import _ "github.com/jinzhu/gorm/dialects/postgres"
 // import _ "github.com/jinzhu/gorm/dialects/sqlite"
 // import _ "github.com/jinzhu/gorm/dialects/mssql"
-
 */
 
 // table定义
@@ -83,6 +84,14 @@ func TestMysql(t *testing.T) {
 		panic(err)
 	}
 	defer db.Close()
+	// SetMaxIdleConns sets the maximum number of connections in the idle connection pool.
+	db.DB().SetMaxIdleConns(5)
+
+	// SetMaxOpenConns sets the maximum number of open connections to the database.
+	db.DB().SetMaxOpenConns(20)
+
+	// SetConnMaxLifetime sets the maximum amount of time a connection may be reused.
+	db.DB().SetConnMaxLifetime(time.Hour)
 
 	db = db.DropTableIfExists(&User{}, &Order{})
 	// processes err
@@ -91,8 +100,13 @@ func TestMysql(t *testing.T) {
 	}
 
 	// create table
-	db.CreateTable(&User{}, &Order{})
+	//db.CreateTable(&User{}, &Order{})
+	// AutoMigrate同步代码中的model到DB, 它做的是创建不存在的表，添加不存在的字段、索引
+	// 不会删除/改变DB中已存在的任何东西
+	// InnoDB是默认的，但编码默认是latin1
+	db.Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4").AutoMigrate(&User{}, &Order{})
 
+	// HasTable("users") 也是可以的
 	//if !db.HasTable(&User{}) {
 	//}
 
@@ -109,10 +123,21 @@ func TestMysql(t *testing.T) {
 	//OffsetTest(t, db)
 	//CountTest(t, db)
 	//JoinTest(t, db)
-	//ScanTest(t, db)
+	//ScanAndRawSqlTest(t, db)
 
 	UpdateAllFields(t, db)
 	UpdateWantedFields(t, db)
+	UpdateSelectFields(t, db)
+	UpdateFieldsOnly(t, db)
+	BatchUpdate(t, db)
+
+	DeleteOneRecord(t, db)
+	BatchDelete(t, db)
+	DeletePermanently(t, db)
+
+	CommitTxTest(t, db)
+	RollbackTxTest(t, db)
+	ManualExecTx(t, db)
 }
 
 func InsertTest(t *testing.T, db *gorm.DB) {
@@ -152,9 +177,11 @@ func CommonQueryTest(t *testing.T, db *gorm.DB) {
 	assert.NotEqual(t, user.ID, 0)
 
 	// Get one record, no specified order
+	// 只取主键作为where条件
 	db.Take(&user)
 
 	// Get last record, order by primary key
+	// 只取主键作为where条件
 	db.Last(&user)
 
 	var users []User
@@ -568,7 +595,7 @@ func JoinTest(t *testing.T, db *gorm.DB) {
 }
 
 // gorm的Scan
-func ScanTest(t *testing.T, db *gorm.DB) {
+func ScanAndRawSqlTest(t *testing.T, db *gorm.DB) {
 	type Result struct {
 		Name string
 		Age  int
@@ -582,4 +609,5 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	// Raw SQL
 	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result1)
 	assert.Equal(t, result, result1)
+	db.DB()
 }
