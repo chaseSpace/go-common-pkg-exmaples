@@ -20,6 +20,12 @@ import _ "github.com/jinzhu/gorm/dialects/mysql"
 // table定义
 // 表名会默认被创建成复数，即users，可以禁用此特点
 type User struct {
+	/* gorm.Model建表后的结果， uint32 ==> int(11) unsigned
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	 `created_at` datetime DEFAULT NULL,
+	 `updated_at` datetime DEFAULT NULL,
+	 `deleted_at` datetime DEFAULT NULL,
+	*/
 	gorm.Model // 进去看它的代码就知道其作用：可选，主要是嵌入一些基本字段，如 id，updatedAt,createdAt,deletedAt
 	// 写了它就不需要再定义id这些基本字段，注意DeletedAt字段是指针，因为在数据未被删除时这个字段应该是nil
 
