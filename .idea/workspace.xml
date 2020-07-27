@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="update gorm">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hot_reload/hot_reload.go" beforeDir="false" afterPath="$PROJECT_DIR$/hot_reload/hot_reload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/mysql_update_delete_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_update_delete_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +184,8 @@
     <MESSAGE value="x" />
     <MESSAGE value="update" />
     <MESSAGE value="update gorm" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gorm" />
+    <MESSAGE value="X" />
+    <option name="LAST_COMMIT_MESSAGE" value="X" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -261,6 +261,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="74" width="598" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594880573642" />
+    <state x="606" y="306" key="git4idea.merge.GitPullDialog" timestamp="1595830453112">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="606" y="306" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595830453112" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594949551957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

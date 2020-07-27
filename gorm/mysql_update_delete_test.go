@@ -51,3 +51,44 @@ func UpdateWantedFields(t *testing.T, db *gorm.DB) {
 	db.Model(&user).Updates(User{Name: "", Age: sql.NullInt64{Int64: 21, Valid: true}})
 	assert.True(t, user.Name == "hello", user.Age.Int64 == 21)
 }
+
+// gorm使用主键删除记录，主键为空时会删除所有记录，除非关闭这个规则: db.BlockGlobalUpdate(true)
+func Delete(t *testing.T, db *gorm.DB) {
+	var user User
+	user.ID = 1
+	db.BlockGlobalUpdate(true)
+	// Delete an existing record
+	db.Delete(&user)
+	// DELETE from users where id=1;
+
+	// Add extra SQL option for deleting SQL
+	db.Set("gorm:delete_option", "OPTION (OPTIMIZE FOR UNKNOWN)").Delete(&user)
+	// DELETE from users where id=1 OPTION (OPTIMIZE FOR UNKNOWN);
+
+	// Batch delete
+	db.Where("u_name LIKE ?", "%jinzhu%").Delete(User{})
+	// DELETE from users where email LIKE "%jinzhu%";
+
+	db.Delete(User{}, "u_name LIKE ?", "%jinzhu%")
+	// DELETE from users where email LIKE "%jinzhu%";
+
+	// soft delete, 只要表结构体有 DeleteAt 字段，默认就是软删除
+	db.Delete(&user)
+	// UPDATE users SET deleted_at="2013-10-29 10:23" WHERE id = 111;
+
+	// Batch Delete
+	db.Where("age = ?", 20).Delete(&User{})
+	// UPDATE users SET deleted_at="2013-10-29 10:23" WHERE age = 20;
+
+	// Soft deleted records will be ignored when query them
+	db.Where("age = 20").Find(&user)
+	// SELECT * FROM users WHERE age = 20 AND deleted_at IS NULL;
+
+	// Find soft deleted records with Unscoped
+	db.Unscoped().Where("age = 20").Find(&user)
+	// SELECT * FROM users WHERE age = 20;
+
+	// Delete record permanently with Unscoped
+	db.Unscoped().Delete(&user)
+	//// DELETE FROM orders WHERE id=10;
+}
