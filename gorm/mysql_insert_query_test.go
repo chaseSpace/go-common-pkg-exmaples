@@ -20,7 +20,7 @@ import _ "github.com/jinzhu/gorm/dialects/mysql"
 // table定义
 // 表名会默认被创建成复数，即users，可以禁用此特点
 type User struct {
-	/* gorm.Model建表后的结果， uint32 ==> int(11) unsigned
+	/* gorm.Model建表后的结果， uint32 == uint ==> int(10) unsigned
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	 `created_at` datetime DEFAULT NULL,
 	 `updated_at` datetime DEFAULT NULL,
