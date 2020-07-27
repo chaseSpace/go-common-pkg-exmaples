@@ -1,4 +1,4 @@
-package hot_reload
+package main
 
 import (
 	"context"

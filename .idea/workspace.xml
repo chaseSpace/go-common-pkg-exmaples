@@ -19,19 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/mysql_update_delete_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/sqlite_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="update gorm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/inside_pkg/item.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/inside_pkg/item.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/req.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/req.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hot_reload/hot_reload.go" beforeDir="false" afterPath="$PROJECT_DIR$/hot_reload/hot_reload.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,22 +90,13 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm">
+  <component name="RunManager" selected="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/gorm/with_sqlite_case.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -128,6 +109,17 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestMysql$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRE in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRE$" />
       <method v="2" />
     </configuration>
     <configuration name="TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -153,19 +145,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
       <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
         <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +184,8 @@
     <MESSAGE value="add dockerfile" />
     <MESSAGE value="x" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update gorm" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gorm" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -224,22 +217,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594970805311" />
-    <state width="1877" height="341" key="GridCell.Tab.0.bottom" timestamp="1594974536779">
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom" timestamp="1595384021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594974536779" />
-    <state width="1877" height="341" key="GridCell.Tab.0.center" timestamp="1594974536779">
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
+    <state width="1877" height="200" key="GridCell.Tab.0.center" timestamp="1595384021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="341" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594974536779" />
-    <state width="1877" height="341" key="GridCell.Tab.0.left" timestamp="1594974536779">
+    <state width="1877" height="200" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
+    <state width="1877" height="200" key="GridCell.Tab.0.left" timestamp="1595384021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="341" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594974536779" />
-    <state width="1877" height="341" key="GridCell.Tab.0.right" timestamp="1594974536779">
+    <state width="1877" height="200" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right" timestamp="1595384021112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="341" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594974536779" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594890400639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -248,6 +241,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594889137475" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1594983924919">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594983924919" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1594898044473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,6 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="814" y="304" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594950976007" />
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595207476697">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595207476697" />
     <state x="661" y="74" width="598" height="891" key="find.popup" timestamp="1594880573642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
