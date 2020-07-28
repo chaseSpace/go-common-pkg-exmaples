@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="update gorm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,14 +92,16 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples">
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)">
+    <configuration name="TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/gorm" />
+      <framework value="gotest" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/gorm/with_sqlite_case.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestMysql$" />
       <method v="2" />
     </configuration>
     <configuration name="TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -144,19 +149,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
       <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
         <item itemvalue="Go Test.TestRE in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
         <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       </list>
     </recent_temporary>
   </component>
@@ -217,22 +222,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594970805311" />
-    <state width="1877" height="200" key="GridCell.Tab.0.bottom" timestamp="1595384021112">
+    <state width="1877" height="286" key="GridCell.Tab.0.bottom" timestamp="1595921823138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="200" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
-    <state width="1877" height="200" key="GridCell.Tab.0.center" timestamp="1595384021112">
+    <state width="1877" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595921823138" />
+    <state width="1877" height="286" key="GridCell.Tab.0.center" timestamp="1595921823138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="200" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
-    <state width="1877" height="200" key="GridCell.Tab.0.left" timestamp="1595384021112">
+    <state width="1877" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595921823138" />
+    <state width="1877" height="286" key="GridCell.Tab.0.left" timestamp="1595921823138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="200" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
-    <state width="1877" height="200" key="GridCell.Tab.0.right" timestamp="1595384021112">
+    <state width="1877" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595921823138" />
+    <state width="1877" height="286" key="GridCell.Tab.0.right" timestamp="1595921823138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="200" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595384021112" />
+    <state width="1877" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595921823138" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594890400639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,10 +246,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594889137475" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595839458287">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595839847017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595839458287" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595839847017" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1594898044473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

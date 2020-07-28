@@ -5,6 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/stretchr/testify/assert"
+	"log"
 	"testing"
 	"time"
 )
@@ -84,7 +85,7 @@ func TestMysql(t *testing.T) {
 
 	// uri方式连接
 	// user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-	db, err := gorm.Open("mysql", "test_u:1918ddkk;;@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
@@ -103,7 +104,7 @@ func TestMysql(t *testing.T) {
 	//}
 
 	InsertTest(t, db)
-	//CommonQueryTest(t, db)
+	CommonQueryTest(t, db)
 	//QueryNotTest(t, db)
 	//QueryOrTest(t, db)
 	//MoreSimpleQueryTest(t, db)
@@ -153,12 +154,15 @@ func InsertTest(t *testing.T, db *gorm.DB) {
 
 func CommonQueryTest(t *testing.T, db *gorm.DB) {
 	var user User
-
-	db.First(&user) // SELECT * FROM users ORDER BY id LIMIT 1;
+	// 不要将条件放在结构体内，不会读取的，只有主键会被作为条件, 后面的Take方法也是
+	db.Debug().First(&user, "u_name=?", "x") // SELECT * FROM users WHERE u_name=x ORDER BY id LIMIT 1;
 	assert.NotEqual(t, user.ID, 0)
 
-	// Get one record, no specified order
-	db.Take(&user)
+	u := new(User)
+	// Get one record, no specified order (只使用主键查询，其他字段不会使用)
+	// SELECT * FROM `admin_users`  WHERE `admin_users`.`deleted_at` IS NULL AND `admin_users`.`id` = 1 LIMIT 1
+	db.Debug().Take(u, "u_name=?", "x")
+	log.Printf("111 %+v", u)
 
 	// Get last record, order by primary key
 	db.Last(&user)
@@ -589,3 +593,9 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result1)
 	assert.Equal(t, result, result1)
 }
+
+/*
+gorm的坑：
+	1. db.Model(&table_struct).Find(&other_struct) 会查到已被删除的记录，还是用回Find(&table_struct)
+
+*/
