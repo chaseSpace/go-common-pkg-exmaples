@@ -10,6 +10,14 @@ import (
 	"time"
 )
 
+/*
+gorm的坑：
+	1. db.Model(&table_struct).Find(&other_struct) 会查到已被删除的记录，还是用回Find(&table_struct)
+
+Mysql的注意点：
+	1. rows affected这个属性在update时，如果新旧数据一致，它也是0，并不代表记录不存在
+*/
+
 /* 数据库需要对应driver
 import _ "github.com/jinzhu/gorm/dialects/mysql"
 // import _ "github.com/jinzhu/gorm/dialects/postgres"
@@ -85,7 +93,7 @@ func TestMysql(t *testing.T) {
 
 	// uri方式连接
 	// user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "test_u:1918ddkkdd@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
@@ -166,6 +174,14 @@ func CommonQueryTest(t *testing.T, db *gorm.DB) {
 
 	// Get last record, order by primary key
 	db.Last(&user)
+
+	// 获取不存在的记录
+	takeErr := db.Take(&User{}, "u_name=?", "NOT_EXIST").Error
+	FindErr := db.Find(&[]User{}, "u_name=?", "NOT_EXIST").Error
+	// !!! 注意这个err，当接收者是一个结构体时且数据未找到时返回
+	assert.Equal(t, takeErr, gorm.ErrRecordNotFound)
+	// slice接收，则是nil
+	assert.Nil(t, FindErr)
 
 	var users []User
 	// Get all records
@@ -571,6 +587,7 @@ func JoinTest(t *testing.T, db *gorm.DB) {
 	}
 	assert.True(t, count > 0)
 
+	// 取部分字段
 	//db.Table("users").Select("users.name, emails.email").Joins("left join emails on emails.user_id = users.id").Scan(&results)
 	//
 	//// multiple joins with parameter
@@ -579,6 +596,8 @@ func JoinTest(t *testing.T, db *gorm.DB) {
 
 // gorm的Scan
 func ScanTest(t *testing.T, db *gorm.DB) {
+
+	// 定义的切片元素类型必须是struct，不能是[]int这种，无法被scan
 	type Result struct {
 		Name string
 		Age  int
@@ -588,14 +607,25 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	db.Table("admin_users").Select("u_name, age").Where("u_name = ?", "x").Scan(&result)
 	assert.True(t, len(result) > 1)
 
-	var result1 []Result
+	// slice元素不是struct，scan出来全是默认值，是无效的
+	var result1 []uint
+	db.Model(&User{}).Select("id").Scan(&result1)
+	assert.True(t, len(result1) > 0)
+	for _, id := range result1 {
+		assert.True(t, id == 0)
+	}
+
+	// slice元素不是struct，scan出来全是默认值，是无效的
+	var result11 []string
+	db.Model(&User{}).Select("u_name").Scan(&result11)
+	assert.True(t, len(result11) > 0)
+	for _, name := range result11 {
+		assert.True(t, name == "")
+	}
+
+	var result2 []Result
 	// Raw SQL
-	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result1)
-	assert.Equal(t, result, result1)
+	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result2)
+	assert.Equal(t, result, result2)
+
 }
-
-/*
-gorm的坑：
-	1. db.Model(&table_struct).Find(&other_struct) 会查到已被删除的记录，还是用回Find(&table_struct)
-
-*/
