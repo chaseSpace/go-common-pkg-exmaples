@@ -39,8 +39,8 @@ type User struct {
 	// 写了它就不需要再定义id这些基本字段，注意DeletedAt字段是指针，因为在数据未被删除时这个字段应该是nil
 
 	//ID string `gorm:"primary_key"`//  primary_key标签也是可选的，gorm默认把id当主键
-	Name         string        `gorm:"column:u_name"` // tag修改字段名（默认字段命名规则是小写+下划线）
-	Age          sql.NullInt64 `gorm:"default:'18'"`  // 默认值会在字段为nil或类型零值时被使用
+	Name         string        `gorm:"column:u_name;comment:'姓名'"` // tag修改字段名（默认字段命名规则是小写+下划线）
+	Age          sql.NullInt64 `gorm:"default:'18'"`               // 默认值会在字段为nil或类型零值时被使用
 	Birthday     *time.Time
 	Email        string `gorm:"type:varchar(100);unique_index"` // 另一种用法是type:text
 	Role         string `gorm:"size:255"`                       // size:255等效于varchar(255)
@@ -48,6 +48,9 @@ type User struct {
 	Num          int    `gorm:"AUTO_INCREMENT"`                 // set num to auto incrementable
 	Address      string `gorm:"index:addr"`                     // create index with name `addr` for address
 	IgnoreMe     int    `gorm:"-"`                              // ignore this field
+	// 自己定义time相关字段
+	MyUpdateTime time.Time `gorm:"not null;default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;index"`
+	MyCreateAt   time.Time `gorm:"not null;default:CURRENT_TIMESTAMP"`
 }
 
 // table
@@ -93,7 +96,7 @@ func TestMysql(t *testing.T) {
 
 	// uri方式连接
 	// user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-	db, err := gorm.Open("mysql", "test_u:1918ddkkdd@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
