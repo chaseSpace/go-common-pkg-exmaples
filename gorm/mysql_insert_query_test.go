@@ -111,6 +111,8 @@ func TestMysql(t *testing.T) {
 	// create table
 	db.CreateTable(&User{}, &Order{})
 
+	// add index, 幂等方法
+	db.Model(&User{}).AddIndex("idx_name", "u_name")
 	//if !db.HasTable(&User{}) {
 	//}
 
@@ -597,7 +599,7 @@ func JoinTest(t *testing.T, db *gorm.DB) {
 	//db.Joins("JOIN emails ON emails.user_id = users.id AND emails.email = ?", "jinzhu@example.org").Joins("JOIN credit_cards ON credit_cards.user_id = users.id").Where("credit_cards.number = ?", "411111111111").Find(&user)
 }
 
-// gorm的Scan
+// ScanTest gorm的Scan
 func ScanTest(t *testing.T, db *gorm.DB) {
 
 	// 定义的切片元素类型必须是struct，不能是[]int这种，无法被scan
@@ -630,5 +632,4 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	// Raw SQL
 	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result2)
 	assert.Equal(t, result, result2)
-
 }
