@@ -1,4 +1,4 @@
-package testify
+package mock_test
 
 import (
 	"errors"

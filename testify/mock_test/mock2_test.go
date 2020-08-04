@@ -1,7 +1,7 @@
-package testify
+package mock_test
 
 import (
-	"github.com/chaseSpace/go-common-pkg-exmaples/testify/mocks"
+	"github.com/chaseSpace/go-common-pkg-exmaples/testify/mock_test/mocks"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
