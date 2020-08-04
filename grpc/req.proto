@@ -26,7 +26,11 @@ message Response {
     google.protobuf.Timestamp time = 4;
 }
 
+message MockPanicReq {}
+
+message MockPanicRsp {}
+
 service SearchSSS {
     rpc Search (Request) returns (Response) {}
+    rpc MockPanic  (MockPanicReq) returns (MockPanicRsp) {}
 }
-

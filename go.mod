@@ -12,6 +12,7 @@ require (
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/gorilla/websocket v1.4.2
+	github.com/grpc-ecosystem/go-grpc-middleware v1.2.0
 	github.com/iris-contrib/go.uuid v2.0.0+incompatible
 	github.com/jinzhu/gorm v1.9.14
 	github.com/kardianos/govendor v1.0.9 // indirect
@@ -20,6 +21,7 @@ require (
 	github.com/onsi/gomega v1.4.3
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/stretchr/testify v1.4.0
+	github.com/vektra/mockery v1.1.2 // indirect
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
 	golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae // indirect
 	golang.org/x/text v0.3.3 // indirect

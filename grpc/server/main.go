@@ -6,6 +6,7 @@ import (
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
 	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"github.com/golang/protobuf/ptypes"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/keepalive"
@@ -25,13 +26,17 @@ type serverSSS struct{}
 
 // Search implements req.Search
 func (s *serverSSS) Search(ctx context.Context, in *pb.Request) (*pb.Response, error) {
-	log.Printf("ctx value a:%v\n", ctx.Value("a"))
 	log.Printf("Received: query:%v header:%+v", in.GetQuery(), in.GetHeaders())
 	return &pb.Response{ReqQuery: in.GetQuery(),
 		X: &pb.ItemDetail{Name: "apple", Price: 110,
 			Desc: "desc", Status: pb.ItemDetail_ACTIVE},
 		Succ: true,
 		Time: ptypes.TimestampNow()}, nil
+}
+
+func (s *serverSSS) MockPanic(ctx context.Context, in *pb.MockPanicReq) (*pb.MockPanicRsp, error) {
+	panic("here panic")
+	return nil, nil
 }
 
 func main() {
@@ -58,9 +63,23 @@ func main() {
 		Time:                  time.Hour,       // 空闲多久主动ping客户端，默认2hour
 		Timeout:               1 * time.Second, // ping超时，默认20s
 	})
-	s := grpc.NewServer(svrOpt, keepaliveopt)
+
+	// 添加拦截器, 这里是有顺序的，recovery拦截器应在第一个，
+	// 即接口报错应被立即捕捉到并返回err，后面的拦截器无需再执行（当然，这也不是绝对的，根据需要）
+	interceptors := grpc_middleware.WithUnaryServerChain(
+		RecoveryInterceptor,
+		LoggingInterceptor)
+	s := grpc.NewServer(
+		svrOpt,
+		keepaliveopt,
+		interceptors,
+	)
 	pb.RegisterSearchSSSServer(s, &serverSSS{})
+
+	defer func() {
+		s.GracefulStop()
+	}()
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
+		log.Panicf("failed to serve: %v", err)
 	}
 }

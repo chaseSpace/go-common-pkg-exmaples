@@ -156,6 +156,82 @@ func (x *Response) GetTime() *timestamp.Timestamp {
 	return nil
 }
 
+type MockPanicReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MockPanicReq) Reset() {
+	*x = MockPanicReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_req_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MockPanicReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MockPanicReq) ProtoMessage() {}
+
+func (x *MockPanicReq) ProtoReflect() protoreflect.Message {
+	mi := &file_req_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MockPanicReq.ProtoReflect.Descriptor instead.
+func (*MockPanicReq) Descriptor() ([]byte, []int) {
+	return file_req_proto_rawDescGZIP(), []int{2}
+}
+
+type MockPanicRsp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MockPanicRsp) Reset() {
+	*x = MockPanicRsp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_req_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MockPanicRsp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MockPanicRsp) ProtoMessage() {}
+
+func (x *MockPanicRsp) ProtoReflect() protoreflect.Message {
+	mi := &file_req_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MockPanicRsp.ProtoReflect.Descriptor instead.
+func (*MockPanicRsp) Descriptor() ([]byte, []int) {
+	return file_req_proto_rawDescGZIP(), []int{3}
+}
+
 var File_req_proto protoreflect.FileDescriptor
 
 var file_req_proto_rawDesc = []byte{
@@ -183,12 +259,17 @@ var file_req_proto_rawDesc = []byte{
 	0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74,
 	0x61, 0x6d, 0x70, 0x52, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x4a, 0x04, 0x08, 0x0f, 0x10, 0x10, 0x4a,
-	0x04, 0x08, 0x09, 0x10, 0x0c, 0x52, 0x03, 0x66, 0x6f, 0x6f, 0x52, 0x03, 0x62, 0x61, 0x72, 0x32,
-	0x34, 0x0a, 0x09, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x53, 0x53, 0x53, 0x12, 0x27, 0x0a, 0x06,
+	0x04, 0x08, 0x09, 0x10, 0x0c, 0x52, 0x03, 0x66, 0x6f, 0x6f, 0x52, 0x03, 0x62, 0x61, 0x72, 0x22,
+	0x0e, 0x0a, 0x0c, 0x4d, 0x6f, 0x63, 0x6b, 0x50, 0x61, 0x6e, 0x69, 0x63, 0x52, 0x65, 0x71, 0x22,
+	0x0e, 0x0a, 0x0c, 0x4d, 0x6f, 0x63, 0x6b, 0x50, 0x61, 0x6e, 0x69, 0x63, 0x52, 0x73, 0x70, 0x32,
+	0x69, 0x0a, 0x09, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x53, 0x53, 0x53, 0x12, 0x27, 0x0a, 0x06,
 	0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x12, 0x0c, 0x2e, 0x72, 0x65, 0x71, 0x2e, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0d, 0x2e, 0x72, 0x65, 0x71, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x3b, 0x70, 0x62, 0x5f, 0x74, 0x65,
-	0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x33, 0x0a, 0x09, 0x4d, 0x6f, 0x63, 0x6b, 0x50, 0x61, 0x6e,
+	0x69, 0x63, 0x12, 0x11, 0x2e, 0x72, 0x65, 0x71, 0x2e, 0x4d, 0x6f, 0x63, 0x6b, 0x50, 0x61, 0x6e,
+	0x69, 0x63, 0x52, 0x65, 0x71, 0x1a, 0x11, 0x2e, 0x72, 0x65, 0x71, 0x2e, 0x4d, 0x6f, 0x63, 0x6b,
+	0x50, 0x61, 0x6e, 0x69, 0x63, 0x52, 0x73, 0x70, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x2e, 0x3b,
+	0x70, 0x62, 0x5f, 0x74, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -203,22 +284,26 @@ func file_req_proto_rawDescGZIP() []byte {
 	return file_req_proto_rawDescData
 }
 
-var file_req_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_req_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_req_proto_goTypes = []interface{}{
 	(*Request)(nil),             // 0: req.Request
 	(*Response)(nil),            // 1: req.Response
-	nil,                         // 2: req.Request.HeadersEntry
-	(*ItemDetail)(nil),          // 3: item.ItemDetail
-	(*timestamp.Timestamp)(nil), // 4: google.protobuf.Timestamp
+	(*MockPanicReq)(nil),        // 2: req.MockPanicReq
+	(*MockPanicRsp)(nil),        // 3: req.MockPanicRsp
+	nil,                         // 4: req.Request.HeadersEntry
+	(*ItemDetail)(nil),          // 5: item.ItemDetail
+	(*timestamp.Timestamp)(nil), // 6: google.protobuf.Timestamp
 }
 var file_req_proto_depIdxs = []int32{
-	2, // 0: req.Request.headers:type_name -> req.Request.HeadersEntry
-	3, // 1: req.Response.x:type_name -> item.ItemDetail
-	4, // 2: req.Response.time:type_name -> google.protobuf.Timestamp
+	4, // 0: req.Request.headers:type_name -> req.Request.HeadersEntry
+	5, // 1: req.Response.x:type_name -> item.ItemDetail
+	6, // 2: req.Response.time:type_name -> google.protobuf.Timestamp
 	0, // 3: req.SearchSSS.Search:input_type -> req.Request
-	1, // 4: req.SearchSSS.Search:output_type -> req.Response
-	4, // [4:5] is the sub-list for method output_type
-	3, // [3:4] is the sub-list for method input_type
+	2, // 4: req.SearchSSS.MockPanic:input_type -> req.MockPanicReq
+	1, // 5: req.SearchSSS.Search:output_type -> req.Response
+	3, // 6: req.SearchSSS.MockPanic:output_type -> req.MockPanicRsp
+	5, // [5:7] is the sub-list for method output_type
+	3, // [3:5] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
 	3, // [3:3] is the sub-list for extension extendee
 	0, // [0:3] is the sub-list for field type_name
@@ -255,6 +340,30 @@ func file_req_proto_init() {
 				return nil
 			}
 		}
+		file_req_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MockPanicReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_req_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MockPanicRsp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -262,7 +371,7 @@ func file_req_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_req_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -289,6 +398,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SearchSSSClient interface {
 	Search(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	MockPanic(ctx context.Context, in *MockPanicReq, opts ...grpc.CallOption) (*MockPanicRsp, error)
 }
 
 type searchSSSClient struct {
@@ -308,9 +418,19 @@ func (c *searchSSSClient) Search(ctx context.Context, in *Request, opts ...grpc.
 	return out, nil
 }
 
+func (c *searchSSSClient) MockPanic(ctx context.Context, in *MockPanicReq, opts ...grpc.CallOption) (*MockPanicRsp, error) {
+	out := new(MockPanicRsp)
+	err := c.cc.Invoke(ctx, "/req.SearchSSS/MockPanic", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SearchSSSServer is the server API for SearchSSS service.
 type SearchSSSServer interface {
 	Search(context.Context, *Request) (*Response, error)
+	MockPanic(context.Context, *MockPanicReq) (*MockPanicRsp, error)
 }
 
 // UnimplementedSearchSSSServer can be embedded to have forward compatible implementations.
@@ -319,6 +439,9 @@ type UnimplementedSearchSSSServer struct {
 
 func (*UnimplementedSearchSSSServer) Search(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Search not implemented")
+}
+func (*UnimplementedSearchSSSServer) MockPanic(context.Context, *MockPanicReq) (*MockPanicRsp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MockPanic not implemented")
 }
 
 func RegisterSearchSSSServer(s *grpc.Server, srv SearchSSSServer) {
@@ -343,6 +466,24 @@ func _SearchSSS_Search_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SearchSSS_MockPanic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MockPanicReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SearchSSSServer).MockPanic(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/req.SearchSSS/MockPanic",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SearchSSSServer).MockPanic(ctx, req.(*MockPanicReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _SearchSSS_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "req.SearchSSS",
 	HandlerType: (*SearchSSSServer)(nil),
@@ -350,6 +491,10 @@ var _SearchSSS_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Search",
 			Handler:    _SearchSSS_Search_Handler,
+		},
+		{
+			MethodName: "MockPanic",
+			Handler:    _SearchSSS_MockPanic_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
