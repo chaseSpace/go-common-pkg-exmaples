@@ -19,12 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="update gorm">
-      <change afterPath="$PROJECT_DIR$/testify/suite_test/st_test.go" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="add suite_test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testify/mock1_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testify/mock_test/mock1_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testify/mock2_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testify/mock_test/mock2_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testify/mocks/substractOwner.go" beforeDir="false" afterPath="$PROJECT_DIR$/testify/mock_test/mocks/substractOwner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redigo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/redigo_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,13 @@
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/chaseSpace/go-common-pkg-exmaples.git" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1ekdsPZKuQrfUY3o78uC7jCOhp7" />
   <component name="ProjectLevelVcsManager">
@@ -200,7 +204,8 @@
     <MESSAGE value="update gorm" />
     <MESSAGE value="X" />
     <MESSAGE value="9" />
-    <option name="LAST_COMMIT_MESSAGE" value="9" />
+    <MESSAGE value="add suite_test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add suite_test" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -241,22 +246,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596512212793" />
-    <state width="1877" height="204" key="GridCell.Tab.0.bottom" timestamp="1596512328605">
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1596513235573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596512328605" />
-    <state width="1877" height="204" key="GridCell.Tab.0.center" timestamp="1596512328605">
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1596513235573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="204" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596512328605" />
-    <state width="1877" height="204" key="GridCell.Tab.0.left" timestamp="1596512328605">
+    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1596513235573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="204" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596512328605" />
-    <state width="1877" height="204" key="GridCell.Tab.0.right" timestamp="1596512328605">
+    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1596513235573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="204" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596512328605" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594890400639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -265,10 +270,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596451251917" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596508123349">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596513151314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596508123349" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596513151314" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596096422726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
