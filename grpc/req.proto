@@ -5,6 +5,7 @@ import "inside_pkg/item.proto";
 package req;
 
 // 生成多个pb文件, /path/to/grpc>protoc -I=. -I=inside_pkg req.proto inside_pkg/item.proto --go_out=plugins=grpc:pb_test
+// 不过使用go generate 命令更方便，查看server/_gogenerate.sh 脚本，进入server目录，执行 【go generate .】命令即可执行上述命令
 
 option go_package = ".;pb_test"; // .; 是 protoc 要求的，用来表示这是一个full path
 

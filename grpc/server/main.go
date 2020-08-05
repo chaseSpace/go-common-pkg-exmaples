@@ -1,5 +1,7 @@
 package main
 
+//go:generate sh ./_go_generate.sh
+
 import (
 	"context"
 	"fmt"

@@ -19,9 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="add suite_test">
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="Deprecated">
+      <change afterPath="$PROJECT_DIR$/grpc/server/_go_generate.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/streamingRPC.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redigo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/redigo_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/req.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/req.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +86,6 @@
     <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\develop\go\go-common-pkg-exmaples\testify\mock_test" />
-      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket_exmaple" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc\key" />
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc" />
@@ -97,26 +93,15 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_7" />
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\ginkgo\example_6" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\develop\go\go-common-pkg-exmaples\grpc\server" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\testify\mock_test" />
+      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
+      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
+      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket_exmaple" />
+    </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test">
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/grpc/server/main.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/grpc/server" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)">
     <configuration name="TestAnyTypeArgs in github.com/chaseSpace/go-common-pkg-exmaples/testify" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$/testify" />
@@ -150,6 +135,17 @@
       <pattern value="^TestSubstractOwner$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/testify/suite_test" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSuiteObj$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$/testify/suite_test" />
@@ -162,19 +158,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Test.TestSomething in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
       <item itemvalue="Go Test.TestAnyTypeArgs in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
       <item itemvalue="Go Test.TestSubstractOwner in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
       <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" />
+      <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" />
         <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" />
         <item itemvalue="Go Test.TestSubstractOwner in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
         <item itemvalue="Go Test.TestAnyTypeArgs in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
         <item itemvalue="Go Test.TestSomething in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +201,8 @@
     <MESSAGE value="X" />
     <MESSAGE value="9" />
     <MESSAGE value="add suite_test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add suite_test" />
+    <MESSAGE value="Deprecated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deprecated" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -246,22 +243,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596512212793" />
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1596513235573">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1596617218265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
-    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1596513235573">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596617218265" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1596617218265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
-    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1596513235573">
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596617218265" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1596617218265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
-    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1596513235573">
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596617218265" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1596617218265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596513235573" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596617218265" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594890400639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,10 +267,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596451251917" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596513151314">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596513638821">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596513151314" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596513638821" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596096422726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
