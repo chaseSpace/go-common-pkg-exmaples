@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="Deprecated">
-      <change afterPath="$PROJECT_DIR$/.idea/protoeditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/req.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/req.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +46,12 @@
         <option value="https://github.com/chaseSpace/go-common-pkg-exmaples.git" />
       </set>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1ekdsPZKuQrfUY3o78uC7jCOhp7" />
   <component name="ProjectLevelVcsManager">
@@ -82,7 +85,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="google.protobuf.language" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -218,10 +221,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="178" key="#GOPATH/0.0.1920.1040@0.0.1920.1040" timestamp="1594870414170" />
-    <state x="842" y="381" key="#Notifications" timestamp="1596507678198">
+    <state x="842" y="381" width="457" height="277" key="#Notifications" timestamp="1596682209970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="842" y="381" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1596507678198" />
+    <state x="842" y="381" width="457" height="277" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1596682209970" />
     <state x="272" y="235" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596451307287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -262,14 +265,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1594890400639" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1596678625149">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1596678732251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596678625149" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596618063553">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596678732251" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596678799484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596618063553" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596678799484" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596096422726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
