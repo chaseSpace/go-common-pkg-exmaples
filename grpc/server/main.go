@@ -1,5 +1,6 @@
 package main
 
+// cd grpc/server/  && go generate .
 //go:generate sh ./_go_generate.sh
 
 import (
