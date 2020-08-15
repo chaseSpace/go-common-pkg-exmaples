@@ -59,6 +59,8 @@ func call() {
 		// parse timestamp
 		log.Printf("searching: %+v", r.String())
 	}
+
+	client.MockPanic(context.Background(), &pb_test.MockPanicReq{})
 }
 
 func main() {

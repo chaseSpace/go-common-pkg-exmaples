@@ -1,10 +1,14 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
+
+// goland 解决import不识别问题：settings--> Languages & FrameWorks --> ProtoBuffer --> 右侧取消勾选即可添加路径
+// 这里应添加 /go-common-pkg-examples/grpc目录
 import "inside_pkg/item.proto";
 
 package req;
 
 // 生成多个pb文件, /path/to/grpc>protoc -I=. -I=inside_pkg req.proto inside_pkg/item.proto --go_out=plugins=grpc:pb_test
+// 不过使用go generate 命令更方便，查看server/_gogenerate.sh 脚本，进入server目录，执行 【go generate .】命令即可执行上述命令
 
 option go_package = ".;pb_test"; // .; 是 protoc 要求的，用来表示这是一个full path
 
@@ -26,7 +30,11 @@ message Response {
     google.protobuf.Timestamp time = 4;
 }
 
+message MockPanicReq {}
+
+message MockPanicRsp {}
+
 service SearchSSS {
     rpc Search (Request) returns (Response) {}
+    rpc MockPanic  (MockPanicReq) returns (MockPanicRsp) {}
 }
-

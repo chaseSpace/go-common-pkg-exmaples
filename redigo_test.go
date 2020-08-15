@@ -9,6 +9,11 @@ import (
 	"time"
 )
 
+// Deprecated !!!!
+// 由于使用此库有些方面确实不太方便，所以本人不再推荐此库！！！！
+// 请使用：https://github.com/go-redis/redis
+// 使用后者，你几乎不需要看使用示例，可直接上手
+
 /*
 Usage of redigo:
 https://godoc.org/github.com/gomodule/redigo/redis#pkg-examples

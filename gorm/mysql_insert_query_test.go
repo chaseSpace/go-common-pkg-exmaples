@@ -5,28 +5,42 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/stretchr/testify/assert"
+	"log"
 	"testing"
 	"time"
 )
 
-// 夹杂中英文是因为英文是从文档中复制下来的，意思简单明了，没必要改成中文
+/*
+gorm的坑：
+	1. db.Model(&table_struct).Find(&other_struct) 会查到已被删除的记录，还是用回Find(&table_struct)
+
+Mysql的注意点：
+	1. rows affected这个属性在update时，如果新旧数据一致，它也是0，并不代表记录不存在
+*/
 
 /* 数据库需要对应driver
 import _ "github.com/jinzhu/gorm/dialects/mysql"
 // import _ "github.com/jinzhu/gorm/dialects/postgres"
 // import _ "github.com/jinzhu/gorm/dialects/sqlite"
 // import _ "github.com/jinzhu/gorm/dialects/mssql"
+
 */
 
 // table定义
 // 表名会默认被创建成复数，即users，可以禁用此特点
 type User struct {
+	/* gorm.Model建表后的结果， uint32 == uint ==> int(10) unsigned
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	 `created_at` datetime DEFAULT NULL,
+	 `updated_at` datetime DEFAULT NULL,
+	 `deleted_at` datetime DEFAULT NULL,
+	*/
 	gorm.Model // 进去看它的代码就知道其作用：可选，主要是嵌入一些基本字段，如 id，updatedAt,createdAt,deletedAt
 	// 写了它就不需要再定义id这些基本字段，注意DeletedAt字段是指针，因为在数据未被删除时这个字段应该是nil
 
 	//ID string `gorm:"primary_key"`//  primary_key标签也是可选的，gorm默认把id当主键
-	Name         string        `gorm:"column:u_name"` // tag修改字段名（默认字段命名规则是小写+下划线）
-	Age          sql.NullInt64 `gorm:"default:'18'"`  // 默认值会在字段为nil或类型零值时被使用
+	Name         string        `gorm:"column:u_name;comment:'姓名'"` // tag修改字段名（默认字段命名规则是小写+下划线）
+	Age          sql.NullInt64 `gorm:"default:'18'"`               // 默认值会在字段为nil或类型零值时被使用
 	Birthday     *time.Time
 	Email        string `gorm:"type:varchar(100);unique_index"` // 另一种用法是type:text
 	Role         string `gorm:"size:255"`                       // size:255等效于varchar(255)
@@ -34,6 +48,9 @@ type User struct {
 	Num          int    `gorm:"AUTO_INCREMENT"`                 // set num to auto incrementable
 	Address      string `gorm:"index:addr"`                     // create index with name `addr` for address
 	IgnoreMe     int    `gorm:"-"`                              // ignore this field
+	// 自己定义time相关字段
+	MyUpdateTime time.Time `gorm:"not null;default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;index"`
+	MyCreateAt   time.Time `gorm:"not null;default:CURRENT_TIMESTAMP"`
 }
 
 // table
@@ -79,19 +96,11 @@ func TestMysql(t *testing.T) {
 
 	// uri方式连接
 	// user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-	db, err := gorm.Open("mysql", "test_u:1918ddkk;;@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}
 	defer db.Close()
-	// SetMaxIdleConns sets the maximum number of connections in the idle connection pool.
-	db.DB().SetMaxIdleConns(5)
-
-	// SetMaxOpenConns sets the maximum number of open connections to the database.
-	db.DB().SetMaxOpenConns(20)
-
-	// SetConnMaxLifetime sets the maximum amount of time a connection may be reused.
-	db.DB().SetConnMaxLifetime(time.Hour)
 
 	db = db.DropTableIfExists(&User{}, &Order{})
 	// processes err
@@ -100,18 +109,15 @@ func TestMysql(t *testing.T) {
 	}
 
 	// create table
-	//db.CreateTable(&User{}, &Order{})
-	// AutoMigrate同步代码中的model到DB, 它做的是创建不存在的表，添加不存在的字段、索引
-	// 不会删除/改变DB中已存在的任何东西
-	// InnoDB是默认的，但编码默认是latin1
-	db.Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4").AutoMigrate(&User{}, &Order{})
+	db.CreateTable(&User{}, &Order{})
 
-	// HasTable("users") 也是可以的
+	// add index, 幂等方法
+	db.Model(&User{}).AddIndex("idx_name", "u_name")
 	//if !db.HasTable(&User{}) {
 	//}
 
 	InsertTest(t, db)
-	//CommonQueryTest(t, db)
+	CommonQueryTest(t, db)
 	//QueryNotTest(t, db)
 	//QueryOrTest(t, db)
 	//MoreSimpleQueryTest(t, db)
@@ -123,21 +129,10 @@ func TestMysql(t *testing.T) {
 	//OffsetTest(t, db)
 	//CountTest(t, db)
 	//JoinTest(t, db)
-	//ScanAndRawSqlTest(t, db)
+	//ScanTest(t, db)
 
 	UpdateAllFields(t, db)
 	UpdateWantedFields(t, db)
-	UpdateSelectFields(t, db)
-	UpdateFieldsOnly(t, db)
-	BatchUpdate(t, db)
-
-	DeleteOneRecord(t, db)
-	BatchDelete(t, db)
-	DeletePermanently(t, db)
-
-	CommitTxTest(t, db)
-	RollbackTxTest(t, db)
-	ManualExecTx(t, db)
 }
 
 func InsertTest(t *testing.T, db *gorm.DB) {
@@ -172,17 +167,26 @@ func InsertTest(t *testing.T, db *gorm.DB) {
 
 func CommonQueryTest(t *testing.T, db *gorm.DB) {
 	var user User
-
-	db.First(&user) // SELECT * FROM users ORDER BY id LIMIT 1;
+	// 不要将条件放在结构体内，不会读取的，只有主键会被作为条件, 后面的Take方法也是
+	db.Debug().First(&user, "u_name=?", "x") // SELECT * FROM users WHERE u_name=x ORDER BY id LIMIT 1;
 	assert.NotEqual(t, user.ID, 0)
 
-	// Get one record, no specified order
-	// 只取主键作为where条件
-	db.Take(&user)
+	u := new(User)
+	// Get one record, no specified order (只使用主键查询，其他字段不会使用)
+	// SELECT * FROM `admin_users`  WHERE `admin_users`.`deleted_at` IS NULL AND `admin_users`.`id` = 1 LIMIT 1
+	db.Debug().Take(u, "u_name=?", "x")
+	log.Printf("111 %+v", u)
 
 	// Get last record, order by primary key
-	// 只取主键作为where条件
 	db.Last(&user)
+
+	// 获取不存在的记录
+	takeErr := db.Take(&User{}, "u_name=?", "NOT_EXIST").Error
+	FindErr := db.Find(&[]User{}, "u_name=?", "NOT_EXIST").Error
+	// !!! 注意这个err，当接收者是一个结构体时且数据未找到时返回
+	assert.Equal(t, takeErr, gorm.ErrRecordNotFound)
+	// slice接收，则是nil
+	assert.Nil(t, FindErr)
 
 	var users []User
 	// Get all records
@@ -588,14 +592,17 @@ func JoinTest(t *testing.T, db *gorm.DB) {
 	}
 	assert.True(t, count > 0)
 
+	// 取部分字段
 	//db.Table("users").Select("users.name, emails.email").Joins("left join emails on emails.user_id = users.id").Scan(&results)
 	//
 	//// multiple joins with parameter
 	//db.Joins("JOIN emails ON emails.user_id = users.id AND emails.email = ?", "jinzhu@example.org").Joins("JOIN credit_cards ON credit_cards.user_id = users.id").Where("credit_cards.number = ?", "411111111111").Find(&user)
 }
 
-// gorm的Scan
-func ScanAndRawSqlTest(t *testing.T, db *gorm.DB) {
+// ScanTest gorm的Scan
+func ScanTest(t *testing.T, db *gorm.DB) {
+
+	// 定义的切片元素类型必须是struct，不能是[]int这种，无法被scan
 	type Result struct {
 		Name string
 		Age  int
@@ -605,9 +612,24 @@ func ScanAndRawSqlTest(t *testing.T, db *gorm.DB) {
 	db.Table("admin_users").Select("u_name, age").Where("u_name = ?", "x").Scan(&result)
 	assert.True(t, len(result) > 1)
 
-	var result1 []Result
+	// slice元素不是struct，scan出来全是默认值，是无效的
+	var result1 []uint
+	db.Model(&User{}).Select("id").Scan(&result1)
+	assert.True(t, len(result1) > 0)
+	for _, id := range result1 {
+		assert.True(t, id == 0)
+	}
+
+	// slice元素不是struct，scan出来全是默认值，是无效的
+	var result11 []string
+	db.Model(&User{}).Select("u_name").Scan(&result11)
+	assert.True(t, len(result11) > 0)
+	for _, name := range result11 {
+		assert.True(t, name == "")
+	}
+
+	var result2 []Result
 	// Raw SQL
-	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result1)
-	assert.Equal(t, result, result1)
-	db.DB()
+	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result2)
+	assert.Equal(t, result, result2)
 }
