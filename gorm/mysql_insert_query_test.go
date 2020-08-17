@@ -545,7 +545,9 @@ func OffsetTest(t *testing.T, db *gorm.DB) {
 func CountTest(t *testing.T, db *gorm.DB) {
 	var users []User
 	var count int
-	db.Where("u_name = ?", "x").Or("u_name = ?", "jinzhu 2").Find(&users).Count(&count)
+	err := db.Where("u_name = ?", "x").Or("u_name = ?", "jinzhu 2").Find(&users).Count(&count).Error
+	// 注意：count方法若找不到数据err == ErrRecordNotFound
+	assert.NotEqual(t, err, gorm.ErrRecordNotFound)
 	assert.True(t, count > 0)
 
 	var count1 int
