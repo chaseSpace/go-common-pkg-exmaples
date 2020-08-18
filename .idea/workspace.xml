@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="Deprecated">
+      <change afterPath="$PROJECT_DIR$/gorm/forupdate_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redigo_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/redigo_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/mysql_update_delete_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_update_delete_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,18 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket_exmaple" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm">
+  <component name="RunManager" selected="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm">
+    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/gorm" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestForUpdate$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestHash in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -130,17 +139,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestMysql$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestSubstractOwner in github.com/chaseSpace/go-common-pkg-exmaples/testify" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/testify" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/testify" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSubstractOwner$" />
       <method v="2" />
     </configuration>
     <configuration name="TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -166,19 +164,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestSubstractOwner in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
       <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" />
       <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" />
       <item itemvalue="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Test.TestMysql in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Test.TestHash in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test (1)" />
         <item itemvalue="Go Test.TestSuiteObj in github.com/chaseSpace/go-common-pkg-exmaples/testify/suite_test" />
-        <item itemvalue="Go Test.TestSubstractOwner in github.com/chaseSpace/go-common-pkg-exmaples/testify" />
       </list>
     </recent_temporary>
   </component>
@@ -279,10 +277,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597313863071" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596695347655">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1597653745991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596695347655" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597653745991" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596096422726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -295,17 +293,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595207476697" />
-    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1596512215719">
+    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1597730401273">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596512215719" />
+    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597730401273" />
     <state x="606" y="306" key="git4idea.merge.GitPullDialog" timestamp="1595830453112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="606" y="306" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595830453112" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594949551957">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597653677592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594949551957" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597653677592" />
   </component>
 </project>
