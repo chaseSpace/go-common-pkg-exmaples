@@ -3,6 +3,7 @@ package encode_pkg
 import (
 	"bytes"
 	"encoding/binary"
+	"log"
 	"testing"
 )
 
@@ -26,4 +27,7 @@ func Test_uint16ToByte(t *testing.T) {
 	}
 	// 打印二进制 [11001000 1001001]
 	t.Logf("Test_uint16ToByte: %b", buf.Bytes())
+
+	v := "asdaf"
+	log.Println(v[2:4])
 }

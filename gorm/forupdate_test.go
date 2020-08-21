@@ -6,9 +6,38 @@ import (
 	"testing"
 )
 
-// 测试锁住id=3的记录时，能不能去修改它, 结果是可以！
-func ForUpdate(t *testing.T, db *gorm.DB) {
-	tx := db.Begin()
+/*
+gorm的事务
+-------------
+1. 如果tx对象在提交或回滚前被传递到函数之外，gorm会使用一个新的db连接，所以这个时候再去操作之前锁住的记录会死锁！
+所以只能在一个函数内完成事务操作
+*/
+
+type Student struct {
+	Id    int
+	Name  string
+	Score int
+}
+
+func (Student) TableName() string {
+	return "student"
+}
+
+type conn struct {
+	id int
+}
+
+func getTx(d *gorm.DB) *gorm.DB {
+	return d.Begin()
+}
+
+// 测试锁住id=1的记录时，并去修改它, 结果是可以（同一个事务中）！
+func ForUpdateTest(t *testing.T) {
+	tx := getTx(db)
+	//var dbConn = new(conn)
+	//db.Exec("select connection_id()").Scan(dbConn)
+	//log.Printf("connection_id-1:%d", dbConn.id)
+
 	defer func() {
 		if r := recover(); r != nil {
 			tx.Rollback()
@@ -19,7 +48,8 @@ func ForUpdate(t *testing.T, db *gorm.DB) {
 		panic(tx.Error)
 	}
 
-	action := tx.Debug().Set("gorm:query_option", "FOR UPDATE").First(&User{}, "id=?", 31)
+	var stu = &Student{}
+	action := tx.Debug().Set("gorm:query_option", "FOR UPDATE").First(stu, "name=?", "liming")
 	if action.Error != nil && action.Error != gorm.ErrRecordNotFound {
 		tx.Rollback()
 		log.Panic(1, action.Error)
@@ -31,26 +61,44 @@ func ForUpdate(t *testing.T, db *gorm.DB) {
 		return
 	}
 
-	err := tx.Debug().Delete(User{}, "id=?", 3).Error
-	if err != nil {
-		tx.Rollback()
-		log.Panic(2, err)
-		return
-	}
-	if err = tx.Commit().Error; err != nil {
-		tx.Rollback()
-		log.Panic(3, err)
-		return
-	}
-	return
-}
-
-func TestForUpdate(t *testing.T) {
-	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	err := UpdateScore(stu.Id, 99, tx)
 	if err != nil {
 		panic(err)
 	}
-	defer db.Close()
 
-	ForUpdate(t, db)
+	if err := tx.Rollback().Error; err != nil {
+		log.Panic("rollback", err)
+		return
+	}
+
+	return
+}
+
+// 这里会阻塞，说明db对象开启了新的会话
+func UpdateScore(id, score int, db *gorm.DB) error {
+	//var dbConn = new(conn)
+	//db.Exec("select connection_id() from student;").Scan(dbConn)
+	//log.Printf("connection_id-1:%d", dbConn.id)
+
+	err := db.Debug().Exec("update `student` set `score` = ? where `id` = ?", score, id).Error
+	if err != nil {
+		log.Panic(err)
+	}
+	return nil
+}
+
+func TestForUpdate(t *testing.T) {
+	startDB()
+	defer closeDB()
+	db.AutoMigrate(Student{})
+
+	err := db.Create(&Student{
+		Name:  "liming",
+		Score: 100,
+	}).Error
+	if err != nil {
+		panic(err)
+	}
+
+	ForUpdateTest(t)
 }
