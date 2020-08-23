@@ -57,6 +57,10 @@ func Delete(t *testing.T, db *gorm.DB) {
 	var user User
 	user.ID = 1
 	db.BlockGlobalUpdate(true)
+	/*
+	 soft delete, 只要表结构体有 DeleteAt 字段，默认就是软删除
+	*/
+
 	// Delete an existing record
 	db.Delete(&user)
 	// DELETE from users where id=1;
@@ -72,7 +76,6 @@ func Delete(t *testing.T, db *gorm.DB) {
 	db.Delete(User{}, "u_name LIKE ?", "%jinzhu%")
 	// DELETE from users where email LIKE "%jinzhu%";
 
-	// soft delete, 只要表结构体有 DeleteAt 字段，默认就是软删除
 	db.Delete(&user)
 	// UPDATE users SET deleted_at="2013-10-29 10:23" WHERE id = 111;
 

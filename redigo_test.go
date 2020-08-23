@@ -312,39 +312,37 @@ func TestExists(t *testing.T) {
 
 func TestList(t *testing.T) {
 	BaseConn()
-	rdsConn := conn
-	defer rdsConn.Close()
-	_, err := rdsConn.Do("DEL", "mylist")
+	defer conn.Close()
+	_, err := conn.Do("DEL", "mylist")
 	log.Println("del empty key", err)
 
-	_, err = rdsConn.Do("RPOP", "mylist")
+	_, err = conn.Do("RPOP", "mylist")
 	log.Println("RPOP empty key", err) // err=nil
 
-	_, err = rdsConn.Do("LPUSH", "mylist", "1")
+	_, err = conn.Do("LPUSH", "mylist", "1")
 	log.Println("LPUSH err", err)
 
-	_, err = rdsConn.Do("RPOP", "mylist")
-	_, err = rdsConn.Do("RPOP", "mylist")
+	_, err = conn.Do("RPOP", "mylist")
+	_, err = conn.Do("RPOP", "mylist")
 	log.Println("RPOP empty list key err", err) // err=nil
 
-	_, err = rdsConn.Do("DEL", "mylist")
+	_, err = conn.Do("DEL", "mylist")
 	log.Println("del list key", err)
 }
 
 func TestHash(t *testing.T) {
 	BaseConn()
-	rdsConn := conn
-	defer rdsConn.Close()
-	_, _ = rdsConn.Do("DEL", "myhash")
-	r, err := rdsConn.Do("HGET", "myhash", "k999")
+	defer conn.Close()
+	_, _ = conn.Do("DEL", "myhash")
+	r, err := conn.Do("HGET", "myhash", "k999")
 	assert.Nil(t, r)
 	assert.Nil(t, err)
 
-	_, err = redis.Values(rdsConn.Do("HSCAN", "myhash", 0, "COUNT", 1))
+	_, err = redis.Values(conn.Do("HSCAN", "myhash", 0, "COUNT", 1))
 	log.Println("HSCAN empty hashkey err", err) // nil
 
 	for i := 0; i < 1000; i++ {
-		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		_, _ = conn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
 		//log.Println("HSET err", err) nil
 	}
 
@@ -354,7 +352,7 @@ func TestHash(t *testing.T) {
 		if cursor == -1 {
 			cursor = 0
 		}
-		vs, err := redis.Values(rdsConn.Do("HSCAN", "myhash", cursor, "COUNT", count))
+		vs, err := redis.Values(conn.Do("HSCAN", "myhash", cursor, "COUNT", count))
 		cursor, err = redis.Int64(vs[0], nil)
 		log.Printf("HSCAN cursor:%d err:%v\n", cursor, err == nil)
 		m, err := redis.StringMap(vs[1], err)
@@ -364,27 +362,26 @@ func TestHash(t *testing.T) {
 
 func TestPipe(t *testing.T) {
 	BaseConn()
-	rdsConn := conn
-	defer rdsConn.Close()
+	defer conn.Close()
 	keys := make([]string, 0)
 	for i := 0; i < 1000; i++ {
-		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
+		_, _ = conn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), 1)
 		//log.Println("HSET err", err) nil
 		keys = append(keys, fmt.Sprintf("k%d", i))
 	}
 
 	for k, _ := range keys {
 		// 命令被缓存到本机buffer
-		_ = rdsConn.Send("HDEL", "myhash", k)
+		_ = conn.Send("HDEL", "myhash", k)
 	}
 	// 一次性发送（注意buffer累积的命令不要过多），例如一条命令"GET KEY"是7字节，1000条就是7Kb
-	err = rdsConn.Flush()
+	err = conn.Flush()
 	log.Println("Flush err:", err)
 
 	nilSlice := make([]error, 0)
 
 	for i := 0; i < 1000; i++ {
-		_, err = rdsConn.Receive()
+		_, err = conn.Receive()
 		nilSlice = append(nilSlice, err)
 	}
 	assert.Equal(t, len(nilSlice), 1000)
@@ -392,21 +389,20 @@ func TestPipe(t *testing.T) {
 
 func TestArgs(t *testing.T) {
 	BaseConn()
-	rdsConn := conn
-	defer rdsConn.Close()
+	defer conn.Close()
 	keys := make([]string, 0)
 	// HSET k f v的v可以是字节，取出来可以直接转str
 	for i := 0; i < 1000; i++ {
-		_, _ = rdsConn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), []byte("xcv"))
+		_, _ = conn.Do("HSET", "myhash", fmt.Sprintf("k%d", i), []byte("xcv"))
 		//log.Println("HSET err", err) nil
 		keys = append(keys, fmt.Sprintf("k%d", i))
 	}
-	r, _ := rdsConn.Do("HGET", "myhash", "k999")
+	r, _ := conn.Do("HGET", "myhash", "k999")
 	log.Printf("typ %T", r)           // []uint8
 	log.Println(redis.String(r, nil)) // 1 <nil>，存入byte，取出时可以转str
 	assert.NotNil(t, r)
-	_, err = rdsConn.Do("HDEL", redis.Args{"myhash"}.AddFlat(keys)...)
+	_, err = conn.Do("HDEL", redis.Args{"myhash"}.AddFlat(keys)...)
 	log.Println("HDEL err", err)
-	r, _ = rdsConn.Do("HGET", "myhash", "k999")
+	r, _ = conn.Do("HGET", "myhash", "k999")
 	assert.Nil(t, r)
 }

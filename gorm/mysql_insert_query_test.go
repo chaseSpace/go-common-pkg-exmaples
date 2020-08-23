@@ -49,8 +49,8 @@ type User struct {
 	Address      string `gorm:"index:addr"`                     // create index with name `addr` for address
 	IgnoreMe     int    `gorm:"-"`                              // ignore this field
 	// 自己定义time相关字段
-	MyUpdateTime time.Time `gorm:"not null;default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;index"`
-	MyCreateAt   time.Time `gorm:"not null;default:CURRENT_TIMESTAMP"`
+	//MyUpdateTime time.Time `gorm:"not null;default:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;index"`
+	//MyCreateAt   time.Time `gorm:"not null;default:CURRENT_TIMESTAMP"`
 }
 
 // table
@@ -545,7 +545,10 @@ func OffsetTest(t *testing.T, db *gorm.DB) {
 func CountTest(t *testing.T, db *gorm.DB) {
 	var users []User
 	var count int
-	db.Where("u_name = ?", "x").Or("u_name = ?", "jinzhu 2").Find(&users).Count(&count)
+	// 要使用.Count()方法时where条件必须单独调用.Where()，不能写在Find(x, where clause...)，否则另外执行的count语句中是没有where条件的
+	err := db.Where("u_name = ?", "x").Or("u_name = ?", "jinzhu 2").Find(&users).Count(&count).Error
+	// 注意：count方法若找不到数据err == ErrRecordNotFound
+	assert.NotEqual(t, err, gorm.ErrRecordNotFound)
 	assert.True(t, count > 0)
 
 	var count1 int
