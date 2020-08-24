@@ -616,6 +616,7 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	assert.True(t, len(result) > 1)
 
 	// slice元素不是struct，scan出来全是默认值，是无效的
+	// unsupported destination, should be slice or struct
 	var result1 []uint
 	db.Model(&User{}).Select("id").Scan(&result1)
 	assert.True(t, len(result1) > 0)
@@ -624,6 +625,7 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	}
 
 	// slice元素不是struct，scan出来全是默认值，是无效的
+	// unsupported destination, should be slice or struct
 	var result11 []string
 	db.Model(&User{}).Select("u_name").Scan(&result11)
 	assert.True(t, len(result11) > 0)
