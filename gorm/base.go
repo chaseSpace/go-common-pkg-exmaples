@@ -9,7 +9,7 @@ var db *gorm.DB
 func startDB() {
 	var err error
 	//  "user:pass@(host:port)/DBNAME?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err = gorm.Open("mysql", GetMysqlConf())
+	db, err = gorm.Open("mysql", GetMysqlUri())
 	if err != nil {
 		panic(err)
 	}

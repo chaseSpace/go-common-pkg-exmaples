@@ -95,8 +95,8 @@ func TestMysql(t *testing.T) {
 	//}
 
 	// uri方式连接
-	// user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-	db, err := gorm.Open("mysql", "test_u:1918ddkk@(114.115.216.44:33061)/test?charset=utf8mb4&parseTime=True&loc=Local")
+	// user:password@(localhost:port)/dbname?charset=utf8&parseTime=True&loc=Local
+	db, err := gorm.Open("mysql", GetMysqlUri())
 	if err != nil {
 		panic(err)
 	}
