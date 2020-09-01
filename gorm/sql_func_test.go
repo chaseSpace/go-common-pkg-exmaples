@@ -19,7 +19,7 @@ func TestSqlFunc(t *testing.T) {
 	// 这种也是可以的
 	//err := db.Raw("select sum(id) as sum from student where id > 0").Pluck("sum", &ss).Error
 
-	err := db.Model(Student{}).Select("sum(id) as sum").Where("id > 0").Pluck("sum", &ss).Error
+	err := db.Debug().Model(Student{}).Select("sum(id) as sum").Where("id > 0").Pluck("sum", &ss).Error
 
 	log.Println(err, ss) // nil, []120
 }
