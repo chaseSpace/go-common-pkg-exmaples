@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/jinzhu/gorm"
+	"github.com/jmoiron/sqlx/types"
 	"log"
 	"testing"
 )
@@ -14,9 +15,10 @@ gorm的事务
 */
 
 type Student struct {
-	Id    int
-	Name  string
-	Score int
+	Id       int
+	Name     string
+	Score    int
+	BitField types.BitBool `gorm:"type:bit(1);default:b'0'"` // bit field test
 }
 
 func (Student) TableName() string {
@@ -92,9 +94,10 @@ func TestForUpdate(t *testing.T) {
 	defer closeDB()
 	db.AutoMigrate(Student{})
 
-	err := db.Create(&Student{
-		Name:  "liming",
-		Score: 100,
+	err := db.Debug().Create(&Student{
+		Name:     "liming",
+		Score:    101,
+		BitField: true,
 	}).Error
 	if err != nil {
 		panic(err)

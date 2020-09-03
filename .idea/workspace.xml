@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/ignore.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/forupdate_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/forupdate_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +110,8 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\websocket_exmaple" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)">
-    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm">
+    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$/gorm" />
       <framework value="gotest" />
@@ -121,7 +122,7 @@
       <pattern value="^TestForUpdate$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$/gorm" />
       <framework value="gotest" />
@@ -143,6 +144,17 @@
       <pattern value="^TestSqlFunc$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/gorm" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSqlFunc$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$/gorm" />
@@ -154,31 +166,20 @@
       <pattern value="^TestSqlFunc$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestX$" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
-      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
       <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
+      <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
+      <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+        <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
         <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
         <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
-        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -259,22 +260,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597313762107" />
-    <state width="1877" height="392" key="GridCell.Tab.0.bottom" timestamp="1598615661835">
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1599114617617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598615661835" />
-    <state width="1877" height="392" key="GridCell.Tab.0.center" timestamp="1598615661835">
+    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599114617617" />
+    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1599114617617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598615661835" />
-    <state width="1877" height="392" key="GridCell.Tab.0.left" timestamp="1598615661834">
+    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599114617617" />
+    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1599114617617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598615661834" />
-    <state width="1877" height="392" key="GridCell.Tab.0.right" timestamp="1598615661835">
+    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599114617617" />
+    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1599114617617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598615661835" />
+    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599114617617" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1598238486059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -287,26 +288,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597313863071" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1598950006544">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1598950740662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598950006544" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598950740662" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1598014684761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040@0.0.1920.1040" timestamp="1598014684761" />
-    <state x="814" y="304" width="614" height="459" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1597733387512">
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1599114715960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="814" y="304" width="614" height="459" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597733387512" />
+    <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599114715960" />
+    <state x="814" y="304" width="614" height="459" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1599114587112">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="814" y="304" width="614" height="459" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599114587112" />
     <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598318870279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598318870279" />
-    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1598015969348">
+    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1599114012408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598015969348" />
+    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599114012408" />
     <state x="606" y="306" key="git4idea.merge.GitPullDialog" timestamp="1595830453112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
