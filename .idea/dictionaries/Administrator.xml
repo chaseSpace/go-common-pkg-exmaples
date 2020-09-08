@@ -5,9 +5,13 @@
       <w>gorm</w>
       <w>grpc</w>
       <w>incrementable</w>
+      <w>oneshot</w>
       <w>protoc</w>
       <w>sqlite</w>
       <w>substract</w>
+      <w>syslink</w>
+      <w>systemctl</w>
+      <w>systemd</w>
     </words>
   </dictionary>
 </component>

@@ -1,0 +1,22 @@
+[Unit]
+Description=simple http process No.%I , curl -d 'xxx' -i http://localhost:8080/hi
+# 以@符号命名文件方便启动进程时传入参数，%I接受外部参数，这是为了完成单个服务多进程部署
+# 在这些服务启动后启动，添加注释
+# 这是注释
+# 这也是注释, 注释的开始必须是新行，不能在配置结尾添加
+After=syslog.target network.target nss-lookup.target
+StopWhenUnneeded=true
+
+
+[Service]
+# simple表示常驻进程，oneshot表示只启动一次，通常应用于脚本，任务不会长时间执行
+Type=simple
+# systemd里面不能直接使用shell命令，第一个指令必须是可执行路径，比如 /bin/bash,  /bin/sh, /path/to/executable_file
+ExecStartPre=/bin/bash -c echo 'starting simple_http...'
+# 用户的二进制文件放在/usr/local/sbin/下或者其他一个专门的目录
+# 而不是/usr/sbin或者其他已经包含许多系统内置二进制文件的目录
+ExecStart=/usr/local/sbin/simple_http
+Restart=on-failure
+
+[Install]
+WantedBy=simple_http.target

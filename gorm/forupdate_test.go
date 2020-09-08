@@ -18,15 +18,11 @@ type Student struct {
 	Id       int
 	Name     string
 	Score    int
-	BitField types.BitBool `gorm:"type:bit(1);default:b'0'"` // bit field test
+	BitField types.BitBool `gorm:"not null;type:bit(1);default:b'0'"` // bit field test
 }
 
 func (Student) TableName() string {
 	return "student"
-}
-
-type conn struct {
-	id int
 }
 
 func getTx(d *gorm.DB) *gorm.DB {
