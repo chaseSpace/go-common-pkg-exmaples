@@ -12,6 +12,7 @@ This will do:
 sl status svc.target
 sl stop svc.target
 sl start svc.target
+sl unmask svc.target   禁用服务，禁用后enable/start都不能生效
 
 建议：systemd仍然不适合管理单个服务的多进程部署，在扩/减进程数量时需要自己使用脚本实现；
 本脚本的初衷是尝试探究systemd在管理单个服务的多进程部署能力，目前看来目标可以勉强实现，但管理仍不太方便，所以还是建议使用supervisor
