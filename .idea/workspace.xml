@@ -20,16 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
-      <change afterPath="$PROJECT_DIR$/exec/simple_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exec/unix_script.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exec/windows_script.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_build/tags/foo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_build/tags/foo_alt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go_build/tags/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sort_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/bamboo_ignore.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/bar_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/bar_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/db_settings_dev.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/db_settings_prod.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build/tags/foo_alt.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/foo_testtag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build/tags/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -216,7 +215,8 @@
     <MESSAGE value="up" />
     <MESSAGE value="add systemd practice" />
     <MESSAGE value="9" />
-    <option name="LAST_COMMIT_MESSAGE" value="9" />
+    <MESSAGE value="999" />
+    <option name="LAST_COMMIT_MESSAGE" value="999" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -229,10 +229,10 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring" timestamp="1601001408219">
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring" timestamp="1601006231596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1040@0.0.1920.1040" timestamp="1601001408219" />
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1040@0.0.1920.1040" timestamp="1601006231596" />
     <state x="552" y="178" key="#Deployment" timestamp="1599474823475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -281,22 +281,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597313762107" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1600656000631">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1601001587962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1600656000631">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601001587962" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1601001587962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1600656000631">
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601001587962" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1601001587962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1600656000631">
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601001587962" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1601001587962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601001587962" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1598238486059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -305,14 +305,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="746" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598318855297" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1599472194491">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1601004685552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599472194491" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599530110430">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601004685552" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1601001901992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599530110430" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601001901992" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599115291812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
