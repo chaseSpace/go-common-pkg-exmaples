@@ -19,9 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="add systemd practice">
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
+      <change afterPath="$PROJECT_DIR$/exec/simple_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exec/unix_script.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exec/windows_script.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/foo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/foo_alt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go_build/tags/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sort_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell_script/systemd_manage_process/systemd.sh" beforeDir="false" afterPath="$PROJECT_DIR$/shell_script/systemd_manage_process/systemd.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +87,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test_go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/go_build/tags" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -92,6 +100,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\develop\go\go-common-pkg-exmaples\go_build\tags" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\grpc" />
+      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc\key" />
+      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\develop\go\go-common-pkg-exmaples\shell_script\systemd_manage_process" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\grpc\server" />
@@ -99,82 +114,75 @@
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\develop\go\go-common-pkg-exmaples" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\grpc" />
-      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc\key" />
-      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc" />
-      <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\_dockerfiles\redis" />
-    </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)">
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/shell_script/systemd_manage_process" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags">
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/shell_script/systemd_manage_process/simple_http_process.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/shell_script/systemd_manage_process" />
+      <filePath value="$PROJECT_DIR$/go_build/tags/main.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSort in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
+      <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestForUpdate$" />
+      <pattern value="^TestSort$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
+      <working_directory value="$PROJECT_DIR$/exec" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/exec" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestForUpdate$" />
+      <pattern value="^TestX$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
+      <working_directory value="$PROJECT_DIR$/exec" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/exec" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSqlFunc$" />
+      <pattern value="^TestX$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSqlFunc$" />
+    <configuration name="unix_script.sh" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/exec/unix_script.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/exec" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/shell_script/systemd_manage_process" />
-      <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
-      <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
-      <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
+      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec" />
+      <item itemvalue="Shell Script.unix_script.sh" />
+      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec (1)" />
+      <item itemvalue="Go Test.TestSort in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/shell_script/systemd_manage_process" />
-        <item itemvalue="Go Test.TestForUpdate in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-        <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (2)" />
-        <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm (1)" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
+        <item itemvalue="Go Test.TestSort in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec (1)" />
+        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples/exec" />
+        <item itemvalue="Shell Script.unix_script.sh" />
       </list>
     </recent_temporary>
   </component>
@@ -205,10 +213,10 @@
     <MESSAGE value="X" />
     <MESSAGE value="add suite_test" />
     <MESSAGE value="Deprecated" />
-    <MESSAGE value="9" />
     <MESSAGE value="up" />
     <MESSAGE value="add systemd practice" />
-    <option name="LAST_COMMIT_MESSAGE" value="add systemd practice" />
+    <MESSAGE value="9" />
+    <option name="LAST_COMMIT_MESSAGE" value="9" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -221,6 +229,10 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring" timestamp="1601001408219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1040@0.0.1920.1040" timestamp="1601001408219" />
     <state x="552" y="178" key="#Deployment" timestamp="1599474823475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -269,22 +281,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597313762107" />
-    <state width="1877" height="251" key="GridCell.Tab.0.bottom" timestamp="1599472072982">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1600656000631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599472072982" />
-    <state width="1877" height="251" key="GridCell.Tab.0.center" timestamp="1599472072982">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1600656000631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599472072982" />
-    <state width="1877" height="251" key="GridCell.Tab.0.left" timestamp="1599472072982">
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1600656000631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599472072982" />
-    <state width="1877" height="251" key="GridCell.Tab.0.right" timestamp="1599472072982">
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1600656000631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599472072982" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600656000631" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1598238486059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,10 +309,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1599472194491" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599529592953">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599530110430">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599529592953" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599530110430" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599115291812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,14 +325,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="814" y="304" width="614" height="459" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599114587112" />
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599445255389">
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600306213236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599445255389" />
-    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1599114012408">
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1600306213236" />
+    <state x="661" y="74" width="896" height="891" key="find.popup" timestamp="1599617652969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599114012408" />
+    <state x="661" y="74" width="896" height="891" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599617652969" />
     <state x="606" y="306" key="git4idea.merge.GitPullDialog" timestamp="1595830453112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
