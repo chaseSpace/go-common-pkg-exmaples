@@ -13,7 +13,7 @@ var secConf = "* * * * * ?"
 
 /*
 cron有两种模式，一个支持秒，一个是默认不支持
-秒模式下，配置项6个（任一模式下最后一位都是问号?）
+秒模式下，配置项6个（任一模式下最后一位都是week，可以?代替）
 `* * * * * ?` 表示每秒执行
 `* 3 * * * ?` 表示分钟数=3时的每一秒都执行
 `0 3 * * * ?` 表示分钟数=3时的第0秒都执行
@@ -55,6 +55,10 @@ func TestCron(t *testing.T) {
 	// 每分钟的0秒执行（第一次执行是启动后的第一个0秒）
 	_, _ = cronItem.AddFunc("0 0/2 * * * ?", func() {
 		log.Printf("job3")
+	})
+	// sec,min,hour,week
+	_, _ = cronItem.AddFunc("22 49 20 * * 3", func() {
+		log.Printf("job4")
 	})
 
 	if name := cronItem.Entry(job1).Job.(*task).Name; name != "job1" {

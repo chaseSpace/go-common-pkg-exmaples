@@ -107,7 +107,7 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron">
+  <component name="RunManager" selected="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -115,6 +115,17 @@
       <filePath value="$PROJECT_DIR$/go_build/tags/main.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/cron" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/cron" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestCron$" />
       <method v="2" />
     </configuration>
     <configuration name="TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -126,17 +137,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestMinute$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestSort in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSort$" />
       <method v="2" />
     </configuration>
     <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -163,18 +163,18 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
-      <item itemvalue="Go Test.TestSort in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
       <item itemvalue="Go Test.TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
+      <item itemvalue="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
         <item itemvalue="Go Test.TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
         <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
         <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
-        <item itemvalue="Go Test.TestSort in github.com/chaseSpace/go-common-pkg-exmaples" />
       </list>
     </recent_temporary>
   </component>
@@ -205,11 +205,12 @@
     <MESSAGE value="X" />
     <MESSAGE value="add suite_test" />
     <MESSAGE value="Deprecated" />
-    <MESSAGE value="up" />
     <MESSAGE value="add systemd practice" />
     <MESSAGE value="9" />
     <MESSAGE value="999" />
-    <option name="LAST_COMMIT_MESSAGE" value="999" />
+    <MESSAGE value="up" />
+    <MESSAGE value="add week test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add week test" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -274,22 +275,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597313762107" />
-    <state width="1877" height="221" key="GridCell.Tab.0.bottom" timestamp="1602553300413">
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom" timestamp="1603024338337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602553300413" />
-    <state width="1877" height="221" key="GridCell.Tab.0.center" timestamp="1602553300413">
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
+    <state width="1877" height="328" key="GridCell.Tab.0.center" timestamp="1603024338337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="221" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602553300413" />
-    <state width="1877" height="221" key="GridCell.Tab.0.left" timestamp="1602553300413">
+    <state width="1877" height="328" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
+    <state width="1877" height="328" key="GridCell.Tab.0.left" timestamp="1603024338337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="221" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602553300413" />
-    <state width="1877" height="221" key="GridCell.Tab.0.right" timestamp="1602553300413">
+    <state width="1877" height="328" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
+    <state width="1877" height="328" key="GridCell.Tab.0.right" timestamp="1603024338337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="221" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602553300413" />
+    <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1598238486059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -302,10 +303,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601004685552" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1601006803306">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1602678687480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601006803306" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602678687480" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599115291812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
