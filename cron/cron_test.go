@@ -1,6 +1,7 @@
 package cron
 
 import (
+	"fmt"
 	"github.com/robfig/cron/v3"
 	"log"
 	"sync"
@@ -108,6 +109,12 @@ func TestMinute(t *testing.T) {
 	// “0-30/2”中的0-30表示在minute为0到30的范围内每2分钟执行一次（如11:31-11:59这个范围都不会执行）
 	_, _ = cronItem.AddFunc("0-30/2 * * * ?", func() {
 		log.Printf("minute 0-30/2")
+		wg.Done()
+	})
+	// 每周3的每分钟0s执行, 如果改成秒模式，也是最后一位是week
+	weekN := 3
+	_, _ = cronItem.AddFunc(fmt.Sprintf("* * * * %d", weekN), func() {
+		log.Printf("this is week %d", weekN)
 		wg.Done()
 	})
 	_ = cronItem.Schedule(cron.Every(time.Second), &task{"sec job", 0, wg})
