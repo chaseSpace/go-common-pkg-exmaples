@@ -296,5 +296,6 @@ func poolCleanup() {
 <br/>
 <br/>
 
-你还可以参考的中文文章
-- https://blog.csdn.net/yongjian_lian/article/details/42058893
+你还可以参考的文章
+- https://blog.csdn.net/yongjian_lian/article/details/42058893 (中文，说的挺到位的)
+- https://programmer.group/a-brief-analysis-of-golang-sync.pool.html （英文，比较详细，有图）
