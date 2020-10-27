@@ -42,11 +42,11 @@ func (p *Pool) Get() interface{} {
 		race.Disable() // 若开启则暂时禁用它
 	}
     /*
-     pin操作内部调用了`runtime_procPin`会将当让goroutine去抢占CPU核心, 在主动让出前，其他goroutine都抢不了
+     pin操作内部调用了`runtime_procPin`会将当让goroutine去抢占CPU核心, 在主动让出前，其他goroutine都抢不了这个P
     */ 
 	l := p.pin() // 获取当前CPU核心的poolLocal（此核心独享的pool对象），内部逻辑在后面解读
 	x := l.private // poolLocal存储的【私有】临时对象复制到x，如果非nil，说明这个CPU核心的pool被Put过，在后面会直接返回这个对象
-	l.private = nil // 取走了就要把pool中的这个位置置空
+	l.private = nil // 取走了就要把这个P的private缓存清除
 	runtime_procUnpin() // 在这里让出CPU核心控制权
 	if x == nil { // 如果poolLocal中的临时对象为nil，就检查poolLocal中的临时对象数组是否有库存，有就从里面取
 		l.Lock() // 即将要操作的是shared对象，这是个在多CPU核心之间会【共享】的切片对象，需要加锁
@@ -59,7 +59,7 @@ func (p *Pool) Get() interface{} {
 		l.Unlock() // shared对象操作完毕，解锁
 		if x == nil { // 如果poolLocal完全空
             // 就尝试从其他CPU核心的poolLocal去偷一个对象
-            // 为啥叫getSlow？因为这个方法的操作时间复杂度较高，后文会解读
+            // 为啥叫getSlow？因为这个方法的有一定的时间复杂度，后文会解读
 			x = p.getSlow() 
 		}
 	}

@@ -21,16 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
       <change afterPath="$PROJECT_DIR$/py_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sync.pool.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_build/tags/foo.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/foo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_build/tags/foo_testtag.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/foo_testtag.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_build/tags/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync.pool.md" beforeDir="false" afterPath="$PROJECT_DIR$/sync.pool.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +212,6 @@
     <MESSAGE value="init" />
     <MESSAGE value="add dockerfile" />
     <MESSAGE value="x" />
-    <MESSAGE value="update" />
     <MESSAGE value="update gorm" />
     <MESSAGE value="X" />
     <MESSAGE value="add suite_test" />
@@ -229,7 +221,8 @@
     <MESSAGE value="999" />
     <MESSAGE value="add week test" />
     <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -318,10 +311,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603335245516" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1602679890247">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1603793353715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602679890247" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603793353715" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599115291812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
