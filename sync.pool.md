@@ -225,28 +225,32 @@ go的实现包含垃圾回收(gc)，减少了开发者心智负担，但也增�
 
 #### 使用示例
 ```go
-var p = &sync.Pool{
-    New: func() interface{} {
-        return 0
-    },
+func main() {
+	var p = &sync.Pool{
+        New: func() interface{} {
+            return 0
+        },
+    }
+    v1 := p.Get().(int)
+    p.Put(1)
+    fmt.Println(v1, p.Get().(int)) // 0， 1
 }
-v1 := p.Get().(int)
-p.Put(1)
-fmt.Println(v1, p.Get().(int)) // 0， 1
 ```
 
 需要注意的是Pool不支持设置最大缓存数量和时间的，那万一缓存过多导致太大的内存开销呢？ 看代码：
 ```go
 // 在上面代码的基础上增加一行
-var p = &sync.Pool{
-    New: func() interface{} {
-        return 0
-    },
+func main() {
+    var p = &sync.Pool{
+        New: func() interface{} {
+            return 0
+        },
+    }
+    v1 := p.Get().(int)
+    p.Put(1)
+    runtime.GC() // <----
+    fmt.Println(v1, p.Get().(int)) // 0， 0
 }
-v1 := p.Get().(int)
-p.Put(1)
-runtime.GC() // <----
-fmt.Println(v1, p.Get().(int)) // 0， 0
 ```
 
 sync.Pool缓存对象的期限是两次GC期间，什么时候清空的，怎么清空的？看代码:
