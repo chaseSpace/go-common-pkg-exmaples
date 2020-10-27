@@ -14,8 +14,7 @@ func TestSqlFunc(t *testing.T) {
 	defer closeDB()
 	db.AutoMigrate(Student{})
 
-	var ss []int // 必须是slice才能接收
-
+	//var ss []*int // 必须是slice才能接收, sum的话得是指针类型，因为没有记录的时候为null==nil
 	// 这种也是可以的
 	//err := db.Raw("select sum(id) as sum from student where id > 0").Pluck("sum", &ss).Error
 

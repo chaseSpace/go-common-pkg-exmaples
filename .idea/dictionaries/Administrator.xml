@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>creds</w>
+      <w>gomaxprocs</w>
       <w>gorm</w>
       <w>grpc</w>
       <w>incrementable</w>

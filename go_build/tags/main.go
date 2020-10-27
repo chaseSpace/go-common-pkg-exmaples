@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	fmt.Printf("vars %s\n", some_img_url)
 	foo()
 	bar()
 	//woo() 无法调用

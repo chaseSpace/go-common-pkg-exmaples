@@ -20,8 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
+      <change afterPath="$PROJECT_DIR$/py_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sync.pool.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/cron_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cron/cron_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build/tags/foo.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/foo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build/tags/foo_testtag.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/foo_testtag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_build/tags/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go_build/tags/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +98,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -107,7 +116,7 @@
       <recent name="E:\workspace\go\lei_pj\go-common-pkg-exmaples\color_display" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -117,29 +126,18 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/cron" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/cron" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestCron$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/cron" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/cron" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestMinute$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestX$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestX in github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -161,20 +159,41 @@
       <pattern value="^TestX$" />
       <method v="2" />
     </configuration>
+    <configuration name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\py36\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
-      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
-      <item itemvalue="Go Test.TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
-      <item itemvalue="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
+      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
+      <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Python.py_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestCron in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
-        <item itemvalue="Go Test.TestMinute in github.com/chaseSpace/go-common-pkg-exmaples/cron" />
-        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
-        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/go_build/tags" />
+        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Python.py_test" />
+        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
+        <item itemvalue="Go Test.TestX in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -208,9 +227,9 @@
     <MESSAGE value="add systemd practice" />
     <MESSAGE value="9" />
     <MESSAGE value="999" />
-    <MESSAGE value="up" />
     <MESSAGE value="add week test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add week test" />
+    <MESSAGE value="up" />
+    <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -223,18 +242,14 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring" timestamp="1601006231596">
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring" timestamp="1603099290033">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1040@0.0.1920.1040" timestamp="1601006231596" />
+    <state x="715" y="226" width="490" height="604" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1040@0.0.1920.1040" timestamp="1603099290033" />
     <state x="552" y="178" key="#Deployment" timestamp="1599474823475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1599474823475" />
-    <state x="752" y="178" key="#GOPATH" timestamp="1594870414170">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="752" y="178" key="#GOPATH/0.0.1920.1040@0.0.1920.1040" timestamp="1594870414170" />
     <state x="752" y="450" key="#GOROOT" timestamp="1597196005208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -247,18 +262,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040@0.0.1920.1040" timestamp="1599474813766" />
-    <state x="464" y="250" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597236622796">
+    <state x="464" y="250" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603338397919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="464" y="250" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597236622796" />
+    <state x="464" y="250" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603338397919" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1596512120109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596512120109" />
-    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599471411761">
+    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603779785095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599471411761" />
+    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1603779785095" />
     <state x="737" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1597756949586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -275,22 +290,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597313762107" />
-    <state width="1877" height="328" key="GridCell.Tab.0.bottom" timestamp="1603024338337">
+    <state width="1877" height="191" key="GridCell.Tab.0.bottom" timestamp="1603791510692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
-    <state width="1877" height="328" key="GridCell.Tab.0.center" timestamp="1603024338337">
+    <state width="1877" height="191" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603791510692" />
+    <state width="1877" height="191" key="GridCell.Tab.0.center" timestamp="1603791510692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="328" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
-    <state width="1877" height="328" key="GridCell.Tab.0.left" timestamp="1603024338337">
+    <state width="1877" height="191" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603791510692" />
+    <state width="1877" height="191" key="GridCell.Tab.0.left" timestamp="1603791510692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="328" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
-    <state width="1877" height="328" key="GridCell.Tab.0.right" timestamp="1603024338337">
+    <state width="1877" height="191" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603791510692" />
+    <state width="1877" height="191" key="GridCell.Tab.0.right" timestamp="1603791510692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603024338337" />
+    <state width="1877" height="191" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603791510692" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1598238486059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -299,14 +314,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="746" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598318855297" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1601004685552">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1603335245516">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601004685552" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1602678687480">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603335245516" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1602679890247">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602678687480" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602679890247" />
     <state x="829" y="401" width="336" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599115291812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -331,10 +346,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="606" y="306" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595830453112" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597653677592">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603792914913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597653677592" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603792914913" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
