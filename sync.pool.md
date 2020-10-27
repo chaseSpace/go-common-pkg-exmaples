@@ -293,6 +293,8 @@ func poolCleanup() {
 - 检查P拥有的shared数组对象（需要上一把小锁，即每个P单独的锁），有则pop一个返回，否则继续 【分段锁思想】
 - 遍历其他的P，直至找一个对象，然后返回它（slow path）
 
-你还可以参考的中文文章： https://blog.csdn.net/yongjian_lian/article/details/42058893
+<br/>
+<br/>
 
-完。
+你还可以参考的中文文章
+- https://blog.csdn.net/yongjian_lian/article/details/42058893
