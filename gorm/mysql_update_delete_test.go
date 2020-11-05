@@ -49,6 +49,10 @@ func UpdateWantedFields(t *testing.T, db *gorm.DB) {
 	// WARNING when update with struct, GORM will only update those fields that with non blank value
 	// For below Update, nothing will be updated as "", 0, false are blank values of their types
 	db.Model(&user).Updates(User{Name: "", Age: sql.NullInt64{Int64: 21, Valid: true}})
+
+	/*
+		UpdateColumns(model)  可以读取主键作为where，但是也不能更新零值字段
+	*/
 	assert.True(t, user.Name == "hello", user.Age.Int64 == 21)
 }
 

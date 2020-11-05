@@ -634,7 +634,7 @@ func ScanTest(t *testing.T, db *gorm.DB) {
 	}
 
 	var result2 []Result
-	// Raw SQL
+	// Raw SQL, 注意：Raw后面必须要跟Scanxxx方法才会真正执行sql
 	db.Raw("SELECT u_name, age FROM admin_users WHERE u_name = ?", "x").Scan(&result2)
 	assert.Equal(t, result, result2)
 }

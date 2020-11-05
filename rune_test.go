@@ -9,7 +9,7 @@ import (
 )
 
 func TestRune(t *testing.T) {
-	// 这几个unicode形式的字符肉眼查看都是空格，但实际是不同形式的空格，这点自行查阅
+	// 这几个unicode字符肉眼查看都是空格，但实际是不同形式的空格，这点自行查阅
 	a := "\u0000\u0020\u3000\u00A0"                                  // len=4
 	fmt.Println(fmt.Sprintf("[%v]", a))                              // [    ]
 	fmt.Println(" " == "\u0020")                                     // true，常用的空格实际是 \u0020 这个unicode字符
