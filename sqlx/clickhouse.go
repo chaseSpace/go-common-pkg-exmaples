@@ -57,4 +57,16 @@ func Exec() {
 	fmt.Println(result.RowsAffected()) // not supported
 	fmt.Println(result.LastInsertId()) // not supported
 	// 不如直接使用gorm 反正都不支持RowsAffected
+	// 如果是gorm v1.20版本，连接ck的方法如下
+	//gormConf := gorm.Config{
+	//	NamingStrategy: schema.NamingStrategy{
+	//		SingularTable: true,
+	//	},
+	//}
+	//// gorm1.20版本也没有ck的dialector，用postgres代替, gorm提供的mysql驱动不行
+	// CkDB, err = gorm.Open(postgres.New(postgres.Config{
+	//	DriverName: "clickhouse",
+	//	DSN:        "tcp://192.168.1.168:9000?username=default&password=xxx&database=DDDBBBread_timeout=10&write_timeout=20",
+	//},
+	//), &gormConf)
 }
