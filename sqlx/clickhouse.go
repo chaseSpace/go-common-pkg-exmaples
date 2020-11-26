@@ -11,6 +11,10 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
+/*
+ck官方推荐使用sql或sqlx库来操作db，但经过测试，发现sqlx对ck的支持也是一般般，看下面的描述；
+所以如果你的项目里面已经用了某个orm库，比如gorm，可直接使用，不需要添加sql或sqlx
+*/
 var ckDB *sqlx.DB
 
 func initCK() {
@@ -48,6 +52,7 @@ func Select() {
 func Exec() {
 	// ck 的insert  update delete必须用这种事务模式，麻烦
 	tx, _ := ckDB.Begin()
+	// 这里数据必须使用?占位，不能直接写在sql里，有点恶心。。
 	result, err := tx.Exec(`insert into gift_data (event_date,gift_time,sender,receiver) values (?,?,?,?)`, "2020-10-11", "2020-10-11 00:00:00", 100, 100)
 	if err != nil {
 		log.Fatal("err: ", err)
