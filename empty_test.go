@@ -1,16 +1,25 @@
 package main
 
-import (
-	"fmt"
-	"net/url"
-	"testing"
-)
-
-func TestWs(t *testing.T) {
-	var durl = url.URL{
-		Scheme:   "http",
-		Host:     "1.1.1.1:22",
-		Path:     "/api/v1/sadasd",
-		RawQuery: fmt.Sprintf("fid=%s&filename=%s", "filename", fmt.Sprintf("新增统计数据.csv"))}
-	fmt.Println(durl.String())
-}
+//func BenchmarkSprintf(b *testing.B){
+//	num:=10
+//	b.ResetTimer()
+//	for i:=0;i<b.N;i++{
+//		fmt.Sprintf("%d",num)
+//	}
+//}
+//
+//func BenchmarkFormat(b *testing.B){
+//	num:=int64(10)
+//	b.ResetTimer()
+//	for i:=0;i<b.N;i++{
+//		strconv.FormatInt(num,10)
+//	}
+//}
+//
+//func BenchmarkItoa(b *testing.B){
+//	num:=10
+//	b.ResetTimer()
+//	for i:=0;i<b.N;i++{
+//		strconv.Itoa(num)
+//	}
+//}

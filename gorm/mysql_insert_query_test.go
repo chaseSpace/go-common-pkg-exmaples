@@ -174,7 +174,7 @@ func CommonQueryTest(t *testing.T, db *gorm.DB) {
 	u := new(User)
 	// Get one record, no specified order (只使用主键查询，其他字段不会使用)
 	// SELECT * FROM `admin_users`  WHERE `admin_users`.`deleted_at` IS NULL AND `admin_users`.`id` = 1 LIMIT 1
-	db.Order().Limit().Take(u, "u_name=?", "x")
+	db.Take(u, "u_name=?", "x")
 	log.Printf("111 %+v", u)
 
 	// Get last record, order by primary key
