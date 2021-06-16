@@ -23,3 +23,6 @@ package main
 //		strconv.Itoa(num)
 //	}
 //}
+
+func main() {
+}

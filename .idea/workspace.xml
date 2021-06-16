@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
-      <change afterPath="$PROJECT_DIR$/bytesconvstr_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm/concurr_update_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkinvalidutf8str.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/mysql_insert_query_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="$PROJECT_DIR$/../../../download/go1.12/go" />
+  <component name="GOROOT" path="C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,7 +61,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1ekdsPZKuQrfUY3o78uC7jCOhp7" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -83,7 +84,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/go_build/tags" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,7 +94,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -111,8 +112,44 @@
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\grpc" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestWs in github.com/chaseSpace/go-common-pkg-exmaples (1)">
-    <configuration name="TestWs in github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)">
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/empty_t2.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/empty_t.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -120,67 +157,23 @@
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestWs$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestWs in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestWs$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestXXX in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestXXX$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_HttpPprof in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^Test_HttpPprof$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_jwt in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^Test_jwt$" />
+      <pattern value="^TestX1$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.Test_jwt in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.Test_HttpPprof in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestWs in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestXXX in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <item itemvalue="Go Test.TestWs in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (1)" />
+      <item itemvalue="Go Test.TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestWs in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
-        <item itemvalue="Go Test.TestXXX in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-        <item itemvalue="Go Test.TestWs in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.Test_HttpPprof in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.Test_jwt in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (1)" />
+        <item itemvalue="Go Test.TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +200,6 @@
     <MESSAGE value="add dockerfile" />
     <MESSAGE value="x" />
     <MESSAGE value="update gorm" />
-    <MESSAGE value="X" />
     <MESSAGE value="add suite_test" />
     <MESSAGE value="Deprecated" />
     <MESSAGE value="add systemd practice" />
@@ -216,7 +208,8 @@
     <MESSAGE value="999" />
     <MESSAGE value="9" />
     <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
+    <MESSAGE value="X" />
+    <option name="LAST_COMMIT_MESSAGE" value="X" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -229,38 +222,54 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611543532176">
+    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619754035202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611543532176" />
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1615342837482">
+    <state x="669" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1619754035202" />
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples" timestamp="1616985544787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615342837482" />
-    <state width="1877" height="178" key="GridCell.Tab.0.center" timestamp="1615342837482">
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples/0.0.1920.1040@0.0.1920.1040" timestamp="1616985544786" />
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples_(1)" timestamp="1620990043820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615342837482" />
-    <state width="1877" height="178" key="GridCell.Tab.0.left" timestamp="1615342837482">
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples_(1)/0.0.1920.1040@0.0.1920.1040" timestamp="1620990043820" />
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples_(2)" timestamp="1623822289600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615342837482" />
-    <state width="1877" height="178" key="GridCell.Tab.0.right" timestamp="1615342837482">
+    <state x="656" y="144" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples_(2)/0.0.1920.1040@0.0.1920.1040" timestamp="1623822289600" />
+    <state x="740" y="260" key="FileChooserDialogImpl" timestamp="1623408688333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615342837482" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1611567634326">
+    <state x="740" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623408688333" />
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1623822606648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611567634326" />
-    <state x="-120" y="19" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1613802448594">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623822606648" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1623822606648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-120" y="19" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613802448594" />
-    <state x="661" y="223" width="598" height="594" key="find.popup" timestamp="1611543637082">
+    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623822606648" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1623822606648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="223" width="598" height="594" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611543637082" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623822606648" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1623822606648">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623822606648" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1623821927217">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623821927217" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615445472192">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615445472192" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1620793023402">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1620793023402" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

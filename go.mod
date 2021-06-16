@@ -5,7 +5,9 @@ go 1.12
 require (
 	github.com/360EntSecGroup-Skylar/excelize/v2 v2.3.1
 	github.com/ClickHouse/clickhouse-go v1.4.3
+	github.com/StackExchange/wmi v0.0.0-20210224194228-fe8f1750fd46 // indirect
 	github.com/fatih/color v1.9.0
+	github.com/go-ole/go-ole v1.2.5 // indirect
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-xorm/xorm v0.7.9
 	github.com/golang/protobuf v1.4.2
@@ -19,9 +21,10 @@ require (
 	github.com/onsi/ginkgo v1.7.0
 	github.com/onsi/gomega v1.4.3
 	github.com/robfig/cron/v3 v3.0.1
+	github.com/shirou/gopsutil v3.21.4+incompatible
 	github.com/stretchr/objx v0.3.0 // indirect
 	github.com/stretchr/testify v1.6.1
-	golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae // indirect
+	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	google.golang.org/genproto v0.0.0-20200709005830-7a2ca40e9dc3 // indirect
 	google.golang.org/grpc v1.30.0
 	google.golang.org/protobuf v1.25.0
