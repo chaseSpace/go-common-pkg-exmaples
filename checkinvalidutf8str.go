@@ -8,6 +8,7 @@ import (
 
 type A struct {
 	Name string
+	_X   string
 	C1   *C
 	C2   *C
 	C3   []*C
@@ -20,6 +21,7 @@ type C struct {
 func main() {
 	x := &A{
 		Name: "xxx",
+		_X:   string([]byte{0xFF}),
 		C1:   &C{Desc: "ccc1"},
 		C2:   &C{Desc: "ccc2"},
 		C3: []*C{
@@ -32,9 +34,13 @@ func main() {
 }
 
 // 使用反射找到一个对象中的包含非utf8字符的str字段以及内容
-// NOTE: 没有解析map类型
+// NOTE:  没有解析map类型
 func CheckObjInvalidUTF8Str(path string, obj interface{}) {
 	v := reflect.ValueOf(obj)
+	if !v.CanSet() {
+		// 不考虑非导出字段
+		return
+	}
 	if v.Kind() == reflect.Ptr {
 		v = v.Elem()
 	}
