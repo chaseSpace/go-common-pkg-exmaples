@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,11 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
-      <change afterPath="$PROJECT_DIR$/mysql_test/init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_test/test_idxquery_while_longtx_running/connA.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_test/test_idxquery_while_longtx_running/connB.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unsafe_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfile/mysql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_dockerfile/mysql/docker-compose-mysql80.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/docker-compose-mysql80.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +93,12 @@
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysql_test/test_idxquery_while_longtx_running" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_dockerfile/mysql" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -99,15 +108,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\go_dev\go-common-pkg-exmaples\_dockerfile\mysql" />
       <recent name="E:\go_dev\go-common-pkg-exmaples\mysql_test\test_idxquery_while_longtx_running" />
       <recent name="E:\go_dev\go-common-pkg-exmaples\mysql_test" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\go_build\tags" />
       <recent name="D:\develop\go\go-common-pkg-exmaples" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\grpc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\develop\go\go-common-pkg-exmaples\ignore" />
@@ -117,51 +126,51 @@
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/empty_t2.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/empty_t2.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/empty_t.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/empty_t.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
+      <framework value="gotest" />
       <pattern value="^TestX1$" />
       <method v="2" />
     </configuration>
@@ -174,9 +183,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (1)" />
         <item itemvalue="Go Test.TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
       </list>
@@ -216,7 +225,8 @@
     <MESSAGE value="up" />
     <MESSAGE value="X" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="mysql test" />
+    <option name="LAST_COMMIT_MESSAGE" value="mysql test" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

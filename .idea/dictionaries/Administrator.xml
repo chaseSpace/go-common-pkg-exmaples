@@ -13,6 +13,7 @@
       <w>syslink</w>
       <w>systemctl</w>
       <w>systemd</w>
+      <w>uintptr</w>
     </words>
   </dictionary>
 </component>

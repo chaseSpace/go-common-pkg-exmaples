@@ -7,14 +7,21 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:D:\develop\go\go-common-pkg-exmaples\gorm\sqlite.db</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="dockerDB" uuid="460e0b58-18ab-4dad-8957-5491fefa90dc">
+    <data-source source="LOCAL" name="docker-mysql80" uuid="460e0b58-18ab-4dad-8957-5491fefa90dc">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.31.11:3306/adminbg</jdbc-url>
+      <jdbc-url>jdbc:mysql://10.0.0.2:3306/mmysql</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="docker-mysql57" uuid="3e7ee8a9-cdf3-4c64-aaf1-0c027be98941">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://10.0.0.2:3357/mmysql</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>
