@@ -23,15 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="9">
-      <change afterPath="$PROJECT_DIR$/unsafe_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dockerfile/mysql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_dockerfile/mysql/docker-compose-mysql80.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_dockerfile/mysql/docker-compose-mysql80.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gomail.go" beforeDir="false" afterPath="$PROJECT_DIR$/gomail.go1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rune_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/rune_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unsafe2.go" beforeDir="false" afterPath="$PROJECT_DIR$/unsafe2_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unsafe_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/unsafe_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../programminglang/go" />
+  <component name="GOROOT" path="C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,52 +125,52 @@
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples">
+  <component name="RunManager" selected="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/empty_t2.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/empty_t2.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/empty_t.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/empty_t.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <framework value="gotest" />
-      <pattern value="^TestX1$" />
+      <pattern value="^TestUnsafe2$" />
       <method v="2" />
     </configuration>
     <list>
@@ -179,21 +178,20 @@
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (1)" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
-      <item itemvalue="Go Test.TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
+      <item itemvalue="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (1)" />
-        <item itemvalue="Go Test.TestX1 in github.com/chaseSpace/go-common-pkg-exmaples (2)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
@@ -237,6 +235,36 @@
       </map>
     </environment>
     <proxy>https://goproxy.cn,direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="752" y="450" key="#GOROOT" timestamp="1629374520200">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="450" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1629374520200" />
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1629438974779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629438974779" />
+    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1629438974778">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629438974778" />
+    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1629438974778">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629438974778" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1629438974779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629438974779" />
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1629374538551">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629374538551" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1629436876681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629436876681" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

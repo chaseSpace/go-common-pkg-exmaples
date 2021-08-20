@@ -37,6 +37,6 @@ func TestRune(t *testing.T) {
 	}
 	fmt.Printf("binary rune: %b actual-byte-len:%d \n", b2.Bytes(), len(b2.Bytes())) // [100000 0 0 0] actual-byte-len:4
 
-	// 单引号 就是 rune 类型的另一种写法， byte是uint8
+	// 单引号 就是 rune 类型的另一种写法， 而byte是uint8
 	fmt.Printf("%T %T %T\n", ' ', rune(' '), byte(' ')) // int32 int32 uint8
 }
