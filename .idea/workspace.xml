@@ -22,9 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="unsafe2">
-      <change afterPath="$PROJECT_DIR$/unicode_test.go" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="unicode_test.go">
+      <change afterPath="$PROJECT_DIR$/rpcx_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicode_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/unicode_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +125,7 @@
       <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestUnicode in github.com/chaseSpace/go-common-pkg-exmaples">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -179,9 +184,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.TestUnicode in github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
       </list>
@@ -222,7 +227,8 @@
     <MESSAGE value="1" />
     <MESSAGE value="mysql test" />
     <MESSAGE value="unsafe2" />
-    <option name="LAST_COMMIT_MESSAGE" value="unsafe2" />
+    <MESSAGE value="unicode_test.go" />
+    <option name="LAST_COMMIT_MESSAGE" value="unicode_test.go" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -239,26 +245,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="450" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1629374520200" />
-    <state width="1877" height="355" key="GridCell.Tab.0.bottom" timestamp="1629441727798">
+    <state x="656" y="143" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples" timestamp="1629878285088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629441727798" />
-    <state width="1877" height="355" key="GridCell.Tab.0.center" timestamp="1629441727798">
+    <state x="656" y="143" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples/0.0.1920.1040@0.0.1920.1040" timestamp="1629878285088" />
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1630579310170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629441727798" />
-    <state width="1877" height="355" key="GridCell.Tab.0.left" timestamp="1629441727797">
+    <state width="1877" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
+    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1630579310170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629441727797" />
-    <state width="1877" height="355" key="GridCell.Tab.0.right" timestamp="1629441727798">
+    <state width="1877" height="168" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
+    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1630579310170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="355" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629441727798" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1629439153165">
+    <state width="1877" height="168" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1630579310170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629439153165" />
+    <state width="1877" height="168" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1629441779287">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629441779287" />
     <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1629374538551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

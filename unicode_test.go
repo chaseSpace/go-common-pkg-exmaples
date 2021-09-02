@@ -7,7 +7,6 @@ import (
 )
 
 func TestUnicode(t *testing.T) {
-
 	a := '的'
 	unicodePoint := unicode.To(unicode.LowerCase, a) // unicode码点：30340
 	println("unicode integer:", unicodePoint)
