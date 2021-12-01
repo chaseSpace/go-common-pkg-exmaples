@@ -23,7 +23,6 @@ func TestWithSqlite(t *testing.T) {
 			log.Fatal(err)
 		}
 	}()
-
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 

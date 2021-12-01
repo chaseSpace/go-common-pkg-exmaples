@@ -1,18 +1,25 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+	"log"
+	"net"
 )
 
 func main() {
-	type S struct {
-		A int
+	_, err := net.Listen("tcp", "192.168.1.1:8080")
+	if err != nil {
+		log.Fatal(111, err)
 	}
-	s := S{128}
-	b, _ := json.Marshal(&s) // {"A":128}, 128占3个字节
-	println(len(b))          // 9bytes
+	_, err = net.ListenUDP("udp4", &net.UDPAddr{
+		IP:   net.IPv4(192, 168, 1, 1),
+		Port: 8080,
+		Zone: "",
+	})
+	if err != nil {
+		log.Fatal(222, err)
+	}
+}
 
-	println('\x80', len([]byte{'\x80'})) // 128 1   -- 80是十进制数128的十六进制表示
-	fmt.Print(s)
+type S struct {
+	X string
 }

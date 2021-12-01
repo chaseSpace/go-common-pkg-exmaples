@@ -23,13 +23,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="unicode_test.go">
-      <change afterPath="$PROJECT_DIR$/rpcx_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/channel_type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/context.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_check.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_ctrl_btn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_follow_rt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_limit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_mod.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_nav.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_visited_record.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/main_tab.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/community_cache/people_nearby.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/geohash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/account_ban.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_comment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_info.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_like.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/channel_type_dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/chat_room_admin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/coefficient_manage_dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_comment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_group.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_tag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_trend.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/home_follow_rt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/home_index_model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/main_tab.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/trend_event_log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/user_comment_ban.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/banner_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/cms/cms_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/cms/prohibit_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/coefficient_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/community_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/index_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/main_tab_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/push_dispatch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/register_ctrl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/statistics_nav_mod_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/switch_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websocket/simple/ws_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/empty.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.json" beforeDir="false" afterPath="$PROJECT_DIR$/empty.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicode_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/unicode_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm/sqlite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sqlite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/client/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/pb_test/item.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/pb_test/item.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/pb_test/req.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/pb_test/req.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/req.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/req.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/server/_go_generate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/_go_generate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocket/simple/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/simple/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +149,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_dockerfile/mysql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccc/community_cache" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -107,34 +159,25 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="go.sdk" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\develop\go\go-common-pkg-exmaples\ccc\community_cache" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\ccc" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples" />
       <recent name="E:\go_dev\go-common-pkg-exmaples\_dockerfile\mysql" />
       <recent name="E:\go_dev\go-common-pkg-exmaples\mysql_test\test_idxquery_while_longtx_running" />
-      <recent name="E:\go_dev\go-common-pkg-exmaples\mysql_test" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\go_build\tags" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\develop\go\go-common-pkg-exmaples\websocket\simple" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\community" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\ccc" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\ignore" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\shell_script\systemd_manage_process" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\grpc\server" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\testify\mock_test" />
-      <recent name="C:\Users\LEI\go\gitee\branch\go-common-pkg-exmaples\hot_reload" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples">
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/checkinvalidutf8str.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build server.go">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -144,51 +187,60 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
+      <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/grpc/client/main.go" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestUnicode in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/websocket/simple/server.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUnicode$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/gorm" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUnsafe2$" />
+      <pattern value="^TestSqlFunc$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/gorm" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestWithSqlite$" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
-      <item itemvalue="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestUnicode in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Build.go build server.go" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+        <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.TestUnicode in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.TestUnsafe2 in github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples (2)" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/grpc/client" />
+        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +280,8 @@
     <MESSAGE value="mysql test" />
     <MESSAGE value="unsafe2" />
     <MESSAGE value="unicode_test.go" />
-    <option name="LAST_COMMIT_MESSAGE" value="unicode_test.go" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -241,42 +294,66 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state x="752" y="450" key="#GOROOT" timestamp="1629374520200">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1630907955789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="752" y="450" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1629374520200" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1630907955789" />
     <state x="656" y="143" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples" timestamp="1629878285088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="143" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples/0.0.1920.1040@0.0.1920.1040" timestamp="1629878285088" />
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom" timestamp="1630579310170">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1638357365307">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="310" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365307" />
+    <state width="829" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1638357365306">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="310" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="829" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1638357365306">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="310" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885316" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="829" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1638357365306">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="310" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="829" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1636534962189">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1636534962189" />
+    <state x="2381" y="164" key="SettingsEditor" timestamp="1638356876185">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2381" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638356876185" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1630580514305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
-    <state width="1877" height="168" key="GridCell.Tab.0.center" timestamp="1630579310170">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1630580514305" />
+    <state x="2723" y="290" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1636535494780">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2723" y="290" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1636535494780" />
+    <state x="2674" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1636538400535">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2674" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1636538400535" />
+    <state x="661" y="223" width="598" height="594" key="find.popup" timestamp="1632827424783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="168" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
-    <state width="1877" height="168" key="GridCell.Tab.0.left" timestamp="1630579310170">
+    <state x="661" y="223" width="598" height="594" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632827424783" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1632834895062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="168" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
-    <state width="1877" height="168" key="GridCell.Tab.0.right" timestamp="1630579310170">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="168" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1630579310170" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1629441779287">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629441779287" />
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1629374538551">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="754" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629374538551" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1629441260841">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629441260841" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632834895062" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

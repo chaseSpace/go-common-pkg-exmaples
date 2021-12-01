@@ -16,7 +16,11 @@ import (
 
 var addr = flag.String("addr", "localhost:8080", "http service address")
 
-var upgrader = websocket.Upgrader{} // use default options
+var upgrader = websocket.Upgrader{
+	CheckOrigin: func(r *http.Request) bool {
+		return true
+	},
+} // use default options
 
 func echo(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
@@ -33,7 +37,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 		log.Printf("recv: %s", message)
-		err = c.WriteMessage(mt, message)
+		reply := string(message)
+		if reply == "-->ping" {
+			reply = "pong<--"
+		}
+		err = c.WriteMessage(mt, []byte(reply))
 		if err != nil {
 			log.Println("write:", err)
 			break

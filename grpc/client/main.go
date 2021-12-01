@@ -2,9 +2,11 @@ package main
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
+	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/keepalive"
@@ -21,6 +23,41 @@ var c *grpc.ClientConn
 var client pb_test.SearchSSSClient
 
 func init() {
+	items := []*pb_test.RichTextItem{
+		{
+			Type: pb_test.RichTextItem_RT_Font,
+			Item: &pb_test.RichTextItem_ItemFont{
+				&pb_test.Font{
+					Text:  "hi 你好啊",
+					Size:  12,
+					Color: "#FF5E5E",
+				},
+			},
+		},
+		{
+			Type: pb_test.RichTextItem_RT_Img,
+			Item: &pb_test.RichTextItem_ItemImg{
+				&pb_test.Img{
+					Url:        "https://miyaadmin-2.taomitao.com/upload/resources/21/B0296EF002871BA7FF4D15B67D86144A.png",
+					ScaleRatio: 100,
+				},
+			},
+		},
+		{
+			Type: pb_test.RichTextItem_RT_Font,
+			Item: &pb_test.RichTextItem_ItemFont{
+				&pb_test.Font{
+					Text:  "，收下这个红包吧~",
+					Size:  12,
+					Color: "#FF5E5E",
+				},
+			},
+		},
+	}
+	b, _ := proto.Marshal(&pb_test.RichTextObj{Items: items})
+
+	s := base64.StdEncoding.EncodeToString(b)
+	print(s)
 	fmt.Println("client...")
 	creds, err := credentials.NewClientTLSFromFile(key.Path("cert.crt"), "gxt.grpcsrv.auth")
 	clientOpt := grpc.WithTransportCredentials(creds)
@@ -47,6 +84,7 @@ func init() {
 }
 
 func call() {
+
 	log.Println(111, c.GetState().String())
 	// 不能通过ctx来传输kv
 	ctx, _ := context.WithTimeout(context.Background(), 50*time.Second)

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title> WS测试页 </title>
+
+</head>
+
+
+<body>
+<p>
+    <!--
+      <label for='textarea'></label>
+        <textarea id='textarea' style="width: 200px;height: 200px;resize:none;outline:none;padding: 10px;"></textarea>
+     -->
+<p id="status"> ws状态：未连接！<br></p>
+<form>
+    输入内容 <input type="text" id="input"> <input type="button" value="Send" id="SendBtn">
+    <br><br>
+
+</form>
+
+<div id="output"></div>
+
+<!-- utils -->
+<script>
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    };
+
+    function get_time() {
+        var t = new Date();
+        return t.format("yyyy-MM-dd hh:mm:ss ")
+    }
+</script>
+
+<!-- ws func-->
+<script>
+    var heartbeat = {
+        timeout: 30000,
+        last_recv_msg_time: 0,
+        interval_exec: null,
+        send_txt: {
+            ping: "-->ping",
+            pong: "pong<--"
+        },
+        clear: function () {
+            this.last_recv_msg_time = 0;
+            clearInterval(this.interval_exec)
+        },
+        start: function () {
+            let self = this;
+            self.clear();
+            self.interval_exec = setInterval(function () {
+                if (ws.readyState !== ws.OPEN) {
+                    console.log(get_time(), "state不对，不可以发心跳,state=", ws.readyState)
+                    return
+                }
+                let ts = parseInt(new Date().valueOf() / 1000);
+                if (this.last_recv_msg_time > 0 && ts - this.last_recv_msg_time > 30) {
+                    status.innerText = get_time() + "ws状态：心跳超时，尝试重连！"
+                    reconnect()
+                    return
+                }
+                ws.send(self.send_txt.ping)
+            }, 10000)
+        }
+    }
+    function create_ws(is_reconnect) {
+        try {
+            ws = new WebSocket("ws://localhost:8080/echo");
+            bind_ws_handler()
+            s = get_time() + "ws状态：第一步OK！"
+        } catch (e) {
+            s = get_time() + "ws状态：出错：" + e
+        }
+        if (is_reconnect) {
+            s = s + "（重连）"
+        }
+        status.innerText = s
+        // 0123
+        // console.log(ws.CONNECTING, ws.OPEN, ws.CLOSING, ws.CLOSED)
+    }
+
+    function reconnect() {
+        console.log(get_time(), "正在重连")
+        create_ws()
+    }
+
+    function bind_ws_handler() {
+        ws.onmessage = function (event) {
+            heartbeat.last_recv_msg_time = parseInt(new Date().valueOf() / 1000)
+            // 心跳不显示
+            if (event.data === heartbeat.send_txt.pong){
+                console.log("event 收到心跳")
+                return
+            }
+            append_msg("收到--" + event.data)
+        };
+
+        //连接建立后的事件监听
+        ws.onopen = function () {
+            s = get_time() + "ws状态：连接成功^_^！运行心跳~"
+            status.innerText = s
+            // bind();
+            heartbeat.start();
+        }
+
+        //连接关闭后的事件监听
+        ws.onclose = function () {
+            s = get_time() + "ws状态：连接被关闭o(╥﹏╥)o！"
+            status.innerText = s
+            heartbeat.clear()
+        };
+
+        //连接出现异常后的事件监听
+        ws.onerror = function () {
+            s = get_time() + "ws状态：连接出错！！！3s后尝试重连"
+            status.innerText = s
+            heartbeat.clear()
+            setTimeout(function () {
+                reconnect()
+            }, 3000)
+        };
+    }
+
+    window.onunload = function () {
+        if (ws != null) {
+            ws.close();
+        }
+    }
+</script>
+
+<!-- ws main-->
+<script>
+    var msg = "";
+    // let doc = document.getElementById('textarea');
+    // doc.value =
+    let output = document.getElementById("output");
+    let status = document.getElementById("status")
+
+    let ws = null;
+    if (window.WebSocket) {
+        create_ws()
+    } else {
+        alert("浏览器不支持WebSocket协议！")
+    }
+
+    $("#SendBtn").click(function () {
+        if (ws == null || ws.readyState !== ws.OPEN) {
+            statusTextDisplayOnce(get_time() + 'ws状态不对，不可以发信息！')
+            return
+        }
+        let input = $("#input").val();
+        if (input === "") {
+            alert("请输入内容！")
+            return;
+        }
+        ws.send(input)
+        append_msg("发送--" + input)
+    })
+
+    function statusTextDisplayOnce(txt) {
+        old = status.innerText
+        status.innerText = txt
+        setTimeout(function () {
+            status.innerText = old
+        }, 1000)
+    }
+
+    function append_msg(msg) {
+        const d = document.createElement("div");
+        d.innerHTML = get_time() + msg;
+        output.appendChild(d);
+    }
+</script>
+
+
+</body>
+</html>

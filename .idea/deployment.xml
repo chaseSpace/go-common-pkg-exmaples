@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData" serverName="local">
     <serverData>
-      <paths name="local">
+      <paths name="local (project level)">
         <serverdata>
           <mappings>
-            <mapping deploy="/root/go-common-pkg-exmaples" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

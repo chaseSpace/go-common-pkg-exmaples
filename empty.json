@@ -1,0 +1,46 @@
+{
+  "request_id": "1637139534173276164",
+  "audience": {
+    "alias": [
+      "200065048"
+    ]
+  },
+  "settings": {
+    "ttl": 3600000,
+    "strategy": {
+      "default": 1,
+      "ios": 4
+    }
+  },
+  "push_message": {
+    "notification": {
+      "title": "您收到一条新消息",
+      "body": "蜡黄的冰枫：简介",
+      "click_type": "intent",
+      "intent": "intent:#Intent;component=com.hs.test.myyw/com.miya.app.hall.hall.HallActivity;S.jump_url=miya%3A%2F%2Fm.haoshun.com%3Fdyaction%3Dconversation%26playerid%3D200404489%26playername%3D%E8%9C%A1%E9%BB%84%E7%9A%84%E5%86%B0%E6%9E%AB;end"
+    }
+  },
+  "push_channel": {
+    "ios": {
+      "aps": {
+        "alert": {
+          "title": "您收到一条新消息",
+          "body": "蜡黄的冰枫：简介"
+        },
+        "sound": "default",
+        "mutable-content": 1
+      },
+      "payload": "intent:#Intent;component=com.hs.test.myyw/com.miya.app.hall.hall.HallActivity;S.jump_url=miya%3A%2F%2Fm.haoshun.com%3Fdyaction%3Dconversation%26playerid%3D200404489%26playername%3D%E8%9C%A1%E9%BB%84%E7%9A%84%E5%86%B0%E6%9E%AB;end"
+    },
+    "android": {
+      "ups": {
+        "notification": {
+          "title": "您收到一条新消息",
+          "body": "蜡黄的冰枫：简介",
+          "click_type": "intent",
+          "intent": "intent:#Intent;component=com.hs.test.myyw/com.miya.app.hall.hall.HallActivity;S.jump_url=miya%3A%2F%2Fm.haoshun.com%3Fdyaction%3Dconversation%26playerid%3D200404489%26playername%3D%E8%9C%A1%E9%BB%84%E7%9A%84%E5%86%B0%E6%9E%AB;end"
+        }
+      }
+    }
+  }
+}

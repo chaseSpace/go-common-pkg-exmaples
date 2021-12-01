@@ -30,6 +30,43 @@ message Response {
     google.protobuf.Timestamp time = 4;
 }
 
+// 富文本协议
+message RichTextItem {
+    enum Type {
+        RT_None = 0;
+        RT_Font = 1;
+        RT_Img = 2;
+    }
+    Type type = 1;
+    oneof item {
+        Font item_font = 2;
+        Img item_img = 3;
+    }
+    // 对齐方式
+    enum AlignType {
+        AT_None = 0;
+        AT_TOP = 1;
+        AT_CENTER = 2;
+        AT_BOTTOM = 3;
+    }
+    AlignType align_type = 4;
+}
+message Font {
+    string text = 1;
+    int32 size = 2;
+    string color = 3;
+}
+
+message Img {
+    string  url = 1;
+    // 放缩比例，e.g.100（%），200%
+    int32 scale_ratio = 2;
+}
+
+message RichTextObj {
+    repeated RichTextItem items = 1;
+}
+
 message MockPanicReq {}
 
 message MockPanicRsp {}
