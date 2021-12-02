@@ -23,65 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="unicode_test.go">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/channel_type.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/context.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_check.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_ctrl_btn.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_follow_rt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_limit.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_mod.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_nav.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/home_visited_record.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/main_tab.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/community_cache/people_nearby.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/geohash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/account_ban.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_info.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/article_like.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/channel_type_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/chat_room_admin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/coefficient_manage_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_group.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_tag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/community_trend.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/home_follow_rt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/home_index_model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/main_tab.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/trend_event_log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccc/phome_dao/user_comment_ban.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/banner_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/cms/cms_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/cms/prohibit_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/coefficient_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/community_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/index_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/main_tab_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/push_dispatch.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/register_ctrl.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/statistics_nav_mod_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/switch_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocket/simple/ws_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty.json" beforeDir="false" afterPath="$PROJECT_DIR$/empty.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/sql_func_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sql_func_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm/sqlite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/gorm/sqlite_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/pb_test/item.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/pb_test/item.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/pb_test/req.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/pb_test/req.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/req.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/req.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc/server/_go_generate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/_go_generate.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocket/simple/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/simple/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocket/simple/ws_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/simple/ws_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +225,8 @@
     <MESSAGE value="unsafe2" />
     <MESSAGE value="unicode_test.go" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="ws html" />
+    <option name="LAST_COMMIT_MESSAGE" value="ws html" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -302,29 +247,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="143" key="#go_build_github.com/chaseSpace/go-common-pkg-exmaples/0.0.1920.1040@0.0.1920.1040" timestamp="1629878285088" />
-    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1638357365307">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1638415313262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="310" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
-    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365307" />
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638415313262" />
     <state width="829" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
-    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1638357365306">
+    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1638415313262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="310" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
-    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638415313262" />
     <state width="829" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
-    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1638357365306">
+    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1638415313262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="310" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885316" />
-    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638415313262" />
     <state width="829" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
-    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1638357365306">
+    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1638415313262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="310" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638165885317" />
-    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357365306" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638415313262" />
     <state width="829" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1633659823021" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1636534962189">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -334,9 +279,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638356876185" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1630580514305">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="252" key="Vcs.Push.Dialog.v2" timestamp="1638357956389">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2472" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1638357956389" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1630580514305" />
     <state x="2723" y="290" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1636535494780">
       <screen x="1920" y="0" width="1920" height="1040" />

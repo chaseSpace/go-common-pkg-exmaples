@@ -26,6 +26,11 @@
 
 <div id="output"></div>
 
+<script>
+    var output = document.getElementById("output");
+    var status = document.getElementById("status");
+</script>
+
 <!-- utils -->
 <script>
     Date.prototype.format = function (fmt) {
@@ -87,7 +92,9 @@
             }, 10000)
         }
     }
+
     function create_ws(is_reconnect) {
+        let s = "";
         try {
             ws = new WebSocket("ws://localhost:8080/echo");
             bind_ws_handler()
@@ -104,15 +111,15 @@
     }
 
     function reconnect() {
-        console.log(get_time(), "正在重连")
-        create_ws()
+        status.innerText = get_time() + "ws状态：正在重连..."
+        create_ws(true)
     }
 
     function bind_ws_handler() {
         ws.onmessage = function (event) {
             heartbeat.last_recv_msg_time = parseInt(new Date().valueOf() / 1000)
             // 心跳不显示
-            if (event.data === heartbeat.send_txt.pong){
+            if (event.data === heartbeat.send_txt.pong) {
                 console.log("event 收到心跳")
                 return
             }
@@ -121,28 +128,38 @@
 
         //连接建立后的事件监听
         ws.onopen = function () {
-            s = get_time() + "ws状态：连接成功^_^！运行心跳~"
-            status.innerText = s
+            status.innerText = get_time() + "ws状态：连接成功^_^！运行心跳~"
             // bind();
             heartbeat.start();
         }
 
-        //连接关闭后的事件监听
+        //连接关闭后的事件监听(注释，因为没有连上server会先后触发 onerror，onclose事件)
         ws.onclose = function () {
-            s = get_time() + "ws状态：连接被关闭o(╥﹏╥)o！"
-            status.innerText = s
             heartbeat.clear()
+
+            let t = 3;
+            let countdown = setInterval(function () {
+                status.innerText = get_time() + "ws状态：连接被关闭o(╥﹏╥)o！," + t + "s后尝试重连"
+                t --;
+            }, 1000)
+            setTimeout(function () {
+                clearInterval(countdown)
+                reconnect()
+            }, 4000)
         };
 
         //连接出现异常后的事件监听
-        ws.onerror = function () {
-            s = get_time() + "ws状态：连接出错！！！3s后尝试重连"
-            status.innerText = s
-            heartbeat.clear()
-            setTimeout(function () {
-                reconnect()
-            }, 3000)
-        };
+        ws.onerror = function (event) {
+            console.log("event onerror", msg)
+            status.innerText = get_time() + "ws状态：连接报错~"
+
+            // arglen = arguments.length;
+            // var errorMsg = "参数个数：" + arglen + "个";
+            // for (var i = 0; i < arglen; i++) {
+            //     errorMsg += "\n参数" + (i + 1) + "：" + arguments[i];
+            // }
+            // console.log(errorMsg);
+        }
     }
 
     window.onunload = function () {
@@ -157,8 +174,6 @@
     var msg = "";
     // let doc = document.getElementById('textarea');
     // doc.value =
-    let output = document.getElementById("output");
-    let status = document.getElementById("status")
 
     let ws = null;
     if (window.WebSocket) {

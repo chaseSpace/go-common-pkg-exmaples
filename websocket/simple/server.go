@@ -40,7 +40,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 		reply := string(message)
 		if reply == "-->ping" {
 			reply = "pong<--"
+		} else {
+			reply = "server reply:" + reply
 		}
+		log.Printf("reply: %s", reply)
+
 		err = c.WriteMessage(mt, []byte(reply))
 		if err != nil {
 			log.Println("write:", err)
