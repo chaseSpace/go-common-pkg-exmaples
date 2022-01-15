@@ -1,0 +1,10 @@
+-	wx付款到零钱
+	-	使用微信支付APIv3：https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_0.shtml
+	-	https://github.com/wechatpay-apiv3/wechatpay-go
+	-	对wx接口的调用需要使用CA证书，resp解析也需要使用CA证书验签，还使用另一个AES秘钥（在商户后台设置）解密回调的敏感信息
+		-	wx会在证书过期前5天开始逐步对新证书放量，所以商户系统需要同时支持多个证书（上述goSDK已经帮助实现定时更新证书）
+	-	一共有两对公私钥、一个AES秘钥（图解和获取方式 https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_0.shtml）
+		-	商户后台下载商户API证书得到商户公私钥（证书含商户号、公司名称、公钥信息）
+		-	WX平台API下载证书得到WX公私钥（含微信支付平台序列号、公钥信息；需自动定时更新）
+			-	通过req | rsp header中的 Wechatpay-Serial字段知道本次请求所使用的是新/旧证书，然后使用对应证书公钥加解密数据
+		-	商户后台设置AES秘钥

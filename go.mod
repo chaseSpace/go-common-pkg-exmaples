@@ -34,6 +34,7 @@ require (
 	github.com/json-iterator/go v1.1.11 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/klauspost/reedsolomon v1.9.13 // indirect
+	github.com/kr/pty v1.1.3 // indirect
 	github.com/mattn/go-isatty v0.0.13 // indirect
 	github.com/miekg/dns v1.1.43 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
@@ -49,6 +50,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/tjfoc/gmsm v1.4.1 // indirect
 	github.com/valyala/fastrand v1.0.0 // indirect
+	github.com/wechatpay-apiv3/wechatpay-go v0.2.9 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 // indirect
 	golang.org/x/mod v0.5.0 // indirect
@@ -60,5 +62,6 @@ require (
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
 	gopkg.in/jose.v1 v1.0.0-20161127122323-a941c3995164
+	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
 	xorm.io/core v0.7.3
 )
