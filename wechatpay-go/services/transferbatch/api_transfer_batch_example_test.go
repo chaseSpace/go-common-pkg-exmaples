@@ -51,7 +51,7 @@ func ExampleTransferBatchApiService_GetTransferBatchByNo() {
 		log.Printf("call GetTransferBatchByNo err:%s", err)
 	} else {
 		// 处理返回结果
-		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp)
+		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp.TransferDetailList)
 	}
 }
 

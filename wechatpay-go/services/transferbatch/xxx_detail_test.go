@@ -54,7 +54,7 @@ func Test_GetTransferDetailByOutNo(t *testing.T) {
 		log.Printf("call GetTransferDetailByNo err:%s", err)
 	} else {
 		// 处理返回结果
-		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp)
+		log.Printf("status=%d resp=%s", result.Response.StatusCode, resp.FailReason)
 	}
 }
 
