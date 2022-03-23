@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"testing"
 	"unicode/utf8"
 )
 
@@ -18,7 +19,7 @@ type C struct {
 	Desc string
 }
 
-func main() {
+func Test_invalidutf8(t *testing.T) {
 	x := &A{
 		Name: "xxx",
 		_X:   string([]byte{0xFF}),

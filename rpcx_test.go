@@ -6,6 +6,7 @@ import (
 	"encoding/gob"
 	"flag"
 	"log"
+	"testing"
 
 	example "github.com/rpcxio/rpcx-examples"
 	"github.com/rpcxio/rpcx-examples/codec/iterator/codec"
@@ -18,7 +19,7 @@ var (
 	addr = flag.String("addr", "localhost:8972", "server address")
 )
 
-func main() {
+func Test_rpcx(t *testing.T) {
 	flag.Parse()
 
 	// register customized codec
