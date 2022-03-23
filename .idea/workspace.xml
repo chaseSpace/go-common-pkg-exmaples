@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="unicode_test.go">
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="io_test.go">
       <change afterPath="$PROJECT_DIR$/io_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
@@ -267,7 +267,8 @@
     <MESSAGE value="ws html" />
     <MESSAGE value="ws html 2" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="io_test.go" />
+    <option name="LAST_COMMIT_MESSAGE" value="io_test.go" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
