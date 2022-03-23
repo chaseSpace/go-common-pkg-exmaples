@@ -1,26 +1,30 @@
 version: "3.3"
 services:
-  test-mysql-8.0:
-    image: mysql/mysql-server:8.0
-    container_name: test-mysql-8.0
-#    build:
-#      context: /path/to/ctx
-#      dockerfile: /xxx.Dockerfile
+  test-mysql-8.0.28:
+    image: mysql/mysql-server:8.0.28
+    container_name: test-mysql-8.0.28
+    #    build:
+    #      context: /path/to/ctx
+    #      dockerfile: /xxx.Dockerfile
     ports:
-        - "3306:3306"  # http (host-p:container-p)
+      - "3306:3306"  # http (host-p:container-p)
+#    build:
+#      dockerfile: Dockerfile.test  # 可以指定dockerfile
     environment:
       TIME_ZONE: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: "123"  # set root password, it will be ignored if db exists
-      MYSQL_DATABASE: "mmysql"  # create a db if not exist
-      MYSQL_USER: "muser"  # create a user
-      MYSQL_PASSWORD: "mpass" # set password for $MYSQL_USER
+#      TZ=${TZ:-Asia/ShangHai}  # 另一种可用的时区设置
+      MYSQL_ROOT_PASSWORD: "houlangfeilang"  # set root password, it will be ignored if db exists
+      #      MYSQL_DATABASE: "mmysql"  # create a db if not exist
+      #      MYSQL_USER: "muser"  # create a user
+      #      MYSQL_PASSWORD: "mpass*&()" # set password for $MYSQL_USER
       # NOTE: $MYSQL_USER will be bind with $MYSQL_DATABASE, this means $MYSQL_USER only can access $MYSQL_DATABASE by default.
     privileged: true
     volumes:
       - "/etc/localtime:/etc/localtime"
-      - "/mysql_data_dir:/var/lib/mysql:rw"  # data dir，也可以在conf中指定
-      - "/root/docker-svc/mysql80:/etc/mysql/conf.d"  # config-file.cnf存在于宿主机对应目录下，文件名固定
-      - "/root/docker-svc/mysql80/slow-query.log:/server/data/mysql-slow.log:rw" # slow query log
+      - "/root/docker_mysql80/log:/var/log/mysql:rw"
+      - "/root/docker_mysql80/data:/var/lib/mysql:rw"  # data dir，也可以在conf中指定
+      - "/root/docker_mysql80/conf.d/my.cnf:/etc/my.cnf"  # config-file.cnf存在于宿主机对应目录下，文件名固定
+#      - "/root/docker_mysql80/slow-query.log:/server/data/mysql-slow.log:rw" # slow query log
     networks:
       - my-bridge
     restart: on-failure
@@ -29,4 +33,3 @@ networks:
   my-bridge:
     driver: bridge
     attachable: true # 可以被独立容器添加
-

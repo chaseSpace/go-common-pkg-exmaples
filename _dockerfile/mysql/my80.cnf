@@ -7,7 +7,6 @@ socket          = /tmp/mysql.sock
 binlog_cache_size = 128K
 thread_stack = 256K
 join_buffer_size = 2048K
-query_cache_type = 1
 max_heap_table_size = 512M
 port            = 3306
 socket          = /tmp/mysql.sock
@@ -25,9 +24,7 @@ read_buffer_size = 1024K
 read_rnd_buffer_size = 768K
 myisam_sort_buffer_size = 16M
 thread_cache_size = 128
-query_cache_size = 192M
 tmp_table_size = 512M
-sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 
 explicit_defaults_for_timestamp = true
 #skip-name-resolve
@@ -39,17 +36,23 @@ log-bin=mysql-bin
 binlog_format=mixed
 server-id = 1
 expire_logs_days = 10
+log_error=/var/log/mysql/err.log
 slow_query_log=1
-slow-query-log-file=/server/data/mysql-slow.log
-long_query_time=3
+slow_query_log_file=/var/log/mysql/slow_query.log
+# >=1.5s
+long_query_time=1.5
 #log_queries_not_using_indexes=on
 early-plugin-load = ""
 
-
-innodb_data_home_dir = /www/server/data
+# 不用设置，默认位于datadir
+# innodb_data_home_dir
 innodb_data_file_path = ibdata1:10M:autoextend
-innodb_log_group_home_dir = /www/server/data
-innodb_buffer_pool_size = 512M
+# 不用设置，默认位于datadir
+# innodb_log_group_home_dir
+
+# 设置为主机内存的60%，越高mysql性能越好
+innodb_buffer_pool_size = 1G
+
 innodb_log_file_size = 128M
 innodb_log_buffer_size = 32M
 innodb_flush_log_at_trx_commit = 1
