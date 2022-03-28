@@ -7,7 +7,7 @@
   </component>
   <component name="Go" enabled="true">
     <buildTags>
-      <option name="os" value="windows" />
+      <option name="os" value="freebsd" />
     </buildTags>
   </component>
   <component name="NewModuleRootManager">

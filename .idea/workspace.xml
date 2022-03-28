@@ -23,14 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="io_test.go">
-      <change afterPath="$PROJECT_DIR$/io_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/kqueuemod/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/socketmod/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkinvalidutf8str.go" beforeDir="false" afterPath="$PROJECT_DIR$/checkinvalidutf8str_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpcx_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpcx_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,11 +96,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="configurable..is.expanded" value="false" />
-    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable..is.expanded" value="true" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
-    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
-    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.format.on.save.advertiser.fired" value="true" />
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
@@ -119,7 +115,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -137,7 +133,7 @@
       <recent name="D:\develop\go\go-common-pkg-exmaples\ignore" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -156,15 +152,13 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <framework value="gotest" />
-      <pattern value="^TestSqlFunc$" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -212,14 +206,15 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestSqlFunc in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
       <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
       <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
       </list>
     </recent_temporary>
   </component>
