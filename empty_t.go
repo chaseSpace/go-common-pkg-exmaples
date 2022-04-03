@@ -1,11 +1,11 @@
 package main
 
-import "net/http"
+import (
+	"bytes"
+)
 
 func main() {
-	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-		writer.WriteHeader(202)
-		writer.Write([]byte(`xxx`))
-	})
-	http.ListenAndServe(":1111", nil)
+	b := bytes.Buffer{}
+	b.WriteString("x111111111111111")
+	println(b.Len())
 }

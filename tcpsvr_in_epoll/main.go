@@ -26,6 +26,7 @@ func main() {
 	log.Println("Server started. Waiting for incoming connections. ^C to exit.")
 	eventLoop.Handle(func(s *socketmod.Socket) {
 		reader := bufio.NewReader(s)
+		log.Println("eventLoop.Handle start ======")
 		// 下面把所有收到的数据返回去，模拟的HTTP response
 		b := bytes.Buffer{}
 		for {
@@ -41,7 +42,7 @@ func main() {
 				log.Println("Handle data EOF")
 				break
 			}
-			if err == syscall.EINTR { // 可忽略的错误
+			if err == syscall.EINTR || err == syscall.EBADF { // 可忽略的错误
 				continue
 			}
 			// 其他无法处理的错误

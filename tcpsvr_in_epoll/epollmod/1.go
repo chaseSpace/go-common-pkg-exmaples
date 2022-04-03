@@ -89,7 +89,7 @@ func (e *EventLoop) Handle(handler Handler) {
 					log.Println("eventLoop Accept conn err:", err)
 					continue
 				}
-				_ = syscall.SetNonblock(newSockFd, true)
+				//_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
 					Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）和ERR事件
 					Fd:     int32(newSockFd),
@@ -108,18 +108,29 @@ func (e *EventLoop) Handle(handler Handler) {
 			} else if event.Events&syscall.EPOLLIN != 0 {
 				// data available -> forward to handler
 				// 某个客户端连接有数据进来了
-				log.Println("event: new data")
+				log.Printf("event: new data fd:%d\n", event.Fd)
 				go handler(&socketmod.Socket{
 					Fd: eventFd,
 				})
+			} else if event.Events&syscall.EPOLLOUT != 0 {
+				// data available -> forward to handler
+				// 某个客户端连接有数据进来了
+				log.Println("event: write data ***")
+				tmpSock := socketmod.Socket{Fd: eventFd}
+				tmpSock.Write([]byte(`<html>
+								  <head>
+									<title>Epoll Response</title>
+								  </head>
+								  <body>%s</body>
+								</html>`))
+				event.Events = syscall.EPOLLIN
+				syscall.EpollCtl(
+					e.epollFd,
+					syscall.EPOLL_CTL_MOD,
+					int(event.Fd),
+					&event,
+				)
 			}
-			//else if event.Events&syscall.EPOLLOUT != 0 {
-			//	// data available -> forward to handler
-			//	// 某个客户端连接有数据进来了
-			//	log.Println("event: write data ***")
-			//	tmpSock := socketmod.Socket{Fd: eventFd}
-			//	tmpSock.Write(event.Pad)
-			//}
 		}
 	}
 }
