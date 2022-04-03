@@ -124,13 +124,21 @@ func (e *EventLoop) Handle(handler Handler) {
 			} else if event.Events&syscall.EPOLLOUT != 0 {
 				log.Println("event: write data done")
 				tmpSock := socketmod.Socket{Fd: eventFd}
-				tmpSock.Close()
-				syscall.EpollCtl(
+				err := tmpSock.Close()
+				if err != nil {
+					log.Println("event: socket close err", err)
+					return
+				}
+				err = syscall.EpollCtl(
 					e.epollFd,
 					syscall.EPOLL_CTL_DEL,
 					int(event.Fd),
 					&event,
 				)
+				if err != nil {
+					log.Println("event: del fd err", err)
+					return
+				}
 			}
 		}
 	}
