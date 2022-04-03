@@ -22,14 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="io_test.go">
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/kqueuemod/1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/socketmod/1.go" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="kqueue">
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/epollmod/1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/socketmod/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-common-pkg-exmaples.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_kqueue/kqueuemod/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/kqueuemod/1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,7 @@
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tcpsvr_in_epoll" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,15 +115,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tcpsvr_in_epoll" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\ccc\community_cache" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\ccc" />
       <recent name="D:\develop\go\go-common-pkg-exmaples" />
       <recent name="E:\go_dev\go-common-pkg-exmaples\_dockerfile\mysql" />
-      <recent name="E:\go_dev\go-common-pkg-exmaples\mysql_test\test_idxquery_while_longtx_running" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\develop\go\go-common-pkg-exmaples\websocket\simple" />
@@ -133,7 +134,7 @@
       <recent name="D:\develop\go\go-common-pkg-exmaples\ignore" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -150,6 +151,15 @@
       <filePath value="$PROJECT_DIR$/empty_t.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -159,17 +169,6 @@
       <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/gorm" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <framework value="gotest" />
-      <pattern value="^TestWithSqlite$" />
       <method v="2" />
     </configuration>
     <configuration name="Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -207,11 +206,12 @@
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
-      <item itemvalue="Go Test.TestWithSqlite in github.com/chaseSpace/go-common-pkg-exmaples/gorm" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
       <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
@@ -263,7 +263,8 @@
     <MESSAGE value="ws html 2" />
     <MESSAGE value="2" />
     <MESSAGE value="io_test.go" />
-    <option name="LAST_COMMIT_MESSAGE" value="io_test.go" />
+    <MESSAGE value="kqueue" />
+    <option name="LAST_COMMIT_MESSAGE" value="kqueue" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

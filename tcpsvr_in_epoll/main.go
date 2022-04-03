@@ -1,31 +1,24 @@
-//go:build freebsd
-// +build freebsd
+//go:build linux
+// +build linux
 
 package main
 
 import (
 	"bufio"
-	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue/kqueuemod"
-	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue/socketmod"
+	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/epollmod"
+	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/socketmod"
 	"log"
 	"os"
 	"strings"
 )
 
 func main() {
-	servSocketObj, err := socketmod.Listen("127.0.0.1", 8080)
-	if err != nil {
-		log.Println("Failed to create Socket:", err)
-		os.Exit(1)
-	}
-	defer servSocketObj.Close()
-
-	eventLoop, err := kqueuemod.NewEventLoop(servSocketObj)
+	eventLoop, err := epollmod.NewEventLoop("127.0.0.1", 8080)
 	if err != nil {
 		log.Println("Failed to create event loop:", err)
 		os.Exit(1)
 	}
-
+	defer eventLoop.Close()
 	log.Println("Server started. Waiting for incoming connections. ^C to exit.")
 	eventLoop.Handle(func(s *socketmod.Socket) {
 		reader := bufio.NewReader(s)
