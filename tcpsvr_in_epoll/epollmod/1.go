@@ -42,7 +42,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	}
 	// 构造一个event对象 传递给epollFd实例，表示我要订阅这个fd上的某些事件
 	changeEvent := syscall.EpollEvent{
-		Events: syscall.EPOLLIN | EPOLLET, // 订阅 IN（可读）和ERR事件
+		Events: syscall.EPOLLIN, // 订阅 IN（可读）和ERR事件
 		Fd:     int32(sock.Fd),
 		Pad:    0,
 	}
@@ -93,7 +93,7 @@ func (e *EventLoop) Handle(handler Handler) {
 				}
 				//_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
-					Events: syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT, // 订阅 IN（可读）和ERR事件
+					Events: syscall.EPOLLIN, // 订阅 IN（可读）和ERR事件
 					Fd:     int32(newSockFd),
 					Pad:    0,
 				}
@@ -114,7 +114,7 @@ func (e *EventLoop) Handle(handler Handler) {
 				handler(&socketmod.Socket{ // 如果这里是异步，那必须设置 ET（边缘触发）模式：真的有数据进入socket时触发事件，而不是在缓冲区未读完时重复触发
 					Fd: eventFd,
 				})
-				event.Events = syscall.EPOLLOUT | EPOLLET
+				event.Events = syscall.EPOLLOUT
 				syscall.EpollCtl(
 					e.epollFd,
 					syscall.EPOLL_CTL_MOD,
