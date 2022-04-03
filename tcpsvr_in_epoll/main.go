@@ -12,6 +12,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"syscall"
 	"time"
 )
 
@@ -26,16 +27,32 @@ func main() {
 	eventLoop.Handle(func(s *socketmod.Socket) {
 		reader := bufio.NewReader(s)
 		// 下面把所有收到的数据返回去，模拟的HTTP response
-		b := bytes.NewBufferString("")
+		b := bytes.Buffer{}
 		for {
 			//b, err := reader.ReadByte()
 			//log.Println("incoming data...", b)
 			line, err := reader.ReadString('\n')
-			if err != nil || strings.TrimSpace(line) == "" {
+			if err == nil {
+				b.WriteString(line)
+				log.Println("Handle incoming data...", strings.TrimRight(line, "\n"))
+				continue
+			}
+			if err == syscall.EAGAIN { // 当前缓冲区已无数据可读
+				log.Println("Handle data EOF")
 				break
 			}
-			b.WriteString(line)
-			log.Println("incoming data...", strings.TrimRight(line, "\n"))
+			if err == syscall.EINTR { // 可忽略的错误
+				continue
+			}
+			// 其他无法处理的错误
+			_ = s.Close()
+			log.Println("Handle other err:", err)
+			return
+		}
+		if b.Len() == 0 {
+			// 对方已关闭conn
+			log.Println("Handle b.Len() == 0, close socket")
+			s.Close()
 		}
 		body := fmt.Sprintf(`<html>
 								  <head>

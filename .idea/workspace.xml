@@ -22,13 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="epoll">
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/readme.md" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/epollmod/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/epollmod/1.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/socketmod/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/socketmod/1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_kqueue/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_kqueue/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,11 +256,11 @@
     <MESSAGE value="unicode_test.go" />
     <MESSAGE value="ws html" />
     <MESSAGE value="ws html 2" />
-    <MESSAGE value="2" />
     <MESSAGE value="io_test.go" />
     <MESSAGE value="kqueue" />
     <MESSAGE value="epoll" />
-    <option name="LAST_COMMIT_MESSAGE" value="epoll" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
