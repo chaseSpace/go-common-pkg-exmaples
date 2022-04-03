@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/epollmod"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/socketmod"
+	"io"
 	"log"
 	"os"
 	"strings"
@@ -44,6 +45,9 @@ func main() {
 			}
 			if err == syscall.EINTR || err == syscall.EBADF { // 可忽略的错误
 				continue
+			}
+			if err == io.ErrNoProgress { // 读完了
+				break
 			}
 			// 其他无法处理的错误
 			_ = s.Close()
