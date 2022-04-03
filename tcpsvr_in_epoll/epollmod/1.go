@@ -119,12 +119,16 @@ func (e *EventLoop) Handle(handler Handler) {
 				// 某个客户端连接有数据进来了
 				log.Println("event: write data ***")
 				tmpSock := socketmod.Socket{Fd: eventFd}
-				tmpSock.Write([]byte(`<html>
-								  <head>
-									<title>Epoll Response</title>
-								  </head>
-								  <body>%s</body>
-								</html>`))
+				_, err := tmpSock.Write([]byte(`<html>
+												  <head>
+													<title>Epoll Response</title>
+												  </head>
+												  <body>%s</body>
+												</html>`))
+				if err != nil {
+					log.Println("write err", err)
+					return
+				}
 				event.Events = syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT
 				syscall.EpollCtl(
 					e.epollFd,
