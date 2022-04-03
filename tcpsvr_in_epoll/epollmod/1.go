@@ -32,15 +32,15 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 		}
 	}()
 	// 创建了一个新的内核事件队列，待会儿用来订阅新socket连接的事件
-	// size用来告诉内核这个epoll实例监听的fd数目一共有多大，但从linux内核2.6.8版本开始已弃用此参数
-	size := 111
+	// size用来告诉内核这个epoll实例同时监听的最大fd数目，但从linux内核2.6.8版本开始已弃用此参数，但必须大于0
+	size := 1
 	epollFd, err := syscall.EpollCreate(size)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create epoll file descriptor (%v)", err)
 	}
 	// 构造一个event对象 传递给epollFd实例，表示我要订阅这个fd上的某些事件
 	changeEvent := syscall.EpollEvent{
-		Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）和ERR事件
+		Events: syscall.EPOLLIN | syscall.EPOLLERR | syscall.EPOLLOUT, // 订阅 IN（可读）和ERR事件
 		Fd:     int32(sock.Fd),
 		Pad:    0,
 	}
@@ -55,7 +55,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	}, nil
 }
 
-// Handler 其实现一般是开启新线/协程处理后续逻辑，才不会阻塞主线程epoll实例，最大化性能；这里仅做演示所以没开
+// Handler 其实现一般是开启新线/协程处理后续逻辑，才不会阻塞主线程epoll实例，最大化性能
 // 另外，必须要控制最大并发线程数，避免耗尽内存，或在GC语言中造成过高延迟
 type Handler func(*socketmod.Socket)
 
@@ -66,7 +66,7 @@ func (e *EventLoop) Handle(handler Handler) {
 		numNewEvents, err := syscall.EpollWait(
 			e.epollFd, // epoll实例FD
 			newEvents, // 待处理的事件数组结构，若有事件会填充到数组
-			10*1000,   // 10s 表示在没有检测到事件发生时最多等待的时间
+			-1,        // 10s 表示在没有检测到事件发生时最多等待的时间
 		)
 		if err != nil {
 			continue
@@ -74,21 +74,22 @@ func (e *EventLoop) Handle(handler Handler) {
 		log.Printf("eventLoop new %d events ...\n", numNewEvents)
 
 		for i := 0; i < numNewEvents; i++ {
-			currentEvent := newEvents[i]
-			eventFileDescriptor := int(currentEvent.Fd)
+			event := newEvents[i]
+			eventFd := int(event.Fd)
 			// 处理 客户端关闭连接 事件
-			if currentEvent.Events&syscall.EPOLLERR != 0 {
+			if event.Events&syscall.EPOLLERR != 0 {
 				// client closing connection
-				syscall.Close(eventFileDescriptor)
+				syscall.Close(eventFd)
 				log.Println("event: close")
-			} else if eventFileDescriptor == e.sock.Fd {
+			} else if eventFd == e.sock.Fd {
 				// new incoming connection 新的客户端连接请求
 				log.Println("event: new conn")
-				newSockFd, _, err := syscall.Accept(eventFileDescriptor)
+				newSockFd, _, err := syscall.Accept(eventFd)
 				if err != nil {
 					log.Println("eventLoop Accept conn err:", err)
 					continue
 				}
+				_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
 					Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）和ERR事件
 					Fd:     int32(newSockFd),
@@ -104,14 +105,21 @@ func (e *EventLoop) Handle(handler Handler) {
 					log.Println("eventLoop register new conn err:", err)
 					continue
 				}
-			} else if currentEvent.Events&syscall.EPOLLIN != 0 {
+			} else if event.Events&syscall.EPOLLIN != 0 {
 				// data available -> forward to handler
 				// 某个客户端连接有数据进来了
 				log.Println("event: new data")
-				handler(&socketmod.Socket{
-					Fd: eventFileDescriptor,
+				go handler(&socketmod.Socket{
+					Fd: eventFd,
 				})
 			}
+			//else if event.Events&syscall.EPOLLOUT != 0 {
+			//	// data available -> forward to handler
+			//	// 某个客户端连接有数据进来了
+			//	log.Println("event: write data ***")
+			//	tmpSock := socketmod.Socket{Fd: eventFd}
+			//	tmpSock.Write(event.Pad)
+			//}
 		}
 	}
 }

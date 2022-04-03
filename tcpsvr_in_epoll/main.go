@@ -5,11 +5,14 @@ package main
 
 import (
 	"bufio"
+	"bytes"
+	"fmt"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/epollmod"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/socketmod"
 	"log"
 	"os"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -22,6 +25,8 @@ func main() {
 	log.Println("Server started. Waiting for incoming connections. ^C to exit.")
 	eventLoop.Handle(func(s *socketmod.Socket) {
 		reader := bufio.NewReader(s)
+		// 下面把所有收到的数据返回去，模拟的HTTP response
+		b := bytes.NewBufferString("")
 		for {
 			//b, err := reader.ReadByte()
 			//log.Println("incoming data...", b)
@@ -29,9 +34,20 @@ func main() {
 			if err != nil || strings.TrimSpace(line) == "" {
 				break
 			}
+			b.WriteString(line)
 			log.Println("incoming data...", strings.TrimRight(line, "\n"))
-			s.Write([]byte(line))
 		}
+		body := fmt.Sprintf(`<html>
+								  <head>
+									<title>Epoll Response</title>
+								  </head>
+								  <body>%s</body>
+								</html>`, b.Bytes())
+		fmt.Fprintf(s, `HTTP/1.1 200 OK
+        Content-Type: text/html;charset=UTF-8
+        Content-Length: %d
+        Date: %s
+		%s`, len(body), time.Now().Format(time.RFC1123), body)
 		s.Close()
 	})
 }
