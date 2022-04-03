@@ -4,6 +4,7 @@ port            = 3306
 socket          = /tmp/mysql.sock
 
 [mysqld]
+default-time_zone = '+8:00'
 binlog_cache_size = 128K
 thread_stack = 256K
 join_buffer_size = 2048K

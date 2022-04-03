@@ -58,10 +58,6 @@ func Listen(ip string, port int) (*Socket, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed set SO_REUSEADDR (%v)", err)
 	}
-	err = syscall.SetsockoptInt(socket.Fd, syscall.SOL_SOCKET, 0, 1)
-	if err != nil {
-		return nil, fmt.Errorf("failed set SO_REUSEPORT (%v)", err)
-	}
 	socketAddress := &syscall.SockaddrInet4{Port: port}
 	copy(socketAddress.Addr[:], net.ParseIP(ip))
 

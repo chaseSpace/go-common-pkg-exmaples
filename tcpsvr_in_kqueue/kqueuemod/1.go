@@ -1,6 +1,9 @@
 //go:build freebsd
 // +build freebsd
 
+//go:build darwin
+// +build darwin
+
 package kqueuemod
 
 import (
@@ -53,7 +56,7 @@ type Handler func(*socketmod.Socket)
 func (eventLoop *EventLoop) Handle(handler Handler) {
 	for {
 		newEvents := make([]syscall.Kevent_t, 10)
-		numNewEvents, err := syscall.Kevent(
+		numNewEvents, err := syscall.Kevent( // BLOCK WAIT
 			eventLoop.KqueueFileDescriptor,
 			nil,
 			newEvents,
@@ -83,7 +86,6 @@ func (eventLoop *EventLoop) Handle(handler Handler) {
 				socketEvent := syscall.Kevent_t{
 					Ident:  uint64(socketConnection),
 					Filter: syscall.EVFILT_READ,
-					Flags:  syscall.EV_ADD,
 					Fflags: 0,
 					Data:   0,
 					Udata:  nil,

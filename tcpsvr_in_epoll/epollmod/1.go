@@ -32,8 +32,8 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 		}
 	}()
 	// 创建了一个新的内核事件队列，待会儿用来订阅新socket连接的事件
-	// size用来告诉内核这个epoll实例监听的fd数目一共有多大，但从linux内核2.6.8版本开始已弃用此参数，一般传0表无限制
-	size := 0
+	// size用来告诉内核这个epoll实例监听的fd数目一共有多大，但从linux内核2.6.8版本开始已弃用此参数
+	size := 111
 	epollFd, err := syscall.EpollCreate(size)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create epoll file descriptor (%v)", err)
