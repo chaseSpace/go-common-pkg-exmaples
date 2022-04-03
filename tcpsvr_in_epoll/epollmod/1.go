@@ -8,6 +8,7 @@ import (
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/socketmod"
 	"log"
 	"syscall"
+	"time"
 )
 
 const EPOLLET = 1 << 31
@@ -123,12 +124,17 @@ func (e *EventLoop) Handle(handler Handler) {
 				)
 			} else if event.Events&syscall.EPOLLOUT != 0 {
 				log.Println("event: write data done")
-				tmpSock := socketmod.Socket{Fd: eventFd}
-				err := tmpSock.Close()
-				if err != nil {
-					log.Println("event: socket close err", err)
-					return
-				}
+				body := fmt.Sprintf(`<html>
+										  <head>
+											<title>Epoll Response</title>
+										  </head>
+										  <body>222</body>
+										</html>`)
+				fmt.Fprintf(socketmod.Socket{Fd: eventFd}, `HTTP/1.1 200 OK
+				Content-Type: text/html;charset=UTF-8
+				Content-Length: %d
+				Date: %s
+				%s`, len(body), time.Now().Format(time.RFC1123), body)
 				err = syscall.EpollCtl(
 					e.epollFd,
 					syscall.EPOLL_CTL_DEL,
@@ -137,6 +143,12 @@ func (e *EventLoop) Handle(handler Handler) {
 				)
 				if err != nil {
 					log.Println("event: del fd err", err)
+					return
+				}
+				tmpSock := socketmod.Socket{Fd: eventFd}
+				err := tmpSock.Close()
+				if err != nil {
+					log.Println("event: socket close err", err)
 					return
 				}
 			}
