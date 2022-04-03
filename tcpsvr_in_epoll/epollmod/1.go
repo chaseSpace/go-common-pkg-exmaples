@@ -10,6 +10,8 @@ import (
 	"syscall"
 )
 
+const EPOLLET = 1 << 31
+
 type EventLoop struct {
 	epollFd int
 	sock    *socketmod.Socket
@@ -40,7 +42,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	}
 	// 构造一个event对象 传递给epollFd实例，表示我要订阅这个fd上的某些事件
 	changeEvent := syscall.EpollEvent{
-		Events: syscall.EPOLLIN | syscall.EPOLLERR | syscall.EPOLLOUT, // 订阅 IN（可读）和ERR事件
+		Events: syscall.EPOLLIN | EPOLLET, // 订阅 IN（可读）和ERR事件
 		Fd:     int32(sock.Fd),
 		Pad:    0,
 	}
@@ -89,9 +91,9 @@ func (e *EventLoop) Handle(handler Handler) {
 					log.Println("eventLoop Accept conn err:", err)
 					continue
 				}
-				//_ = syscall.SetNonblock(newSockFd, true)
+				_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
-					Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）和ERR事件
+					Events: syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT, // 订阅 IN（可读）和ERR事件
 					Fd:     int32(newSockFd),
 					Pad:    0,
 				}
@@ -109,7 +111,7 @@ func (e *EventLoop) Handle(handler Handler) {
 				// data available -> forward to handler
 				// 某个客户端连接有数据进来了
 				log.Printf("event: new data fd:%d\n", event.Fd)
-				go handler(&socketmod.Socket{
+				go handler(&socketmod.Socket{ // 如果这里是异步，那必须设置 ET（边缘触发）模式：真的有数据进入socket时触发事件，而不是在缓冲区未读完时重复触发
 					Fd: eventFd,
 				})
 			} else if event.Events&syscall.EPOLLOUT != 0 {
@@ -123,7 +125,7 @@ func (e *EventLoop) Handle(handler Handler) {
 								  </head>
 								  <body>%s</body>
 								</html>`))
-				event.Events = syscall.EPOLLIN
+				event.Events = syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT
 				syscall.EpollCtl(
 					e.epollFd,
 					syscall.EPOLL_CTL_MOD,

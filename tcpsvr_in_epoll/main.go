@@ -52,7 +52,7 @@ func main() {
 		}
 		if b.Len() == 0 {
 			// 对方已关闭conn
-			log.Println("Handle b.Len() == 0, close socket")
+			log.Println("Handle peer closed socket")
 			s.Close()
 		}
 		body := fmt.Sprintf(`<html>

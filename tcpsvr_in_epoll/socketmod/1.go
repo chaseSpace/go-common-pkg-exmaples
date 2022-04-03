@@ -49,10 +49,10 @@ func Listen(ip string, port int) (*Socket, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to create socket (%v)", err)
 	}
-	//err = syscall.SetNonblock(socketFileDescriptor, true)
-	//if err != nil {
-	//	return nil, fmt.Errorf("failed to SetNonblock (%v)", err)
-	//}
+	err = syscall.SetNonblock(socketFileDescriptor, true)
+	if err != nil {
+		return nil, fmt.Errorf("failed to SetNonblock (%v)", err)
+	}
 	socket.Fd = socketFileDescriptor
 	/*
 		设置 SO_REUSEADDR & SO_REUSEPORT 方便快速重启
