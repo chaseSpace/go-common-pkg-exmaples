@@ -111,25 +111,32 @@ func (e *EventLoop) Handle(handler Handler) {
 				// data available -> forward to handler
 				// 某个客户端连接有数据进来了
 				log.Printf("event: new data fd:%d\n", event.Fd)
-				go handler(&socketmod.Socket{ // 如果这里是异步，那必须设置 ET（边缘触发）模式：真的有数据进入socket时触发事件，而不是在缓冲区未读完时重复触发
+				handler(&socketmod.Socket{ // 如果这里是异步，那必须设置 ET（边缘触发）模式：真的有数据进入socket时触发事件，而不是在缓冲区未读完时重复触发
 					Fd: eventFd,
 				})
+				event.Events = syscall.EPOLLOUT | EPOLLET
+				syscall.EpollCtl(
+					e.epollFd,
+					syscall.EPOLL_CTL_MOD,
+					int(event.Fd),
+					&event,
+				)
 			} else if event.Events&syscall.EPOLLOUT != 0 {
 				// data available -> forward to handler
 				// 某个客户端连接有数据进来了
 				log.Println("event: write data ***")
-				tmpSock := socketmod.Socket{Fd: eventFd}
-				_, err := tmpSock.Write([]byte(`<html>
-												  <head>
-													<title>Epoll Response</title>
-												  </head>
-												  <body>%s</body>
-												</html>`))
-				if err != nil {
-					log.Println("write err", err)
-					return
-				}
-				event.Events = syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT
+				//tmpSock := socketmod.Socket{Fd: eventFd}
+				//_, err := tmpSock.Write([]byte(`<html>
+				//								  <head>
+				//									<title>Epoll Response</title>
+				//								  </head>
+				//								  <body>%s</body>
+				//								</html>`))
+				//if err != nil {
+				//	log.Println("write err", err)
+				//	return
+				//}
+				event.Events = syscall.EPOLLIN | EPOLLET
 				syscall.EpollCtl(
 					e.epollFd,
 					syscall.EPOLL_CTL_MOD,

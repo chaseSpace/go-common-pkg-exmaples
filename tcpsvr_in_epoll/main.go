@@ -6,6 +6,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"fmt"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/epollmod"
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll/socketmod"
 	"io"
@@ -13,6 +14,7 @@ import (
 	"os"
 	"strings"
 	"syscall"
+	"time"
 )
 
 func main() {
@@ -57,17 +59,17 @@ func main() {
 			log.Println("Handle peer closed socket")
 			s.Close()
 		}
-		//body := fmt.Sprintf(`<html>
-		//						  <head>
-		//							<title>Epoll Response</title>
-		//						  </head>
-		//						  <body>%s</body>
-		//						</html>`, b.Bytes())
-		//fmt.Fprintf(s, `HTTP/1.1 200 OK
-		//Content-Type: text/html;charset=UTF-8
-		//Content-Length: %d
-		//Date: %s
-		//%s`, len(body), time.Now().Format(time.RFC1123), body)
-		//s.Close()
+		body := fmt.Sprintf(`<html>
+								  <head>
+									<title>Epoll Response</title>
+								  </head>
+								  <body>%s</body>
+								</html>`, b.Bytes())
+		fmt.Fprintf(s, `HTTP/1.1 200 OK
+        Content-Type: text/html;charset=UTF-8
+        Content-Length: %d
+        Date: %s
+		%s`, len(body), time.Now().Format(time.RFC1123), body)
+		s.Write([]byte(body))
 	})
 }
