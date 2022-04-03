@@ -91,7 +91,7 @@ func (e *EventLoop) Handle(handler Handler) {
 					log.Println("eventLoop Accept conn err:", err)
 					continue
 				}
-				_ = syscall.SetNonblock(newSockFd, true)
+				//_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
 					Events: syscall.EPOLLIN | EPOLLET | syscall.EPOLLOUT, // 订阅 IN（可读）和ERR事件
 					Fd:     int32(newSockFd),
@@ -125,13 +125,12 @@ func (e *EventLoop) Handle(handler Handler) {
 				log.Println("event: write data done")
 				tmpSock := socketmod.Socket{Fd: eventFd}
 				tmpSock.Close()
-				//event.Events = syscall.EPOLLIN | EPOLLET
-				//syscall.EpollCtl(
-				//	e.epollFd,
-				//	syscall.EPOLL_CTL_MOD,
-				//	int(event.Fd),
-				//	&event,
-				//)
+				syscall.EpollCtl(
+					e.epollFd,
+					syscall.EPOLL_CTL_DEL,
+					int(event.Fd),
+					&event,
+				)
 			}
 		}
 	}
