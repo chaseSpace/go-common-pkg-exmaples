@@ -15,17 +15,17 @@ type Pack []byte
 const packDelimiter = '\n'
 
 type TcpConn struct {
-	sock      *socket.Socket
-	reuseBuf  []byte
-	streamBuf *bytes.Buffer
-	err       error
+	sock         *socket.Socket
+	reuseTempBuf []byte
+	streamBuf    *bytes.Buffer
+	err          error
 }
 
 func NewTcpConn(s *socket.Socket) *TcpConn {
 	return &TcpConn{
-		sock:      s,
-		reuseBuf:  make([]byte, 10),
-		streamBuf: bytes.NewBuffer(make([]byte, 100)),
+		sock:         s,
+		reuseTempBuf: make([]byte, 10), // 设置一个较小的buf 方便观察到多次从底层buffer中读取流并组成一个pack的现象
+		streamBuf:    bytes.NewBuffer(make([]byte, 100)),
 	}
 }
 
@@ -35,11 +35,11 @@ func NewTcpConn(s *socket.Socket) *TcpConn {
 
 func (c *TcpConn) Read() {
 	for {
-		n, err := c.sock.Read(c.reuseBuf)
+		n, err := c.sock.Read(c.reuseTempBuf)
 		if err != nil {
 			if n > 0 {
 				bs := make([]byte, n)
-				copy(bs, c.reuseBuf[:n])
+				copy(bs, c.reuseTempBuf[:n])
 				c.streamBuf.Write(bs) // 中断了，读出来的要缓存到buf
 			}
 			// read buffer已读完
@@ -59,10 +59,11 @@ func (c *TcpConn) Read() {
 			return
 		}
 		bs := make([]byte, n)
-		copy(bs, c.reuseBuf[:n])
+		copy(bs, c.reuseTempBuf[:n])
 		c.streamBuf.Write(bs)
 		println("read stream:", c.streamBuf.String())
-		// 遗留的问题：经测试，ET模式下，即使没有一次性读完底层buffer的数据，还是会持续的收到read event（与LT模式无差了）
+		// o(╥﹏╥)o遗留的问题：
+		// 经测试，ET模式下，即使没有一次性读完底层buffer的数据，还是会持续的收到read event（与LT模式无差了）
 		// 使得本例仍能跑通~~ 作者暂无法找到原因
 		break
 	}
