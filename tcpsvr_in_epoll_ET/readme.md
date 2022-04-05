@@ -29,22 +29,35 @@ nothing to do...
 ```
 root@4d455a521d36:/home/gocode/tcpsvr_in_epollLT# go run .
 Server started. Waiting for incoming connections. ^C to exit.
-2022/04/05 05:20:03 eventLoop new 1 events ...
-2022/04/05 05:20:03 event: new Conn
-2022/04/05 05:20:03 eventLoop new 1 events ...
-2022/04/05 05:20:03 event: Readable fd:5
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: new Conn
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Readable fd:5
 read stream: client sen
+2022/04/05 13:43:55 read stream end
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Writeable
+2022/04/05 13:43:55 incomplete pack, write back~
+2022/04/05 13:43:55 WriteReply: end
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Readable fd:5
 read stream: client sent 0
 client
-read stream: client sent 0
-client sent 1
+2022/04/05 13:43:55 read stream end
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Writeable
+2022/04/05 13:43:55 server reply: [client sent 0]
+2022/04/05 13:43:55 incomplete pack, write back~
+2022/04/05 13:43:55 WriteReply: end
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Readable fd:5
+read stream: client sent 1
 
-2022/04/05 05:20:03 read stream end
-2022/04/05 05:20:03 eventLoop new 1 events ...
-2022/04/05 05:20:03 event: Writeable
-2022/04/05 05:20:03 server reply: [client sent 0]
-2022/04/05 05:20:03 server reply: [client sent 1]
-2022/04/05 05:20:03 WriteReply: end
+2022/04/05 13:43:55 read stream end
+2022/04/05 13:43:55 eventLoop new 1 events ...
+2022/04/05 13:43:55 event: Writeable
+2022/04/05 13:43:55 server reply: [client sent 1]
+2022/04/05 13:43:55 WriteReply: end
 ...省略
 ```
 

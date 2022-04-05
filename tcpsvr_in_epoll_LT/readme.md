@@ -21,31 +21,41 @@ conn ok...
 write 28 err:<nil>
 server reply: [client sent 0]
 server reply: [client sent 1]
-write 28 err:<nil>
-server reply: [client sent 1]
-server reply: [client sent 2]
-nothing to do...
 ```
 
 同时会观察到server端程序日志如下：
 ```
 root@4d455a521d36:/home/gocode/tcpsvr_in_epollLT# go run .
 Server started. Waiting for incoming connections. ^C to exit.
-2022/04/05 02:59:21 eventLoop new 1 events ...
-2022/04/05 02:59:21 event: new Conn
-2022/04/05 02:59:21 eventLoop new 1 events ...
-2022/04/05 02:59:21 event: Readable fd:5
-read pack: client sent 0
-read pack: client sent 1
-2022/04/05 02:59:21 read pack end
-2022/04/05 02:59:21 eventLoop new 1 events ...
-2022/04/05 02:59:21 event: Writeable
-2022/04/05 02:59:21 WriteReply: end
-2022/04/05 02:59:22 eventLoop new 1 events ...
-2022/04/05 02:59:22 event: Readable fd:5
-read pack: client sent 1
-read pack: client sent 2
-2022/04/05 02:59:22 read pack end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: new Conn
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Readable fd:5
+read stream: client sen
+2022/04/05 13:42:48 read stream end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Writeable
+2022/04/05 13:42:48 incomplete pack, write back~
+2022/04/05 13:42:48 WriteReply: end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Readable fd:5
+read stream: client sent 0
+client
+2022/04/05 13:42:48 read stream end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Writeable
+2022/04/05 13:42:48 server reply: [client sent 0]
+2022/04/05 13:42:48 incomplete pack, write back~
+2022/04/05 13:42:48 WriteReply: end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Readable fd:5
+read stream: client sent 1
+
+2022/04/05 13:42:48 read stream end
+2022/04/05 13:42:48 eventLoop new 1 events ...
+2022/04/05 13:42:48 event: Writeable
+2022/04/05 13:42:48 server reply: [client sent 1]
+2022/04/05 13:42:48 WriteReply: end
 ```
 
 ### 备注
