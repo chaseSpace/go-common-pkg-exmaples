@@ -6,6 +6,10 @@ import (
 
 func main() {
 	b := bytes.Buffer{}
-	b.WriteString("x111111111111111")
+	b.WriteString("1231111111111111111111111111231111111111111111111111111211111111")
+	println(b.Len())
+	s, _ := b.ReadString('x')
+	println(b.Len(), b.Cap())
+	b.WriteString(s)
 	println(b.Len())
 }

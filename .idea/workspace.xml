@@ -23,8 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="2">
+      <change afterPath="$PROJECT_DIR$/tcpclient/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpcomm/conn/conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_ET/epoll/epoll.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_ET/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_ET/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_LT/epoll/epoll.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_LT/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tcpsvr_in_epoll_LT/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/epollmod/1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpsvr_in_epoll/socketmod/1.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpcomm/socket/socket.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +113,7 @@
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tcpsvr_in_epoll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tcpsvr_in_epoll_LT" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -111,25 +124,25 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tcpsvr_in_epoll_LT" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/tcpsvr_in_epoll" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\ccc\community_cache" />
       <recent name="D:\develop\go\go-common-pkg-exmaples\ccc" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples" />
-      <recent name="E:\go_dev\go-common-pkg-exmaples\_dockerfile\mysql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\develop\go\go-common-pkg-exmaples\websocket\simple" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\community" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\ccc" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples" />
-      <recent name="D:\develop\go\go-common-pkg-exmaples\ignore" />
+      <recent name="$PROJECT_DIR$/tcpcomm/conn" />
+      <recent name="$PROJECT_DIR$/tcpcomm" />
+      <recent name="$PROJECT_DIR$/tcpcomm/socket" />
+      <recent name="$PROJECT_DIR$/tcpsvr_comm" />
+      <recent name="$PROJECT_DIR$/tcpsvr_in_epoll_LT/conn" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll">
+  <component name="RunManager" selected="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient">
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -146,6 +159,15 @@
       <filePath value="$PROJECT_DIR$/empty_t.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/tcpclient/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -177,38 +199,19 @@
       <pattern value="^\QTest_hashfile\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="py_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/py_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
+      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
       <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.Test_hashfile in github.com/chaseSpace/go-common-pkg-exmaples" />
       </list>
     </recent_temporary>

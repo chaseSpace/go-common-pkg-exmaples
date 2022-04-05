@@ -1,12 +1,11 @@
 //go:build linux
 // +build linux
 
-package socketmod
+package socket
 
 import (
 	"fmt"
 	"net"
-	"strconv"
 	"syscall"
 )
 
@@ -14,19 +13,24 @@ type Socket struct {
 	Fd int
 }
 
-func (socket Socket) Read(bytes []byte) (int, error) {
+func NewSocket(fd int) *Socket {
+	return &Socket{
+		Fd: fd,
+	}
+}
+
+func (socket *Socket) Read(bytes []byte) (int, error) {
 	if len(bytes) == 0 {
 		return 0, nil
 	}
-	numBytesRead, err := syscall.Read(socket.Fd, bytes)
-	if err != nil {
-		numBytesRead = 0
+	n, err := syscall.Read(socket.Fd, bytes)
+	if n < 0 {
+		n = 0 // sometimes, n<0 is happening, it may cause caller panic
 	}
-
-	return numBytesRead, err
+	return n, err
 }
 
-func (socket Socket) Write(bytes []byte) (int, error) {
+func (socket *Socket) Write(bytes []byte) (int, error) {
 	numBytesWritten, err := syscall.Write(socket.Fd, bytes)
 	if err != nil {
 		numBytesWritten = 0
@@ -36,9 +40,6 @@ func (socket Socket) Write(bytes []byte) (int, error) {
 
 func (socket *Socket) Close() error {
 	return syscall.Close(socket.Fd)
-}
-func (socket *Socket) String() string {
-	return strconv.Itoa(socket.Fd)
 }
 
 func Listen(ip string, port int) (*Socket, error) {
@@ -55,7 +56,7 @@ func Listen(ip string, port int) (*Socket, error) {
 	}
 	socket.Fd = socketFileDescriptor
 	/*
-		设置 SO_REUSEADDR & SO_REUSEPORT 方便快速重启
+		设置 SO_REUSEADDR 方便实现热重启
 	*/
 	err = syscall.SetsockoptInt(socket.Fd, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1)
 	if err != nil {

@@ -10,6 +10,8 @@
         <function importPath="fmt" name="Print" />
         <function importPath="fmt" name="Fprint" />
         <function importPath="fmt" name="Fprintln" />
+        <function importPath="fmt" name="Fprintf" />
+        <function importPath="syscall" name="EpollCtl" />
       </functions>
       <methods>
         <method importPath="hash" receiver="Hash" name="Write" />
@@ -31,6 +33,7 @@
         <method importPath="github.com/fatih/color" receiver="*Color" name="Fprint" />
         <method importPath="github.com/gomodule/redigo/redis" receiver="Conn" name="Close" />
         <method importPath="github.com/jinzhu/gorm" receiver="*DB" name="Close" />
+        <method importPath="bytes" receiver="*Buffer" name="Read" />
       </methods>
     </inspection_tool>
     <inspection_tool class="GoUnusedCallResult" enabled="true" level="WARNING" enabled_by_default="true">
