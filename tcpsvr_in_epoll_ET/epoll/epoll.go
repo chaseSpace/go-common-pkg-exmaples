@@ -13,8 +13,8 @@ import (
 )
 
 // ET: EPOLL的边缘触发模式（edge-trigger），比LT模式复杂点，但性能高点
-// 	-	读特性：除非把socket read buffer读完，否则epoll_wait不会返回该socket的可读事件
-// 	-	写特性：除非把socket write buffer写满，否则epoll_wait不会返回该socket的可写事件
+// 	-	读特性：除非有新数据进入socket read buffer，否则epoll_wait不会返回该socket的可读事件
+// 	-	写特性：除非一次把socket write buffer写满，否则epoll_wait不会返回该socket的可写事件
 
 // LT：水平触发模式（level-trigger）
 //  -	读特性：只要socket read buffer有数据，epoll_wait就总会返回该socket的可读事件
@@ -91,7 +91,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	}
 	// 构造一个event对象 传递给epoll实例，表示我要订阅这个fd上的某些事件
 	changeEvent := syscall.EpollEvent{
-		Events: syscall.EPOLLIN | syscall.EPOLLET, // 订阅 IN（可读）和ERR事件，对于epoll实例的fd，只需要监听 IN（可读）事件，它不会有OUT（可写）事件
+		Events: syscall.EPOLLIN | syscall.EPOLLET, // 订阅 IN（可读），并设置ET模式
 		Fd:     int32(sock.Fd),
 		Pad:    0,
 	}
@@ -144,7 +144,13 @@ func (e *EventLoop) Listen() {
 				// 设置socket非阻塞模式，以允许socket的read和write也是非阻塞的，这一步可选的，非阻塞模式可提高性能
 				_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
-					Events: syscall.EPOLLIN | syscall.EPOLLET,
+					/*
+						因为现在是ET模式， 所以accept的时候需要一次性监听IN和OUT事件
+						不得在read/write后修改事件，否则会重复收到readable/writeable事件 现采用如下逻辑
+						-  accept后，监听 IN | ET | OUT
+						-  read/write，不修改监听事件
+					*/
+					Events: syscall.EPOLLIN | syscall.EPOLLET | syscall.EPOLLOUT,
 					Fd:     int32(newSockFd),
 					Pad:    0,
 				}
@@ -163,8 +169,8 @@ func (e *EventLoop) Listen() {
 					e.safeRemoveTcpConn(eventFd)
 				} else {
 					// 修改监听的事件类型为：OUT（buffer可写） & ET模式
-					event.Events = syscall.EPOLLOUT | syscall.EPOLLET
-					err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
+					//event.Events = syscall.EPOLLOUT | EPOLLET
+					//err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
 				}
 			} else if event.Events&syscall.EPOLLOUT != 0 { // ET模式下，表示write buffer可写空间刚从0过渡到>0
 				log.Println("event: Writeable")
@@ -176,8 +182,8 @@ func (e *EventLoop) Listen() {
 					e.safeRemoveTcpConn(eventFd)
 				} else {
 					// 修改监听的事件类型为：IN（buffer可读） & ET模式
-					event.Events = syscall.EPOLLIN | syscall.EPOLLET
-					err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
+					//event.Events = syscall.EPOLLIN | EPOLLET
+					//err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
 				}
 			}
 		}

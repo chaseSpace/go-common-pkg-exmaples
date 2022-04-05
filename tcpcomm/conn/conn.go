@@ -65,13 +65,43 @@ func (c *TcpConn) Read() {
 		// o(╥﹏╥)o遗留的问题：
 		// 经测试，ET模式下，即使没有一次性读完底层buffer的数据，还是会持续的收到read event（与LT模式无差了）
 		// 使得本例仍能跑通~~ 作者暂无法找到原因
-		break
+		//break
 	}
 	log.Println("read stream end")
 	return
 }
 
 func (c *TcpConn) WriteReply() {
+	// 检查：收到一个pack，回复一个pack（示例中，回复内容与收到内容无关）
+	for {
+		pack, err := c.streamBuf.ReadString(packDelimiter)
+		if err == io.EOF {
+			if pack != "" {
+				c.streamBuf.WriteString(pack) // 找不到分隔符，说明是不完整的pack，要把读出来的写回去，下次再读
+				log.Println("incomplete pack, write back~")
+			}
+			break
+		}
+		reply := []byte(fmt.Sprintf("server reply: [%s]", pack[:len(pack)-1]))
+		reply = append(reply, packDelimiter) // to be a Pack
+
+		_, err = c.sock.Write(reply)
+		if err == syscall.EAGAIN {
+			log.Println("WriteReply：write buffer fulled, wait for next time...")
+			return
+		}
+		if err != nil {
+			c.err = fmt.Errorf("WriteLoop err:%v", err)
+			log.Println(c.err)
+			return
+		}
+		log.Println(string(reply[:len(reply)-1]))
+	}
+	log.Println("WriteReply: end")
+}
+
+func (c *TcpConn) WriteReplyET() {
+	// TODO 修改
 	// 检查：收到一个pack，回复一个pack（示例中，回复内容与收到内容无关）
 	for {
 		pack, err := c.streamBuf.ReadString(packDelimiter)

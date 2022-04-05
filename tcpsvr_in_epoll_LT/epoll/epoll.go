@@ -92,7 +92,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	}
 	// 构造一个event对象 传递给epollFd实例，表示我要订阅这个fd上的某些事件
 	changeEvent := syscall.EpollEvent{
-		Events: syscall.EPOLLIN | syscall.EPOLLET, // 订阅 IN（可读）和ERR事件
+		Events: syscall.EPOLLIN, // 订阅 IN（可读）和ERR事件
 		Fd:     int32(sock.Fd),
 		Pad:    0,
 	}
@@ -145,7 +145,13 @@ func (e *EventLoop) Listen() {
 				// 设置socket非阻塞模式，以允许socket的read和write也是非阻塞的，这一步可选的，非阻塞模式可提高性能
 				_ = syscall.SetNonblock(newSockFd, true)
 				socketEvent := syscall.EpollEvent{
-					Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）OUT（可写） 事件
+					/*
+						因为我们这里的tcpserver是echo模式， 所以accept的时候不监听OUT事件，不然会一直收到write事件，现采用如下逻辑
+						-  accept后，监听 IN
+						-  read后，监听 OUT
+						-  write后，监听 IN
+					*/
+					Events: syscall.EPOLLIN | syscall.EPOLLERR, // 订阅 IN（可读）和ERR事件，
 					Fd:     int32(newSockFd),
 					Pad:    0,
 				}
@@ -164,7 +170,7 @@ func (e *EventLoop) Listen() {
 					e.safeRemoveTcpConn(eventFd)
 				} else {
 					// 修改监听的事件类型为：OUT（buffer可写） & ET模式
-					event.Events = syscall.EPOLLOUT | syscall.EPOLLERR | EPOLLET
+					event.Events = syscall.EPOLLOUT | syscall.EPOLLERR
 					err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
 				}
 			} else if event.Events&syscall.EPOLLOUT != 0 { // LT模式下 这表示write buffer可用空间>=0
@@ -177,7 +183,7 @@ func (e *EventLoop) Listen() {
 					e.safeRemoveTcpConn(eventFd)
 				} else {
 					// 修改监听的事件类型为：IN（buffer可读） & ET模式
-					event.Events = syscall.EPOLLIN | syscall.EPOLLERR | EPOLLET
+					event.Events = syscall.EPOLLIN | syscall.EPOLLERR
 					err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
 				}
 			}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"io"
 	"log"
@@ -17,6 +18,15 @@ import (
 编写的
 */
 const packDelimiter = '\n'
+
+func genContent(length int) string {
+	buf := bytes.NewBufferString("start_")
+	for i := 0; i < length; i++ {
+		buf.WriteString("0123456789")
+	}
+	buf.WriteString("_end")
+	return buf.String()
+}
 
 func main() {
 	conn, err := net.Dial("tcp", ":8080")
@@ -46,8 +56,8 @@ func main() {
 	// 作为用于简单测试连通性的tcp client，此处仅发送几次与server端约定好的data pack，观察回包即可
 	for i := 0; i < 1; i++ {
 		// --	这里一次发送2个pack，是为了测试server代码是否能够正常解析pack，#相关逻辑在server的conn.ReadPack()
-		pack1 := fmt.Sprintf("client sent %d%s", i, string(packDelimiter))
-		pack2 := fmt.Sprintf("client sent %d%s", i+1, string(packDelimiter))
+		pack1 := fmt.Sprintf("client sent %s%s", genContent(10), string(packDelimiter))
+		pack2 := fmt.Sprintf("client sent %s%s", genContent(10), string(packDelimiter))
 
 		n, err := fmt.Fprintf(conn, pack1+pack2)
 		fmt.Printf("write %d err:%v\n", n, err)
