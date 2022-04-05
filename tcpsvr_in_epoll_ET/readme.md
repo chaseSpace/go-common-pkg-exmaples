@@ -51,5 +51,9 @@ client sent 1
 ### 备注
 本项目仅作为使用epoll(ET模式)实现tcp server的最小参考示例，相关逻辑并不是最优解
 
+### 遗留的问题
+请在此仓库的`tcpcomm/`目录下搜索  `遗留的问题` 即可找到相关位置
+>了解&解决此问题需要读者熟悉epoll的ET和LT模式的差别
+
 ### 参考资料
 https://man7.org/linux/man-pages/man2/
