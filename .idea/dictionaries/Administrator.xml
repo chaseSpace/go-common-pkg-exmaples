@@ -3,6 +3,7 @@
     <words>
       <w>alignof</w>
       <w>creds</w>
+      <w>getsockopt</w>
       <w>gomaxprocs</w>
       <w>gorm</w>
       <w>grpc</w>

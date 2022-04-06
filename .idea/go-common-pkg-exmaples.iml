@@ -7,11 +7,13 @@
   </component>
   <component name="Go" enabled="true">
     <buildTags>
-      <option name="os" value="linux" />
+      <option name="os" value="windows" />
     </buildTags>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
