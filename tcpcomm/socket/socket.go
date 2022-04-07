@@ -24,9 +24,9 @@ func (socket *Socket) Read(bytes []byte) (int, error) {
 		return 0, nil
 	}
 	n, err := syscall.Read(socket.Fd, bytes)
-	if n < 0 {
-		n = 0 // sometimes, n<0 is happening, it may cause caller panic
-	}
+	//if n < 0 {
+	//	n = 0 // sometimes, n<0 is happening, it may cause caller panic
+	//}
 	return n, err
 }
 

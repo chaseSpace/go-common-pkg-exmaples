@@ -16,5 +16,6 @@ func main() {
 	}
 	defer eventLoop.Close()
 	println("Server started. Waiting for incoming connections. ^C to exit.")
+	go eventLoop.CleanThread()
 	eventLoop.Listen()
 }

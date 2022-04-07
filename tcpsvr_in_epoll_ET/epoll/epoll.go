@@ -10,6 +10,7 @@ import (
 	"log"
 	"sync"
 	"syscall"
+	"time"
 )
 
 // ET: EPOLL的边缘触发模式（edge-trigger），比LT模式复杂点，但性能高点
@@ -25,7 +26,7 @@ type EventLoop struct {
 	sock    *socket.Socket
 
 	cmLock  sync.RWMutex
-	connMap map[int]*conn.TcpConn
+	connMap map[int]*conn.TcpConnET
 }
 
 func (e *EventLoop) Close() {
@@ -33,7 +34,26 @@ func (e *EventLoop) Close() {
 	_ = e.sock.Close()
 }
 
-func (e *EventLoop) safeReadTcpConn(fd int, op func(c *conn.TcpConn) error) (err error) {
+// CleanThread 一个单独线程来清理那些已关闭或内部发生ERR的conn
+// 当然，这不是一个很好的实现，因为这里的锁会影响新连接的建立速度
+func (e *EventLoop) CleanThread() {
+	cleanup := func() {
+		e.cmLock.Lock()
+		defer e.cmLock.Unlock()
+		for _, c := range e.connMap {
+			if c.Err() != nil {
+				log.Println("CleanThread: delete conn, fd", c.SockFd())
+				delete(e.connMap, c.SockFd())
+			}
+		}
+	}
+	for {
+		cleanup()
+		time.Sleep(time.Second)
+	}
+}
+
+func (e *EventLoop) safeReadTcpConn(fd int, op func(c *conn.TcpConnET) error) (err error) {
 	e.cmLock.RLock()
 	defer e.cmLock.RUnlock()
 	tc, ok := e.connMap[fd]
@@ -43,7 +63,7 @@ func (e *EventLoop) safeReadTcpConn(fd int, op func(c *conn.TcpConn) error) (err
 	return
 }
 
-func (e *EventLoop) safeAddTcpConn(fd int, c *conn.TcpConn) {
+func (e *EventLoop) safeAddTcpConn(fd int, c *conn.TcpConnET) {
 	e.cmLock.Lock()
 	defer e.cmLock.Unlock()
 	e.connMap[fd] = c
@@ -103,7 +123,7 @@ func NewEventLoop(ip string, port int) (et *EventLoop, err error) {
 	return &EventLoop{
 		epollFd: epollFd,
 		sock:    sock,
-		connMap: make(map[int]*conn.TcpConn),
+		connMap: make(map[int]*conn.TcpConnET),
 	}, nil
 }
 
@@ -128,7 +148,7 @@ func (e *EventLoop) Listen() {
 		for i := 0; i < numNewEvents; i++ {
 			event := newEvents[i]
 			eventFd := int(event.Fd)
-			// 处理 客户端关闭连接 事件
+			// 处理 ERR 事件（client关闭conn不会触发此事件）
 			if event.Events&syscall.EPOLLERR != 0 && eventFd != e.sock.Fd {
 				// client closing connection
 				e.safeRemoveTcpConn(eventFd)
@@ -156,35 +176,19 @@ func (e *EventLoop) Listen() {
 				}
 				// 监听新的conn socket
 				syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_ADD, newSockFd, &socketEvent)
-				c := conn.NewTcpConn(socket.NewSocket(newSockFd))
+				c := conn.NewTcpConnET(socket.NewSocket(newSockFd))
 				e.safeAddTcpConn(newSockFd, c)
-			} else if event.Events&syscall.EPOLLIN != 0 { // ET模式下，这表示 read buffer可读数据刚从0过渡到>0
-				// 某个连接有数据进来了
+				// 启动2个无限循环读写数据
+				go c.ReadLoop()
+				go c.WriteLoop()
+			} else if event.Events&syscall.EPOLLIN != 0 {
+				// ET模式下，这表示socket read buffer 刚从外部收到数据，收到一次触发一次
 				log.Printf("event: Readable fd:%d\n", event.Fd)
-				err = e.safeReadTcpConn(eventFd, func(c *conn.TcpConn) error {
-					c.Read()
-					return c.Err()
-				})
-				if err != nil {
-					e.safeRemoveTcpConn(eventFd)
-				} else {
-					// 修改监听的事件类型为：OUT（buffer可写） & ET模式
-					//event.Events = syscall.EPOLLOUT | EPOLLET
-					//err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
-				}
-			} else if event.Events&syscall.EPOLLOUT != 0 { // ET模式下，表示write buffer可写空间刚从0过渡到>0
-				log.Println("event: Writeable")
-				err = e.safeReadTcpConn(eventFd, func(c *conn.TcpConn) error {
-					c.WriteReply()
-					return c.Err()
-				})
-				if err != nil {
-					e.safeRemoveTcpConn(eventFd)
-				} else {
-					// 修改监听的事件类型为：IN（buffer可读） & ET模式
-					//event.Events = syscall.EPOLLIN | EPOLLET
-					//err = syscall.EpollCtl(e.epollFd, syscall.EPOLL_CTL_MOD, eventFd, &event)
-				}
+
+			} else if event.Events&syscall.EPOLLOUT != 0 {
+				// ET模式下，这表示socket write buffer刚从不可写变为可写（not writable->writeable）
+				// 且刚启动时就会自动触发一次（client未发数据）
+				log.Printf("event: Writeable fd:%d\n", event.Fd)
 			}
 		}
 	}
