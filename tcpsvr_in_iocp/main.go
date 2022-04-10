@@ -5,7 +5,6 @@ package main
 
 import (
 	"github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_iocp/iocp"
-	"log"
 	"os"
 )
 
@@ -18,6 +17,5 @@ func main() {
 	defer eventLoop.Close()
 	println("Server started. Waiting for incoming connections. ^C to exit.")
 
-	err = eventLoop.AcceptLoop()
-	log.Println("Server stopped, got err:", err)
+	eventLoop.AcceptLoop()
 }

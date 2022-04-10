@@ -2,15 +2,16 @@ package socket
 
 import (
 	"fmt"
+	"golang.org/x/sys/windows"
 	"net"
 	"syscall"
 )
 
 type Socket struct {
-	Fd syscall.Handle
+	Fd windows.Handle
 }
 
-func NewSocket(fd syscall.Handle) *Socket {
+func NewSocket(fd windows.Handle) *Socket {
 	return &Socket{
 		Fd: fd,
 	}
@@ -20,7 +21,7 @@ func (socket *Socket) Read(bytes []byte) (int, error) {
 	if len(bytes) == 0 {
 		return 0, nil
 	}
-	n, err := syscall.Read(socket.Fd, bytes)
+	n, err := windows.Read(socket.Fd, bytes)
 	if n < 0 {
 		n = 0 // sometimes, n<0 is happening, it may cause caller panic
 	}
@@ -28,7 +29,7 @@ func (socket *Socket) Read(bytes []byte) (int, error) {
 }
 
 func (socket *Socket) Write(bytes []byte) (int, error) {
-	numBytesWritten, err := syscall.Write(socket.Fd, bytes)
+	numBytesWritten, err := windows.Write(socket.Fd, bytes)
 	if err != nil {
 		numBytesWritten = 0
 	}
@@ -36,8 +37,7 @@ func (socket *Socket) Write(bytes []byte) (int, error) {
 }
 
 func (socket *Socket) Close() error {
-	syscall.WSACleanup() // 释放为我初始化的dll资源
-	return syscall.Close(socket.Fd)
+	return windows.Close(socket.Fd)
 }
 
 // WSA（Windows Sockets Asynchronous）文档
@@ -46,14 +46,10 @@ func (socket *Socket) Close() error {
 func Listen(ip string, port int) (sock *Socket, err error) {
 	socket := &Socket{}
 
-	// SOCK_STREAM 表示采用tcp协议
-	sockHandle, err := syscall.Socket(syscall.AF_INET, syscall.SOCK_STREAM, 0)
+	sockHandle, err := windows.WSASocket(windows.AF_INET, windows.SOCK_STREAM, 0, nil,
+		0, windows.WSA_FLAG_OVERLAPPED)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create socket (%v)", err)
-	}
-	err = syscall.SetNonblock(sockHandle, true)
-	if err != nil {
-		return nil, fmt.Errorf("failed to SetNonblock (%v)", err)
 	}
 	socket.Fd = sockHandle
 	defer func() {
@@ -61,21 +57,14 @@ func Listen(ip string, port int) (sock *Socket, err error) {
 			_ = socket.Close()
 		}
 	}()
-	/*
-		设置 SO_REUSEADDR 方便实现热重启
-	*/
-	err = syscall.SetsockoptInt(socket.Fd, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1)
-	if err != nil {
-		return nil, fmt.Errorf("failed set SO_REUSEADDR (%v)", err)
-	}
-	socketAddress := &syscall.SockaddrInet4{Port: port}
+	socketAddress := &windows.SockaddrInet4{Port: port}
 	copy(socketAddress.Addr[:], net.ParseIP(ip))
 
-	if err = syscall.Bind(socket.Fd, socketAddress); err != nil {
+	if err = windows.Bind(socket.Fd, socketAddress); err != nil {
 		return nil, fmt.Errorf("failed to bind socket (%v)", err)
 	}
 
-	if err = syscall.Listen(socket.Fd, syscall.SOMAXCONN); err != nil {
+	if err = windows.Listen(socket.Fd, syscall.SOMAXCONN); err != nil {
 		return nil, fmt.Errorf("failed to listen on socket (%v)", err)
 	}
 
