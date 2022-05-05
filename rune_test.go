@@ -39,4 +39,5 @@ func TestRune(t *testing.T) {
 
 	// 单引号 就是 rune 类型的另一种写法， 而byte是uint8
 	fmt.Printf("%T %T %T\n", ' ', rune(' '), byte(' ')) // int32 int32 uint8
+
 }

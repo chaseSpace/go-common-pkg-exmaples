@@ -22,12 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="2">
-      <change afterPath="$PROJECT_DIR$/tcpsvr_in_iocp/readme.md" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/base62_impl_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpcomm/socket/socket_windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpcomm/socket/socket_windows.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_iocp/iocp/iocp.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_iocp/iocp/iocp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpsvr_in_iocp/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpsvr_in_iocp/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rune_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/rune_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$USER_HOME$/sdk/go/go1.17.6" />
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,10 +66,27 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/empty_t.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/_dockerfile/mysql/docker-compose-mysql80.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/os/types.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/ginkgo/example_1/sum.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/io/example_test.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/unicode_test.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/os/file_posix.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18/src/unicode/tables.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/empty.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18/src/unicode/graphic.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18/src/unicode/letter.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tcpsvr_in_iocp/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/go.mod" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ginkgo/example_1/sum_test.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/os/file.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/ginkgo/example_1/example_1_suite_test.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/os/readfrom_stub.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/bufio/bufio.go" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/wechatpay-go/services/transferbatch/models.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/empty_t.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../download/go1.18rc1/src/io/io.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/rune_test.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -108,6 +127,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tcpsvr_in_iocp" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -120,7 +140,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -138,7 +158,15 @@
       <recent name="$PROJECT_DIR$/tcpsvr_in_epoll_LT/conn" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -166,24 +194,6 @@
       <filePath value="$PROJECT_DIR$/tcpclient/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/tcpsvr_in_epoll/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/tcpsvr_in_kqueue/main.go" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -193,20 +203,51 @@
       <filePath value="$PROJECT_DIR$/tcpsvr_in_iocp/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestBase62\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="example_1_suite_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/ginkgo/example_1" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/ginkgo/example_1/example_1_suite_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
       <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Test.example_1_suite_test.go" />
+      <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.example_1_suite_test.go" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_epoll" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpsvr_in_kqueue" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +302,6 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-    <auto-vendoring-mode>false</auto-vendoring-mode>
     <environment>
       <map>
         <entry key="GOPROXY" value="https://goproxy.cn" />

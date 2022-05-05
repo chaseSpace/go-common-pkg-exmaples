@@ -6,6 +6,13 @@ func main() {
 	println(0x303) // 00000001(高8位) 00000010(低8位)
 	println(makeWord(3, 3))
 	println(LoByte(0x102), HiByte(0x102))
+
+	x := make(map[int]*[]int)
+	x[1] = &[]int{1}
+	s := x[1]
+
+	*s = append(*s, 11)
+	println(len(*x[1]))
 }
 
 // 实现Cpp中的同名宏函数

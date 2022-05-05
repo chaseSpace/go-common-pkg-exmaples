@@ -8,14 +8,16 @@ require (
 	github.com/apache/thrift v0.14.2 // indirect
 	github.com/armon/go-metrics v0.3.9 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/doug-martin/goqu/v9 v9.18.0 // indirect
 	github.com/edwingeng/doublejump v0.0.0-20210724020454-c82f1bcb3280 // indirect
 	github.com/fatih/color v1.12.0
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/go-ping/ping v0.0.0-20210506233800-ff8be3320020 // indirect
 	github.com/go-redis/redis/v8 v8.11.3 // indirect
-	github.com/go-sql-driver/mysql v1.5.0
+	github.com/go-sql-driver/mysql v1.6.0
 	github.com/go-xorm/xorm v0.7.9
 	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/goji/httpauth v0.0.0-20160601135302-2da839ab0f4d // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2
 	github.com/golang/snappy v0.0.4 // indirect
@@ -64,6 +66,7 @@ require (
 	google.golang.org/grpc v1.36.0
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
+	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/jose.v1 v1.0.0-20161127122323-a941c3995164
 	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
 	xorm.io/core v0.7.3
