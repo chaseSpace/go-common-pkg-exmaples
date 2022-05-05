@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python facet">
-      <configuration sdkName="Python 3.6 (venv)" />
+      <configuration sdkName="Python 3.8 (go-common-pkg-exmaples)" />
     </facet>
   </component>
   <component name="Go" enabled="true">
@@ -13,11 +13,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
     <orderEntry type="library" name="jquery-migrate-1.2.1" level="application" />
-    <orderEntry type="library" name="Python 3.6 (venv) interpreter library" level="application" />
+    <orderEntry type="library" name="Python 3.8 (go-common-pkg-exmaples) interpreter library" level="application" />
   </component>
 </module>
