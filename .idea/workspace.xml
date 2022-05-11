@@ -23,13 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/base62_impl_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base62_impl/b62_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base62_impl/impl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base62_impl/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base62_impl/testdata/hbase.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base62_impl_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rune_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/rune_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,14 +151,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\develop\go\go-common-pkg-exmaples\base62_impl\testdata" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\base62_impl\\" />
+      <recent name="D:\develop\go\go-common-pkg-exmaples\base62_impl" />
       <recent name="$PROJECT_DIR$/tcpcomm/conn" />
       <recent name="$PROJECT_DIR$/tcpcomm" />
-      <recent name="$PROJECT_DIR$/tcpcomm/socket" />
-      <recent name="$PROJECT_DIR$/tcpsvr_comm" />
-      <recent name="$PROJECT_DIR$/tcpsvr_in_epoll_LT/conn" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples">
+  <component name="RunManager" selected="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -185,25 +185,7 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/tcpclient/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/tcpsvr_in_iocp/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -212,6 +194,42 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestBase62\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/base62_impl" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_All\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Decode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/base62_impl" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_Decode\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Encode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/base62_impl" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_Encode\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -223,31 +241,20 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="example_1_suite_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$/ginkgo/example_1" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/ginkgo/example_1/example_1_suite_test.go" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
-      <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.example_1_suite_test.go" />
-      <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" />
+      <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
+      <item itemvalue="Go Test.Test_Encode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <item itemvalue="Go Test.Test_Decode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <item itemvalue="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples" />
+        <item itemvalue="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+        <item itemvalue="Go Test.Test_Decode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+        <item itemvalue="Go Test.Test_Encode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+        <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
         <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-        <item itemvalue="Go Test.example_1_suite_test.go" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples/tcpclient" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +305,8 @@
     <MESSAGE value="kqueue" />
     <MESSAGE value="epoll" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="base62" />
+    <option name="LAST_COMMIT_MESSAGE" value="base62" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

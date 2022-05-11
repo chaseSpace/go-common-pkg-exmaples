@@ -7,12 +7,8 @@ func main() {
 	println(makeWord(3, 3))
 	println(LoByte(0x102), HiByte(0x102))
 
-	x := make(map[int]*[]int)
-	x[1] = &[]int{1}
-	s := x[1]
-
-	*s = append(*s, 11)
-	println(len(*x[1]))
+	println(reverseBits(0xf0000000)) // => 0Xf = 15
+	println(^(int8(-12) - 1))
 }
 
 // 实现Cpp中的同名宏函数
@@ -33,4 +29,13 @@ func LoByte(x uint16) uint16 {
 func HiByte(x uint16) uint16 {
 	x &= 0xFF00 // 低位清零就得到高位
 	return x
+}
+
+func reverseBits(n uint32) uint32 {
+	n2 := uint32(0)
+	for i := 0; i < 32; i++ {
+		n2 = n2<<1 | (n & 1)
+		n >>= 1
+	}
+	return n2
 }
