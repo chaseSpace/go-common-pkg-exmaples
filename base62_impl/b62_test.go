@@ -171,5 +171,4 @@ func Test_All(t *testing.T) {
 		require.Equal(t, err, nil)
 		require.Equal(t, td.input, decoded)
 	}
-
 }
