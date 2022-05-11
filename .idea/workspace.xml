@@ -22,9 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="base62 impl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base62_impl/b62_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/base62_impl/b62_test.go" afterDir="false" />
+    <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/base62_impl/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/base62_impl/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -300,10 +298,10 @@
     <MESSAGE value="io_test.go" />
     <MESSAGE value="kqueue" />
     <MESSAGE value="epoll" />
-    <MESSAGE value="2" />
     <MESSAGE value="base62" />
     <MESSAGE value="base62 impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="base62 impl" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
