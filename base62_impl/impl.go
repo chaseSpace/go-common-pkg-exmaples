@@ -42,41 +42,41 @@ func b62encode(input []byte) (output []byte) {
 			uint(input[idx+3])<<8 |
 			uint(input[idx+4])
 		// 然后将8组5bit数据转换为base62字符
-		for i := 0; i < 8; i++ {
-			shift := 40 - 5*(i+1)
-			if shift < 0 {
-				_5bit = mergedVal << uint(^(shift - 1)) & 0x1f // ^(shift - 1) 是取绝对值
-			} else {
-				_5bit = mergedVal >> uint(shift) & 0x1f
-			}
-			_tmp8bytes[i] = toBase62Char(_5bit)
-		}
-		output = append(output, _tmp8bytes...)
-		/* 下面是上述for循环的展开形式 */
-		//_5bit = mergedVal >> (32 + 3) // 取出 0-4 bit (第一组5b)
-		//_tmp8bytes[0] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (24 + 6) & 0x1f // 取出 5-9 bit（第二组5b）
-		//_tmp8bytes[1] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (24 + 1) & 0x1f // 取出 10-14 bit（第三组5b）
-		//_tmp8bytes[2] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (16 + 4) & 0x1f // 第四组 15-19
-		//_tmp8bytes[3] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (8 + 7) & 0x1f // 第五组 20-24
-		//_tmp8bytes[4] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (8 + 2) & 0x1f // 第六组 25-29
-		//_tmp8bytes[5] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> (0 + 5) & 0x1f // 第七组 30-34
-		//_tmp8bytes[6] = toBase62Char(_5bit)
-		//
-		//_5bit = mergedVal >> 0 & 0x1f // 第八组 35-39
-		//_tmp8bytes[7] = toBase62Char(_5bit)
+		//for i := 0; i < 8; i++ {
+		//	shift := 40 - 5*(i+1)
+		//	if shift < 0 {
+		//		_5bit = mergedVal << uint(^(shift - 1)) & 0x1f // ^(shift - 1) 是取绝对值
+		//	} else {
+		//		_5bit = mergedVal >> uint(shift) & 0x1f
+		//	}
+		//	_tmp8bytes[i] = toBase62Char(_5bit)
+		//}
 		//output = append(output, _tmp8bytes...)
+		/* 下面是上述for循环的展开形式 */
+		_5bit = mergedVal >> (40 - 5) // 取出 0-4 bit (第一组5b)
+		_tmp8bytes[0] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*2) & 0x1f // 取出 5-9 bit（第二组5b）
+		_tmp8bytes[1] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*3) & 0x1f // 取出 10-14 bit（第三组5b）
+		_tmp8bytes[2] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*4) & 0x1f // 第四组 15-19
+		_tmp8bytes[3] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*5) & 0x1f // 第五组 20-24
+		_tmp8bytes[4] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*6) & 0x1f // 第六组 25-29
+		_tmp8bytes[5] = toBase62Char(_5bit)
+
+		_5bit = mergedVal >> (40 - 5*7) & 0x1f // 第七组 30-34
+		_tmp8bytes[6] = toBase62Char(_5bit)
+
+		_5bit = mergedVal & 0x1f // 第八组 35-39
+		_tmp8bytes[7] = toBase62Char(_5bit)
+		output = append(output, _tmp8bytes...)
 
 		idx += 5
 	}

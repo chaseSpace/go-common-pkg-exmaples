@@ -23,7 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9bf9fd-0692-47a8-84d4-993a28507fc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/base62_impl/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/base62_impl/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base62_impl/impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/base62_impl/impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty.json" beforeDir="false" afterPath="$PROJECT_DIR$/empty.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empty_t.go" beforeDir="false" afterPath="$PROJECT_DIR$/empty_t.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +156,7 @@
       <recent name="$PROJECT_DIR$/tcpcomm" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl">
+  <component name="RunManager" selected="Go Test.b62_test.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="go-common-pkg-exmaples" />
       <working_directory value="$PROJECT_DIR$" />
@@ -177,17 +181,6 @@
       <filePath value="$PROJECT_DIR$/empty_t.go" />
       <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
       <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-common-pkg-exmaples" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chaseSpace/go-common-pkg-exmaples" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestBase62\E$" />
       <method v="2" />
     </configuration>
     <configuration name="Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -235,20 +228,30 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="b62_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-common-pkg-exmaples" />
+      <working_directory value="$PROJECT_DIR$/base62_impl" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/base62_impl/b62_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
-      <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
       <item itemvalue="Go Test.Test_Encode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
       <item itemvalue="Go Test.Test_Decode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
       <item itemvalue="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
+      <item itemvalue="Go Test.b62_test.go" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.b62_test.go" />
+        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
         <item itemvalue="Go Test.Test_All in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
         <item itemvalue="Go Test.Test_Decode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
         <item itemvalue="Go Test.Test_Encode in github.com/chaseSpace/go-common-pkg-exmaples/base62_impl" />
-        <item itemvalue="Go Test.TestBase62 in github.com/chaseSpace/go-common-pkg-exmaples (1)" />
-        <item itemvalue="Go Build.go build github.com/chaseSpace/go-common-pkg-exmaples" />
       </list>
     </recent_temporary>
   </component>
