@@ -12,7 +12,7 @@ func main() {
 	println(reverseBits(0xf0000000)) // => 0Xf = 15
 	println(^(int8(-12) - 1))
 
-	fmt.Println(GetLvByExp(0))
+	fmt.Println(GetIntimateLvByExp(20778))
 }
 
 // 实现Cpp中的同名宏函数
@@ -44,7 +44,7 @@ func reverseBits(n uint32) uint32 {
 	return n2
 }
 
-func GetLvByExp(exp int32) (lv int32, nextExp int32) {
+func GetIntimateLvByExp(exp int32) (lv, currLvExp, nextExp int32) {
 	lv2Exp := int32(520)
 	lv3Exp := int32(520 + 1314)
 	lv4Exp := int32(520 + 1314 + 3344)
@@ -52,15 +52,16 @@ func GetLvByExp(exp int32) (lv int32, nextExp int32) {
 
 	switch _ = 0; {
 	case exp < lv2Exp:
-		return 1, lv2Exp
+		return 1, 0, lv2Exp
 	case exp < lv3Exp:
-		return 2, lv3Exp
+		return 2, lv2Exp, lv3Exp
 	case exp < lv4Exp:
-		return 3, lv4Exp
+		return 3, lv3Exp, lv4Exp
 	case exp < lv5Exp:
-		return 4, lv5Exp
+		return 4, lv4Exp, lv5Exp
 	default:
 		lv = (exp-lv5Exp)/5200 + 5
+		currLvExp = lv5Exp + (lv-5)*5200
 		nextExp = (lv-5+1)*5200 + lv5Exp
 		return
 	}
