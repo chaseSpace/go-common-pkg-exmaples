@@ -25,7 +25,7 @@ func TestRune(t *testing.T) {
 	buf.WriteRune('\u0000') // 在unicode中表示空字符，单字节
 	buf.WriteRune('\u0020') // 表示ASCII的空格，编号在unicode定义的0x00-0x7F范围内，以utf8编码仅需单字节即可表示
 	buf.WriteRune('\u4F60') // 表示汉字的`你`，在unicode定义的0x0800-0xFFFF之间，以utf8编码需三字节可表示
-	buf.WriteRune(0x20C30)  // 0x20C30是unicode字符的另一种书写形式，在unicode定义的0x010000-0x10FFFF之间，以utf8编码需四字节可表示
+	buf.WriteRune(0x20C30)  // 0x20C30是unicode字符的另一种16进制书写形式，在unicode定义的0x010000-0x10FFFF之间，以utf8编码需四字节可表示
 	fmt.Printf("rune-bin:%b rune equal: %v, byte len of a rune:%d "+
 		"toStr:[%s]\n", ' ', ' ' == rune(' '), len(buf.Bytes()), buf.Bytes()) // rune equal: true, byte len of a rune:10 toStr:[   你𠰰]
 

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// 16进制表示
@@ -13,6 +15,17 @@ func main() {
 	println(^(int8(-12) - 1))
 
 	fmt.Println(GetIntimateLvByExp(20778))
+
+	fmt.Printf("%p %p", get(), get())
+}
+
+type x struct {
+}
+
+var s = &x{}
+
+func get() *x {
+	return s
 }
 
 // 实现Cpp中的同名宏函数
