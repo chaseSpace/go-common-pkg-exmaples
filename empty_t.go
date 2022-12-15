@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// 16进制表示
 	//println(0x11)  // 0001 0001
@@ -9,6 +11,9 @@ func main() {
 
 	println(reverseBits(0xf0000000)) // => 0Xf = 15
 	println(^(int8(-12) - 1))
+
+	nbits := 0x4c86041b
+	fmt.Printf("%+x", nbits&0xffff)
 }
 
 // 实现Cpp中的同名宏函数

@@ -1,8 +1,5 @@
-//go:build freebsd
-// +build freebsd
-
-//go:build darwin
-// +build darwin
+//go:build freebsd && darwin
+// +build freebsd,darwin
 
 package kqueuemod
 
