@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// 16进制表示
@@ -12,8 +14,18 @@ func main() {
 	println(reverseBits(0xf0000000)) // => 0Xf = 15
 	println(^(int8(-12) - 1))
 
-	nbits := 0x4c86041b
-	fmt.Printf("%+x", nbits&0xffff)
+	fmt.Println(GetIntimateLvByExp(20778))
+
+	fmt.Printf("%p %p", get(), get())
+}
+
+type x struct {
+}
+
+var s = &x{}
+
+func get() *x {
+	return s
 }
 
 // 实现Cpp中的同名宏函数
@@ -43,4 +55,27 @@ func reverseBits(n uint32) uint32 {
 		n >>= 1
 	}
 	return n2
+}
+
+func GetIntimateLvByExp(exp int32) (lv, currLvExp, nextExp int32) {
+	lv2Exp := int32(520)
+	lv3Exp := int32(520 + 1314)
+	lv4Exp := int32(520 + 1314 + 3344)
+	lv5Exp := int32(520 + 1314 + 3344 + 5200)
+
+	switch _ = 0; {
+	case exp < lv2Exp:
+		return 1, 0, lv2Exp
+	case exp < lv3Exp:
+		return 2, lv2Exp, lv3Exp
+	case exp < lv4Exp:
+		return 3, lv3Exp, lv4Exp
+	case exp < lv5Exp:
+		return 4, lv4Exp, lv5Exp
+	default:
+		lv = (exp-lv5Exp)/5200 + 5
+		currLvExp = lv5Exp + (lv-5)*5200
+		nextExp = (lv-5+1)*5200 + lv5Exp
+		return
+	}
 }

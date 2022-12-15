@@ -23,7 +23,8 @@ func Test_uint16ToByte(t *testing.T) {
 	// 什么是大端序/小端序？ http://www.ruanyifeng.com/blog/2016/11/byte-order.html
 	err := binary.Write(buf, binary.LittleEndian, twoByteVar)
 	if err != nil {
-		t.Error(err)
+		t.Logf("Write err %v", err)
+		t.FailNow()
 	}
 	// 打印二进制 [11001000 1001001]
 	t.Logf("Test_uint16ToByte: %b", buf.Bytes())

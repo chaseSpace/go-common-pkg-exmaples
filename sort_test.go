@@ -15,6 +15,7 @@ func TestSort(t *testing.T) {
 
 	// 降序
 	sort.Slice(S, func(i, j int) bool {
+		// 小于=升序，大于=降序（小升大降）
 		return S[i].integer > S[j].integer
 	})
 

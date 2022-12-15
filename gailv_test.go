@@ -10,7 +10,7 @@ import (
 // 奖品配置列表
 var prize = []struct {
 	id   int
-	prob int
+	prob int // 权重
 }{
 	{id: 3, prob: 30}, {id: 4, prob: 40}, {id: 1, prob: 10}, {id: 2, prob: 20},
 }

@@ -10,10 +10,10 @@ import (
 /*
 本文件内的代码演示了unsafe.Pointer的基本使用方法；
 如要了解更高级的使用指针做算数运算，需要先*熟练*掌握go的内存对齐原则，即使这样还是尽量少用指针做算数运算，
-因为go版本升级可能会导致结构体的内存布局发生微小变化，然后导致你的算数运算出现偏差，导致程序crash~
-# 比如reflect.SliceHeader结构体的注释就表名了，结构体的实现在将来可能会发生转变
+因为go版本升级可能会导致结构体的内存布局发生微小变化，然后导致你的算数运算出现偏差，导致程序crash！
+# 比如reflect.SliceHeader结构体的注释就表名了“结构体的实现在将来可能会发生转变”
 
-进阶查看同目录下文件：unsafe2_test.go
+如需进阶unsafe，查看同目录下文件：unsafe2_test.go
 */
 
 func TestUnsafe(t *testing.T) {
@@ -43,12 +43,12 @@ func TestUnsafe(t *testing.T) {
 	// 比如str 和 bytes, 通常我们使用[]byte(x) 来转str，这会造成内存拷贝
 	s := "x"
 	b := []byte{'x'}
-	// str的内存结构是reflect.StringHeader, bytes是reflect.SliceHeader
-	//
+	// str在go中的真实内存结构体是reflect.StringHeader, bytes是reflect.SliceHeader）（在标准库搜索能找到）
+	// StringHeader内部字段Data和SliceHeader.Data都是byte数据，所以可以零拷贝互转
 	strHead := (*reflect.StringHeader)(unsafe.Pointer(&s))
 	sliceHead := reflect.SliceHeader{
 		Data: strHead.Data,
-		Len:  strHead.Len, // strHead的len也是byte单位
+		Len:  strHead.Len,
 		Cap:  strHead.Len,
 	}
 	newB := (*[]byte)(unsafe.Pointer(&sliceHead))

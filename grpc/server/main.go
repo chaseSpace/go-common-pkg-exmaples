@@ -69,9 +69,7 @@ func main() {
 
 	// 添加拦截器, 这里是有顺序的，recovery拦截器应在第一个，
 	// 即接口报错应被立即捕捉到并返回err，后面的拦截器无需再执行（当然，这也不是绝对的，根据需要）
-	interceptors := grpc_middleware.WithUnaryServerChain(
-		RecoveryInterceptor,
-		LoggingInterceptor)
+	interceptors := grpc_middleware.WithUnaryServerChain(RecoveryInterceptor, LoggingInterceptor)
 	s := grpc.NewServer(
 		svrOpt,
 		keepaliveopt,

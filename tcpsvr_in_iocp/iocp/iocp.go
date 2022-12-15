@@ -77,7 +77,7 @@ func NewEventLoop(ip string, port int) (iocp *Iocp, err error) {
 	// NOTE:这里还可以在检查wd返回的版本是否符合需求，不符合可终止服务
 	// >>这里的wd.Version也是同上面MakeWord()方式计算出来的，所以要反解出主副版本，再比对
 	if LoByte(wd.Version) != uint16(mainVer) || HiByte(wd.Version) != uint16(minorVer) {
-		err = fmt.Errorf("could not find a usable version of Winsock.dll")
+		err = fmt.Errorf("could not find a usable version of Winsock.dll, LoByte=%d HiByte=%d", LoByte(wd.Version), HiByte(wd.Version))
 		return
 	}
 
@@ -93,7 +93,7 @@ func NewEventLoop(ip string, port int) (iocp *Iocp, err error) {
 		uint32(maxSystemProcessIOThreadCnt), // 内核层的真正并发同时执行最大线程数，若第二个参数为空则此参数被忽略，0也表示使用默认值（cpu核心数）
 	)
 	if err != nil {
-		err = fmt.Errorf("could not find a usable version of Winsock.dll")
+		err = fmt.Errorf("CreateIoCompletionPort err = %v", err)
 		return
 	}
 	iocp = &Iocp{sock: sock, hComPort: hComPort}

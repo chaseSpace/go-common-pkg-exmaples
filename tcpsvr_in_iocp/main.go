@@ -11,7 +11,7 @@ import (
 func main() {
 	eventLoop, err := iocp.NewEventLoop("127.0.0.1", 8080)
 	if err != nil {
-		println("Failed to create event loop:", err)
+		println("Failed to create event loop:", err.Error())
 		os.Exit(1)
 	}
 	defer eventLoop.Close()
