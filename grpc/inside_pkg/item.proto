@@ -1,6 +1,6 @@
 syntax = "proto3";
 package item;
-option go_package = ".;pb_test";
+option go_package = "./inside_pkg;pb_test";
 
 message ItemDetail {
     string name=1;
