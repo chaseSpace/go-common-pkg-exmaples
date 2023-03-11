@@ -1,13 +1,11 @@
 package main
 
-// cd grpc/server/  && go generate .
-//go:generate sh ./_go_generate.sh
-
 import (
 	"context"
 	"fmt"
+	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/example_gen_pb.com/sub1"
+	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/example_gen_pb.com/sub2"
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
-	pb "github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
 	"github.com/golang/protobuf/ptypes"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	"google.golang.org/grpc"
@@ -31,8 +29,8 @@ type serverSSS struct{}
 func (s *serverSSS) Search(ctx context.Context, in *pb.Request) (*pb.Response, error) {
 	log.Printf("Received: query:%v header:%+v", in.GetQuery(), in.GetHeaders())
 	return &pb.Response{ReqQuery: in.GetQuery(),
-		X: &pb.ItemDetail{Name: "apple", Price: 110,
-			Desc: "desc", Status: pb.ItemDetail_ACTIVE},
+		X: &sub1.ItemDetail{Name: "apple", Price: 110,
+			Desc: "desc", Status: sub1.ItemDetail_ACTIVE},
 		Succ: true,
 		Time: ptypes.TimestampNow()}, nil
 }

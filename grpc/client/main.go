@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/key"
-	"github.com/chaseSpace/go-common-pkg-exmaples/grpc/pb_test"
+	pb_test "github.com/chaseSpace/go-common-pkg-exmaples/grpc/example_gen_pb.com/sub2"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

@@ -1,6 +1,7 @@
 syntax = "proto3";
-package item;
-option go_package = ".;pb_test";
+package sub1;
+
+option go_package = "example_gen_pb.com/sub1";
 
 message ItemDetail {
     string name=1;
@@ -8,10 +9,9 @@ message ItemDetail {
     string desc=3;
     status Status=4;
     enum status {
-         option allow_alias = true;
          DEFAULT=0;
          ACTIVE=1;
          INACTIVE=2;
-         OFF=2;
+         OFF=3;
     }
 }

@@ -1,16 +1,19 @@
 syntax = "proto3";
+package sub2;
+
+// 官方推荐使用 go_package 来确定生成proto代码文件的导包全路径，比如: example.com/sub1  (必须包含 . 或 /)
+// -- 还可以通过分号来分开指定导包路径和包名，但官方不推荐这种方式，因为包名应该被默认使用路径的最后一个目录名
+option go_package = "example_gen_pb.com/sub2";
+
 import "google/protobuf/timestamp.proto";
+// pb中的import路径只与实际的.proto结构有关
+import "protocol/sub1/item.proto";
 
 // goland 解决import不识别问题：settings--> Languages & FrameWorks --> ProtoBuffer --> 右侧取消勾选即可添加路径
 // 这里应添加 /go-common-pkg-examples/grpc目录
-import "inside_pkg/item.proto";
-
-package req;
 
 // 生成多个pb文件, /path/to/grpc>protoc -I=. -I=inside_pkg req.proto inside_pkg/item.proto --go_out=plugins=grpc:pb_test
 // 不过使用go generate 命令更方便，查看server/_gogenerate.sh 脚本，进入server目录，执行 【go generate .】命令即可执行上述命令
-
-option go_package = ".;pb_test"; // .; 是 protoc 要求的，用来表示这是一个full path
 
 message Request {
     reserved 15, 9 to 11; // 保留一些标识号
@@ -25,7 +28,7 @@ message Response {
     reserved "foo", "bar";
 
     string req_query = 1;
-    item.ItemDetail x = 2;
+    sub1.ItemDetail x = 2;
     bool succ = 3;
     google.protobuf.Timestamp time = 4;
 }
