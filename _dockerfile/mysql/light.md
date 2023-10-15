@@ -1,4 +1,4 @@
-### 轻量化部署 mysql (docker on linux)
+## 轻量化部署 mysql (docker on linux)
 
 先尝试运行看是否报错：
 ```shell
@@ -21,12 +21,24 @@ docker run -d --name mysql \
       -v /etc/localtime:/etc/localtime \
       -e MYSQL_ROOT_PASSWORD='123'\
        mysql:5.7  # mac上替换为 mariadb:5.7
-mysql -h 127.0.0.1 -u root -p123  # 有时候通过 `-h localhost` 进不去
-docker stop mysql && docker rm mysql
+```
 
+其他常用命令：
+```shell
+# 在宿主机尝试连接
+mysql -h 127.0.0.1 -u root -p123  # 有时候通过 `-h localhost` 进不去
+
+# 或直接进入容器
 docker exec -it mysql mysql -p123
 
-# 远程登录（但上述命令指定了容器网络是host，所以宿主机登录可以直接认为是本机登录）
-GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY '123' WITH GRANT OPTION; 
+# 删除容器
+docker stop mysql && docker rm mysql
+```
+
+## 设置mysql远程登录
+默认mysql仅支持本机访问，所以如果需要，则通过上面的常用命令进入mysql shell，执行下面指令：
+```shell
+# 123是root密码
+GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY '123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
