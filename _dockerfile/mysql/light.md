@@ -10,8 +10,7 @@ docker run --rm --name mysql \
        mysql  # mac上替换为 mariadb
        
 docker exec -it mysql mysql -p123
-mariadb -h 127.0.0.1 -u root -p123
-# 无法使用mysql 命令行登录
+mysql -h 127.0.0.1 -u root -p123  # mariadb也需要用 mariadb client连接
 ```
 
 如果没报错，就crtl+C退出，运行下面命令：
