@@ -3,18 +3,18 @@ services:
   test-mysql-5.7:
     image: mysql/mysql-server:5.7.37
     container_name: test-mysql-5.7.37
-#    build:
-#      context: /path/to/ctx
-#      dockerfile: /xxx.Dockerfile
+    #    build:
+    #      context: /path/to/ctx
+    #      dockerfile: /xxx.Dockerfile
     ports:
-        - "3306:3306"  # http (host-p:container-p)
+      - "3306:3306"  # http (host-p:container-p)
     environment:
       TIME_ZONE: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: "houlangfeilang"  # set root password, it will be ignored if db exists
-#      MYSQL_DATABASE: "mmysql"  # create a db if not exist
-#      MYSQL_USER: "muser"  # create a user
-#      MYSQL_PASSWORD: "mpass*&()" # set password for $MYSQL_USER
-      # NOTE: $MYSQL_USER will be bind with $MYSQL_DATABASE, this means $MYSQL_USER only can access $MYSQL_DATABASE by default.
+      MYSQL_ROOT_PASSWORD: "123"  # set root password, it will be ignored if db exists
+      MYSQL_DATABASE: "biz_main"  # create a db if not exist
+      MYSQL_USER: "biz01"  # create a user
+      MYSQL_PASSWORD: "biz123" # set password for $MYSQL_USER
+    # NOTE: $MYSQL_USER will be bind with $MYSQL_DATABASE, this means $MYSQL_USER only can access $MYSQL_DATABASE by default.
     privileged: true
     volumes:
       - "/etc/localtime:/etc/localtime"
