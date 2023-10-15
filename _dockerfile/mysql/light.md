@@ -1,4 +1,4 @@
-### 轻量化部署 mysql (docker on mac)
+### 轻量化部署 mysql (docker on linux)
 
 先尝试运行看是否报错：
 ```shell
@@ -14,14 +14,14 @@ mariadb -h 127.0.0.1 -u root -p123
 # 无法使用mysql 命令行登录
 ```
 
-
+如果没报错，就crtl+C退出，运行下面命令：
 ```shell
 docker run -d --name mysql \
       --network host \
       -v ~/docker/mysql/data:/var/lib/mysql \
       -v /etc/localtime:/etc/localtime \
       -e MYSQL_ROOT_PASSWORD='123'\
-       mysql:5.7
+       mysql:5.7  # mac上替换为 mariadb:5.7
 mysql -h 127.0.0.1 -u root -p123  # 有时候通过 `-h localhost` 进不去
 docker stop mysql && docker rm mysql
 
