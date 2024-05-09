@@ -53,6 +53,8 @@ CREATE TABLE test.users (
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     gender BIT(1) NOT NULL,
+    money DECIMAL(2) NOT NULL,
     registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+# drop table test.users;
 ```
