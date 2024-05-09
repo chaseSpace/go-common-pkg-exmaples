@@ -42,3 +42,17 @@ docker stop mysql && docker rm mysql
 GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY '123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
+
+## 测试表
+
+```
+create database test;
+CREATE TABLE test.users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    gender BIT(1) NOT NULL,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
