@@ -47,14 +47,14 @@ FLUSH PRIVILEGES;
 
 ```
 create database test;
-CREATE TABLE test.users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    gender BIT(1) NOT NULL,
-    money DECIMAL(2) NOT NULL,
-    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '用户ID，自增主键',
+    username VARCHAR(50) NOT NULL COMMENT '用户名，最大长度为50个字符，不为空',
+    email VARCHAR(100) NOT NULL UNIQUE COMMENT '电子邮件地址，最大长度为100个字符，不为空，唯一索引',
+    password VARCHAR(255) NOT NULL COMMENT '密码，最大长度为255个字符，不为空',
+    gender BIT(1) NOT NULL COMMENT '性别，使用 BIT(1) 类型表示，0 表示女性，1 表示男性，不为空',
+    money DECIMAL(2) NOT NULL COMMENT 'money，浮点数',
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '注册日期，默认为当前时间戳'
 );
 # drop table test.users;
 ```
