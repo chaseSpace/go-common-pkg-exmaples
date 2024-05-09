@@ -7,7 +7,7 @@ docker run --rm --name mysql \
       -v ~/docker/mysql/data:/var/lib/mysql \
       -v /etc/localtime:/etc/localtime \
       -e MYSQL_ROOT_PASSWORD='123'\
-       mysql  # mac上替换为 mariadb
+       mysql:5.7  # mac上替换为 mariadb
        
 docker exec -it mysql mysql -p123
 mysql -h 127.0.0.1 -u root -p123  # mariadb也需要用 mariadb client连接
