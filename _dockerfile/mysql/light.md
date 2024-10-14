@@ -47,8 +47,10 @@ docker run -d --name mysqlv8 \
 ```
 
 其他常用命令：
-
 ```shell
+# install mysql-client
+# https://www.itqaq.com/index/634.html
+
 # 在宿主机尝试连接
 mysql -h 127.0.0.1 -u root -p123  # 有时候通过 `-h localhost` 进不去
 
